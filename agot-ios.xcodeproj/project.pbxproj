@@ -28,6 +28,7 @@
 		8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */; };
+		8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8F257EAD14DECFD0008CF1D5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		8F257EAE14DECFD0008CF1D5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGoTLCGCards.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		8F257E6B14DEBFC6008CF1D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */,
 				8F257E6C14DEBFC6008CF1D5 /* agot-ios-Info.plist */,
 				8F257E6D14DEBFC6008CF1D5 /* InfoPlist.strings */,
 				8F257E7014DEBFC6008CF1D5 /* main.m */,
@@ -268,6 +271,7 @@
 				8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
 				8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */,
+				8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

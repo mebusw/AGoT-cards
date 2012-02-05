@@ -11,6 +11,9 @@
 #import "DetailViewController.h"
 #import "CardViewController.h"
 
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
+
 @implementation MasterViewController
 
 @synthesize detailViewController = _detailViewController;
@@ -33,6 +36,56 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void) selectFromTestTable {
+    NSLog(@"");
+    BOOL success;
+    NSError *error;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *writableDBPath = @"AGoTLCGCards.db";
+    
+    //NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"sample.db"];
+    success = [fm fileExistsAtPath:writableDBPath];
+    if(!success){
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"sample.db"];
+        success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+        if(!success){
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }
+    
+    // 连接DB
+    FMDatabase* db = [FMDatabase databaseWithPath:writableDBPath];
+    if ([db open]) {
+        [db setShouldCacheStatements:YES];
+        
+        //        // INSERT	
+        //        [db beginTransaction];
+        //        int i = 0;
+        //        while (i++ < 20) {
+        //            [db executeUpdate:@"INSERT INTO TEST (name) values (?)" , [NSString stringWithFormat:@"number %d", i]];
+        //            if ([db hadError]) {
+        //                NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+        //            }
+        //        }
+        //        [db commit];
+        
+        // SELECT
+        FMResultSet *rs = [db executeQuery:@"SELECT * FROM t_types"];
+        
+        while ([rs next]) {
+            NSLog(@"%d %@", [rs intForColumnIndex:0], [rs stringForColumnIndex:1]);
+        }
+        [rs close];
+        [db close];
+    }else{
+        NSLog(@"Could not open db.");
+    }
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -44,7 +97,9 @@
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     }
     allItems = [NSArray arrayWithObjects:@"Tom", @"Bob", @"Alice" , nil];
-    
+    self.searchDisplayController.searchBar.showsScopeBar = YES;
+    [self.searchDisplayController.searchBar setScopeButtonTitles:[NSArray arrayWithObjects:@"All",@"Device",@"Desktop",@"Portable",nil]];
+    [self selectFromTestTable];
 }
 
 - (void)viewDidUnload
@@ -125,6 +180,8 @@
     searchResult = [allItems filteredArrayUsingPredicate:p];
 }
 
+
+
 #pragma mark - UISearchDisplayController delegate
 
 -(BOOL) searchDisplayController:(UISearchDisplayController*) controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -134,7 +191,7 @@
 }
 
 -(BOOL) searchDisplayController:(UISearchDisplayController*) controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    NSLog(@"%@", searchOption);
+    NSLog(@"%d", searchOption);
     [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     return YES;
 }
