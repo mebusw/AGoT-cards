@@ -22,6 +22,8 @@
 		8F257E8B14DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
 		8F257E9314DEBFC6008CF1D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E9114DEBFC6008CF1D5 /* InfoPlist.strings */; };
 		8F257E9614DEBFC6008CF1D5 /* agot_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */; };
+		8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EA414DECA58008CF1D5 /* CardViewController.m */; };
+		8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F257EA514DECA58008CF1D5 /* CardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		8F257E9214DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F257E9414DEBFC6008CF1D5 /* agot_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = agot_iosTests.h; sourceTree = "<group>"; };
 		8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = agot_iosTests.m; sourceTree = "<group>"; };
+		8F257EA314DECA57008CF1D5 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		8F257EA414DECA58008CF1D5 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		8F257EA514DECA58008CF1D5 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */,
 				8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */,
 				8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */,
+				8F257EA314DECA57008CF1D5 /* CardViewController.h */,
+				8F257EA414DECA58008CF1D5 /* CardViewController.m */,
+				8F257EA514DECA58008CF1D5 /* CardViewController.xib */,
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */,
 				8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */,
@@ -232,6 +240,7 @@
 				8F257E6F14DEBFC6008CF1D5 /* InfoPlist.strings in Resources */,
 				8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
+				8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +279,7 @@
 				8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */,
 				8F257E7E14DEBFC6008CF1D5 /* MasterViewController.m in Sources */,
 				8F257E8114DEBFC6008CF1D5 /* DetailViewController.m in Sources */,
+				8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

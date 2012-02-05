@@ -9,10 +9,13 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "CardViewController.h"
 
 @implementation MasterViewController
 
 @synthesize detailViewController = _detailViewController;
+
+@synthesize allItems, searchResult;
 
 - (void)awakeFromNib
 {
@@ -39,6 +42,8 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     }
+    allItems = [NSArray arrayWithObjects:@"Tom", @"Bob", @"Alice" , nil];
+    
 }
 
 - (void)viewDidUnload
@@ -76,6 +81,31 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - tableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [allItems count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.textLabel.text = [allItems objectAtIndex:indexPath.row];
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CardViewController *cvc = [[CardViewController alloc] init];
+    cvc.title = [allItems objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:cvc animated:YES];
+    
 }
 
 /*

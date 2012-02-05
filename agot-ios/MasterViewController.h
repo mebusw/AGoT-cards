@@ -14,4 +14,10 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
+@property (strong, nonatomic) NSArray *allItems;
+@property (strong, nonatomic) NSArray *searchResult;
+
+
+
+
 @end

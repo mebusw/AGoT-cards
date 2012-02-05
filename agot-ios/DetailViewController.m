@@ -23,6 +23,7 @@
 
 - (void)setDetailItem:(id)newDetailItem
 {
+    NSLog(@"");
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         
@@ -54,9 +55,13 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"%@", self.detailDescriptionLabel);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    //[self configureView];
+    self.detailDescriptionLabel = [[UILabel alloc] init];
+    self.detailDescriptionLabel.text = @"Detail";
+    [self.view addSubview:self.detailDescriptionLabel];
 }
 
 - (void)viewDidUnload
