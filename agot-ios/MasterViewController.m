@@ -16,6 +16,7 @@
 @synthesize detailViewController = _detailViewController;
 
 @synthesize allItems, searchResult;
+@synthesize searchBar, searchDisplayController;
 
 - (void)awakeFromNib
 {
@@ -86,8 +87,11 @@
 #pragma mark - tableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [allItems count];
-    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        return [searchResult count];
+    } else {
+        return [allItems count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,8 +100,15 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.textLabel.text = [allItems objectAtIndex:indexPath.row];
     }
+    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        cell.textLabel.text = [searchResult objectAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = [allItems objectAtIndex:indexPath.row];
+
+    }
+    
     return cell;
 }
 
@@ -106,6 +117,26 @@
     cvc.title = [allItems objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:cvc animated:YES];
     
+}
+
+
+-(void) filterContentForSearchText:(NSString*) searchText scope:(NSString*) scope {
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+    searchResult = [allItems filteredArrayUsingPredicate:p];
+}
+
+#pragma mark - UISearchDisplayController delegate
+
+-(BOOL) searchDisplayController:(UISearchDisplayController*) controller shouldReloadTableForSearchString:(NSString *)searchString {
+    NSLog(@"%@", searchString);
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+     return YES;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController*) controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    NSLog(@"%@", searchOption);
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    return YES;
 }
 
 /*
