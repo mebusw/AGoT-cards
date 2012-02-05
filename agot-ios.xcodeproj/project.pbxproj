@@ -39,23 +39,23 @@
 		8F257E6414DEBFC6008CF1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F257E6614DEBFC6008CF1D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F257E6814DEBFC6008CF1D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8F257E6C14DEBFC6008CF1D5 /* agot-ios-Info.plist */ = {isa = PBXFileReference; path = "agot-ios-Info.plist"; sourceTree = "<group>"; };
+		8F257E6C14DEBFC6008CF1D5 /* agot-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agot-ios-Info.plist"; sourceTree = "<group>"; };
 		8F257E6E14DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F257E7014DEBFC6008CF1D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8F257E7214DEBFC6008CF1D5 /* agot-ios-Prefix.pch */ = {isa = PBXFileReference; path = "agot-ios-Prefix.pch"; sourceTree = "<group>"; };
-		8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F257E7214DEBFC6008CF1D5 /* agot-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "agot-ios-Prefix.pch"; sourceTree = "<group>"; };
+		8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8F257E7714DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		8F257E7A14DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		8F257E7F14DEBFC6008CF1D5 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		8F257E7F14DEBFC6008CF1D5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		8F257E8014DEBFC6008CF1D5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		8F257E8714DEBFC6008CF1D5 /* agot-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "agot-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		8F257E9014DEBFC6008CF1D5 /* agot-iosTests-Info.plist */ = {isa = PBXFileReference; path = "agot-iosTests-Info.plist"; sourceTree = "<group>"; };
+		8F257E9014DEBFC6008CF1D5 /* agot-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agot-iosTests-Info.plist"; sourceTree = "<group>"; };
 		8F257E9214DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8F257E9414DEBFC6008CF1D5 /* agot_iosTests.h */ = {isa = PBXFileReference; path = agot_iosTests.h; sourceTree = "<group>"; };
+		8F257E9414DEBFC6008CF1D5 /* agot_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = agot_iosTests.h; sourceTree = "<group>"; };
 		8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = agot_iosTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,7 +333,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -359,7 +359,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
