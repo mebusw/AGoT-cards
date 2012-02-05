@@ -44,7 +44,7 @@
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     //NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *writableDBPath = @"AGoTLCGCards.db";
+    NSString *writableDBPath = @"/tmp/tmp.db";
     
     //NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"sample.db"];
     success = [fm fileExistsAtPath:writableDBPath];
