@@ -42,12 +42,12 @@
     NSError *error;
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@", documentsDirectory);
     
-    NSString *writableDBPath = @"/tmp/tmp.db";
-    
-    //NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"sample.db"];
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"AGoTLCGCards.db"];
     success = [fm fileExistsAtPath:writableDBPath];
+    NSLog(@"file exists %d", success);
     if(!success){
         NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"sample.db"];
         success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
