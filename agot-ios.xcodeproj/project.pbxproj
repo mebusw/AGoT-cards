@@ -22,7 +22,6 @@
 		8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */; };
 		8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */; };
 		8F257E7E14DEBFC6008CF1D5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */; };
-		8F257E8114DEBFC6008CF1D5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E8014DEBFC6008CF1D5 /* DetailViewController.m */; };
 		8F257E8914DEBFC6008CF1D5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */; };
 		8F257E8A14DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E8B14DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
@@ -74,8 +73,6 @@
 		8F257E7A14DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		8F257E7F14DEBFC6008CF1D5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		8F257E8014DEBFC6008CF1D5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		8F257E8714DEBFC6008CF1D5 /* agot-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "agot-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F257E9014DEBFC6008CF1D5 /* agot-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agot-iosTests-Info.plist"; sourceTree = "<group>"; };
@@ -192,8 +189,6 @@
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */,
 				8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */,
-				8F257E7F14DEBFC6008CF1D5 /* DetailViewController.h */,
-				8F257E8014DEBFC6008CF1D5 /* DetailViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 			);
 			path = "agot-ios";
@@ -355,7 +350,6 @@
 				8F257E7114DEBFC6008CF1D5 /* main.m in Sources */,
 				8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */,
 				8F257E7E14DEBFC6008CF1D5 /* MasterViewController.m in Sources */,
-				8F257E8114DEBFC6008CF1D5 /* DetailViewController.m in Sources */,
 				8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */,
 				8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */,
 				8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */,

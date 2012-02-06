@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
 #import "CardViewController.h"
 
 #import "FMDatabase.h"
