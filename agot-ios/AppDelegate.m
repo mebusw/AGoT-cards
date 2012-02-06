@@ -8,9 +8,12 @@
 
 #import "AppDelegate.h"
 
+#define DB_NAME @"AGoTLCGCards"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize db;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -22,7 +25,42 @@
     }
     return YES;
 }
-							
+			
+
+
+- (BOOL)initDatabase{
+    BOOL success;
+    NSError *error;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:DB_NAME];
+    
+    success = [fm fileExistsAtPath:writableDBPath];
+    if(!success){
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DB_NAME];
+        success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+        if(!success){
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        success = NO;
+    }
+    if(success){
+        db = [FMDatabase databaseWithPath:writableDBPath];
+        if ([db open]) {
+            [db setShouldCacheStatements:YES];
+        }else{
+            NSLog(@"Failed to open database.");
+            success = NO;
+        }
+    }
+    return success;
+}
+
+- (void) closeDatabase{
+    [db close];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

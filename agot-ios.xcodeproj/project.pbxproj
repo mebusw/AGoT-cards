@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1B287C14E0080F006C8638 /* AGoTCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287814E0080F006C8638 /* AGoTCard.m */; };
+		8F1B287D14E0080F006C8638 /* CardDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287914E0080F006C8638 /* CardDao.m */; };
+		8F1B287F14E0080F006C8638 /* AGoTSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287B14E0080F006C8638 /* AGoTSet.m */; };
+		8F1B288314E00845006C8638 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288214E00845006C8638 /* BaseDao.m */; };
 		8F257E6514DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E6714DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
 		8F257E6914DEBFC6008CF1D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6814DEBFC6008CF1D5 /* CoreGraphics.framework */; };
@@ -42,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F1B287814E0080F006C8638 /* AGoTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTCard.m; sourceTree = "<group>"; };
+		8F1B287914E0080F006C8638 /* CardDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDao.m; sourceTree = "<group>"; };
+		8F1B287B14E0080F006C8638 /* AGoTSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTSet.m; sourceTree = "<group>"; };
+		8F1B288214E00845006C8638 /* BaseDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDao.m; sourceTree = "<group>"; };
+		8F1B288514E00891006C8638 /* AGoTCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTCard.h; sourceTree = "<group>"; };
+		8F1B288614E00D58006C8638 /* AGoTSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTSet.h; sourceTree = "<group>"; };
+		8F1B288714E00DBF006C8638 /* BaseDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDao.h; sourceTree = "<group>"; };
+		8F1B288814E00DC7006C8638 /* CardDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDao.h; sourceTree = "<group>"; };
 		8F257E6014DEBFC6008CF1D5 /* agot-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agot-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E6414DEBFC6008CF1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F257E6614DEBFC6008CF1D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +114,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F1B288114E00817006C8638 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				8F1B288814E00DC7006C8638 /* CardDao.h */,
+				8F1B287914E0080F006C8638 /* CardDao.m */,
+				8F1B288714E00DBF006C8638 /* BaseDao.h */,
+				8F1B288214E00845006C8638 /* BaseDao.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		8F1B288414E0084D006C8638 /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				8F1B288514E00891006C8638 /* AGoTCard.h */,
+				8F1B287814E0080F006C8638 /* AGoTCard.m */,
+				8F1B288614E00D58006C8638 /* AGoTSet.h */,
+				8F1B287B14E0080F006C8638 /* AGoTSet.m */,
+			);
+			name = Bean;
+			sourceTree = "<group>";
+		};
 		8F257E5514DEBFC6008CF1D5 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +170,8 @@
 		8F257E6A14DEBFC6008CF1D5 /* agot-ios */ = {
 			isa = PBXGroup;
 			children = (
+				8F1B288414E0084D006C8638 /* Bean */,
+				8F1B288114E00817006C8638 /* DAO */,
 				8F257EA814DECFB6008CF1D5 /* FMDB */,
 				8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */,
 				8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */,
@@ -314,6 +350,10 @@
 				8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */,
 				8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */,
 				8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */,
+				8F1B287C14E0080F006C8638 /* AGoTCard.m in Sources */,
+				8F1B287D14E0080F006C8638 /* CardDao.m in Sources */,
+				8F1B287F14E0080F006C8638 /* AGoTSet.m in Sources */,
+				8F1B288314E00845006C8638 /* BaseDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +533,7 @@
 				8F257E9B14DEBFC6008CF1D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F257E9C14DEBFC6008CF1D5 /* Build configuration list for PBXNativeTarget "agot-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +542,7 @@
 				8F257E9E14DEBFC6008CF1D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
