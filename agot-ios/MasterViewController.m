@@ -49,13 +49,11 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     }
-    //allItems = [NSArray arrayWithObjects:@"Tom", @"Bob", @"Alice" , nil];
+    allItems = [NSArray arrayWithObjects:@"Tom", @"Bob", @"Alice" , nil];
     self.searchDisplayController.searchBar.showsScopeBar = YES;
     [self.searchDisplayController.searchBar setScopeButtonTitles:[NSArray arrayWithObjects:@"All",@"Device",@"Desktop",@"Portable",nil]];
 
-    ///////////
-    TypeDao *dao = [[TypeDao alloc] init];
-    allItems = [dao select];
+
     
 
 }
@@ -119,7 +117,7 @@
         cell.textLabel.text = [searchResult objectAtIndex:indexPath.row];
     } else {
         NSLog(@"row=%d", indexPath.row);
-        cell.textLabel.text = ((AGoTType*)[allItems objectAtIndex:indexPath.row]).types;
+        cell.textLabel.text = [allItems objectAtIndex:indexPath.row];
 
     }
     
@@ -128,7 +126,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CardViewController *cvc = [[CardViewController alloc] init];
-    cvc.title = ((AGoTType*)[allItems objectAtIndex:indexPath.row]).types;
+    cvc.title = [allItems objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:cvc animated:YES];
     
 }

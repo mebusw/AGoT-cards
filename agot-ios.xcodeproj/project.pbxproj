@@ -13,6 +13,8 @@
 		8F1B288314E00845006C8638 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288214E00845006C8638 /* BaseDao.m */; };
 		8F1B288B14E01536006C8638 /* AGoTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288A14E01536006C8638 /* AGoTType.m */; };
 		8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288D14E015F8006C8638 /* TypeDao.m */; };
+		8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B289014E01DC0006C8638 /* SearchViewController.m */; };
+		8F1B289314E01DC1006C8638 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289114E01DC0006C8638 /* SearchViewController.xib */; };
 		8F257E6514DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E6714DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
 		8F257E6914DEBFC6008CF1D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6814DEBFC6008CF1D5 /* CoreGraphics.framework */; };
@@ -59,6 +61,9 @@
 		8F1B288A14E01536006C8638 /* AGoTType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTType.m; sourceTree = "<group>"; };
 		8F1B288C14E015F8006C8638 /* TypeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDao.h; sourceTree = "<group>"; };
 		8F1B288D14E015F8006C8638 /* TypeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDao.m; sourceTree = "<group>"; };
+		8F1B288F14E01DC0006C8638 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		8F1B289014E01DC0006C8638 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		8F1B289114E01DC0006C8638 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		8F257E6014DEBFC6008CF1D5 /* agot-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agot-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E6414DEBFC6008CF1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F257E6614DEBFC6008CF1D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,6 +194,9 @@
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */,
 				8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */,
+				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
+				8F1B289014E01DC0006C8638 /* SearchViewController.m */,
+				8F1B289114E01DC0006C8638 /* SearchViewController.xib */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 			);
 			path = "agot-ios";
@@ -313,6 +321,7 @@
 				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
 				8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */,
 				8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */,
+				8F1B289314E01DC1006C8638 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +369,7 @@
 				8F1B288314E00845006C8638 /* BaseDao.m in Sources */,
 				8F1B288B14E01536006C8638 /* AGoTType.m in Sources */,
 				8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */,
+				8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
