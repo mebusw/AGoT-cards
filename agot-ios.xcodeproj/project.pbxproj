@@ -11,6 +11,8 @@
 		8F1B287D14E0080F006C8638 /* CardDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287914E0080F006C8638 /* CardDao.m */; };
 		8F1B287F14E0080F006C8638 /* AGoTSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287B14E0080F006C8638 /* AGoTSet.m */; };
 		8F1B288314E00845006C8638 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288214E00845006C8638 /* BaseDao.m */; };
+		8F1B288B14E01536006C8638 /* AGoTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288A14E01536006C8638 /* AGoTType.m */; };
+		8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288D14E015F8006C8638 /* TypeDao.m */; };
 		8F257E6514DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E6714DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
 		8F257E6914DEBFC6008CF1D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6814DEBFC6008CF1D5 /* CoreGraphics.framework */; };
@@ -54,6 +56,10 @@
 		8F1B288614E00D58006C8638 /* AGoTSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTSet.h; sourceTree = "<group>"; };
 		8F1B288714E00DBF006C8638 /* BaseDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDao.h; sourceTree = "<group>"; };
 		8F1B288814E00DC7006C8638 /* CardDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDao.h; sourceTree = "<group>"; };
+		8F1B288914E01536006C8638 /* AGoTType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTType.h; sourceTree = "<group>"; };
+		8F1B288A14E01536006C8638 /* AGoTType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTType.m; sourceTree = "<group>"; };
+		8F1B288C14E015F8006C8638 /* TypeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDao.h; sourceTree = "<group>"; };
+		8F1B288D14E015F8006C8638 /* TypeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDao.m; sourceTree = "<group>"; };
 		8F257E6014DEBFC6008CF1D5 /* agot-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agot-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E6414DEBFC6008CF1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F257E6614DEBFC6008CF1D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +127,8 @@
 				8F1B287914E0080F006C8638 /* CardDao.m */,
 				8F1B288714E00DBF006C8638 /* BaseDao.h */,
 				8F1B288214E00845006C8638 /* BaseDao.m */,
+				8F1B288C14E015F8006C8638 /* TypeDao.h */,
+				8F1B288D14E015F8006C8638 /* TypeDao.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -128,6 +136,8 @@
 		8F1B288414E0084D006C8638 /* Bean */ = {
 			isa = PBXGroup;
 			children = (
+				8F1B288914E01536006C8638 /* AGoTType.h */,
+				8F1B288A14E01536006C8638 /* AGoTType.m */,
 				8F1B288514E00891006C8638 /* AGoTCard.h */,
 				8F1B287814E0080F006C8638 /* AGoTCard.m */,
 				8F1B288614E00D58006C8638 /* AGoTSet.h */,
@@ -354,6 +364,8 @@
 				8F1B287D14E0080F006C8638 /* CardDao.m in Sources */,
 				8F1B287F14E0080F006C8638 /* AGoTSet.m in Sources */,
 				8F1B288314E00845006C8638 /* BaseDao.m in Sources */,
+				8F1B288B14E01536006C8638 /* AGoTType.m in Sources */,
+				8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

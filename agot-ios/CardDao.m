@@ -1,7 +1,6 @@
 
 
-#import "FMDatabase.h"
-#import "FMDatabaseAdditions.h"
+
 #import "CardDao.h"
 #import "AGoTCard.h"
 
@@ -23,8 +22,7 @@
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
     FMResultSet *rs = [db executeQuery:[self setTable:@"SELECT * FROM %@"]];
     while ([rs next]) {
-        AGoTCard *card = [self parseSelectResult:rs];
-        [result addObject:card];
+        [result addObject:[self parseSelectResult:rs]];
     }
     [rs close];
     return result;

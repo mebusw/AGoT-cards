@@ -5,7 +5,7 @@
 @implementation BaseDao
 @synthesize db;
 
-- (id)init{
+- (id)init {
   if(self = [super init]){
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     db = [appDelegate db];

@@ -8,24 +8,12 @@
 
 #import "AppDelegate.h"
 
-#define DB_NAME @"AGoTLCGCards"
+#define DB_NAME @"AGoTLCGCards.db"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize db;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
-    return YES;
-}
-			
 
 
 - (BOOL)initDatabase{
@@ -34,9 +22,10 @@
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@", documentsDirectory);
     NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:DB_NAME];
-    
     success = [fm fileExistsAtPath:writableDBPath];
+    NSLog(@"file exists %d", success);
     if(!success){
         NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DB_NAME];
         success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
@@ -60,6 +49,23 @@
 - (void) closeDatabase{
     [db close];
 }
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // Override point for customization after application launch.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        splitViewController.delegate = (id)navigationController.topViewController;
+    }
+    
+    NSLog(@"initDatabase=%d", [self initDatabase]);
+    
+    return YES;
+}
+			
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
