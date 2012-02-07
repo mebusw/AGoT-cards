@@ -45,6 +45,8 @@ NSString *pickedType;
 
     TypeDao *dao = [[TypeDao alloc] init];
     types = [dao select];
+    
+    searchBar.showsCancelButton = YES;
 }
 
 - (void)viewDidUnload
@@ -66,10 +68,11 @@ NSString *pickedType;
     UIPickerView *pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
     pickerV.delegate = (id)self;
     [self.view addSubview:pickerV];
-
-    
 }
 
+-(IBAction) tapNext {
+    //[self.navigationController performSegueWithIdentifier:@"Result" sender:nil];
+}
 
 #pragma mark - Picker delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

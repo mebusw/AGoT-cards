@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 -(IBAction) tapTypes;
+-(IBAction) tapNext;
 
 @end

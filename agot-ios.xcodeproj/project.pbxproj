@@ -14,7 +14,6 @@
 		8F1B288B14E01536006C8638 /* AGoTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288A14E01536006C8638 /* AGoTType.m */; };
 		8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288D14E015F8006C8638 /* TypeDao.m */; };
 		8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B289014E01DC0006C8638 /* SearchViewController.m */; };
-		8F1B289314E01DC1006C8638 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289114E01DC0006C8638 /* SearchViewController.xib */; };
 		8F1B28A414E027BD006C8638 /* claim.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289914E027BD006C8638 /* claim.png */; };
 		8F1B28A514E027BD006C8638 /* gc16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289A14E027BD006C8638 /* gc16.png */; };
 		8F1B28A614E027BD006C8638 /* ginc.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289B14E027BD006C8638 /* ginc.png */; };
@@ -46,7 +45,6 @@
 		8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */; };
 		8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */; };
 		8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */; };
-		8F257E7E14DEBFC6008CF1D5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */; };
 		8F257E8914DEBFC6008CF1D5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */; };
 		8F257E8A14DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E8B14DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
@@ -59,6 +57,7 @@
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */; };
 		8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */; };
+		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +85,6 @@
 		8F1B288D14E015F8006C8638 /* TypeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDao.m; sourceTree = "<group>"; };
 		8F1B288F14E01DC0006C8638 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		8F1B289014E01DC0006C8638 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		8F1B289114E01DC0006C8638 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		8F1B289914E027BD006C8638 /* claim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim.png; sourceTree = "<group>"; };
 		8F1B289A14E027BD006C8638 /* gc16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gc16.png; sourceTree = "<group>"; };
 		8F1B289B14E027BD006C8638 /* ginc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ginc.png; sourceTree = "<group>"; };
@@ -122,8 +120,6 @@
 		8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8F257E7714DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		8F257E7A14DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		8F257E8714DEBFC6008CF1D5 /* agot-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "agot-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F257E9014DEBFC6008CF1D5 /* agot-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agot-iosTests-Info.plist"; sourceTree = "<group>"; };
@@ -141,6 +137,8 @@
 		8F257EAE14DECFD0008CF1D5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGoTLCGCards.db; sourceTree = "<group>"; };
+		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,11 +267,10 @@
 				8F257EA414DECA58008CF1D5 /* CardViewController.m */,
 				8F257EA514DECA58008CF1D5 /* CardViewController.xib */,
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
-				8F257E7C14DEBFC6008CF1D5 /* MasterViewController.h */,
-				8F257E7D14DEBFC6008CF1D5 /* MasterViewController.m */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
 				8F1B289014E01DC0006C8638 /* SearchViewController.m */,
-				8F1B289114E01DC0006C8638 /* SearchViewController.xib */,
+				8FBF91E114E157D30058D09C /* ResultViewController.h */,
+				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 			);
 			path = "agot-ios";
@@ -398,7 +395,6 @@
 				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
 				8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */,
 				8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */,
-				8F1B289314E01DC1006C8638 /* SearchViewController.xib in Resources */,
 				8F1B28A414E027BD006C8638 /* claim.png in Resources */,
 				8F1B28A514E027BD006C8638 /* gc16.png in Resources */,
 				8F1B28A614E027BD006C8638 /* ginc.png in Resources */,
@@ -458,7 +454,6 @@
 			files = (
 				8F257E7114DEBFC6008CF1D5 /* main.m in Sources */,
 				8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */,
-				8F257E7E14DEBFC6008CF1D5 /* MasterViewController.m in Sources */,
 				8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */,
 				8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */,
 				8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */,
@@ -470,6 +465,7 @@
 				8F1B288B14E01536006C8638 /* AGoTType.m in Sources */,
 				8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */,
 				8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */,
+				8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
