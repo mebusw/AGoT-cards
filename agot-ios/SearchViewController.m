@@ -46,7 +46,7 @@ NSString *pickedType;
     TypeDao *dao = [[TypeDao alloc] init];
     types = [dao select];
     
-    searchBar.showsCancelButton = YES;
+    searchBar.showsCancelButton = NO;
 }
 
 - (void)viewDidUnload

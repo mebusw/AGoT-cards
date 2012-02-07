@@ -51,7 +51,6 @@
 		8F257E9314DEBFC6008CF1D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E9114DEBFC6008CF1D5 /* InfoPlist.strings */; };
 		8F257E9614DEBFC6008CF1D5 /* agot_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */; };
 		8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EA414DECA58008CF1D5 /* CardViewController.m */; };
-		8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F257EA514DECA58008CF1D5 /* CardViewController.xib */; };
 		8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EA914DECFD0008CF1D5 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -128,7 +127,6 @@
 		8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = agot_iosTests.m; sourceTree = "<group>"; };
 		8F257EA314DECA57008CF1D5 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
 		8F257EA414DECA58008CF1D5 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
-		8F257EA514DECA58008CF1D5 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		8F257EA914DECFD0008CF1D5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */,
 				8F257EA314DECA57008CF1D5 /* CardViewController.h */,
 				8F257EA414DECA58008CF1D5 /* CardViewController.m */,
-				8F257EA514DECA58008CF1D5 /* CardViewController.xib */,
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
 				8F1B289014E01DC0006C8638 /* SearchViewController.m */,
@@ -393,7 +390,6 @@
 				8F257E6F14DEBFC6008CF1D5 /* InfoPlist.strings in Resources */,
 				8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
-				8F257EA714DECA58008CF1D5 /* CardViewController.xib in Resources */,
 				8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */,
 				8F1B28A414E027BD006C8638 /* claim.png in Resources */,
 				8F1B28A514E027BD006C8638 /* gc16.png in Resources */,
