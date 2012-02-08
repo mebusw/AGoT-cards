@@ -56,6 +56,11 @@
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */; };
 		8F257EB514DED1B1008CF1D5 /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */; };
+		8F31EC1A14E2D0F20034F8AE /* AGoTHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */; };
+		8F31EC1E14E2D1540034F8AE /* AGotCrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1D14E2D1540034F8AE /* AGotCrest.m */; };
+		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
+		8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2314E2D23A0034F8AE /* CrestDao.m */; };
+		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +140,16 @@
 		8F257EAE14DECFD0008CF1D5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		8F257EB414DED1B1008CF1D5 /* AGoTLCGCards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGoTLCGCards.db; sourceTree = "<group>"; };
+		8F31EC1814E2D0F20034F8AE /* AGoTHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTHouse.h; sourceTree = "<group>"; };
+		8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTHouse.m; sourceTree = "<group>"; };
+		8F31EC1C14E2D1540034F8AE /* AGotCrest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGotCrest.h; sourceTree = "<group>"; };
+		8F31EC1D14E2D1540034F8AE /* AGotCrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGotCrest.m; sourceTree = "<group>"; };
+		8F31EC1F14E2D1CC0034F8AE /* HouseDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseDao.h; sourceTree = "<group>"; };
+		8F31EC2014E2D1CC0034F8AE /* HouseDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseDao.m; sourceTree = "<group>"; };
+		8F31EC2214E2D23A0034F8AE /* CrestDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrestDao.h; sourceTree = "<group>"; };
+		8F31EC2314E2D23A0034F8AE /* CrestDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrestDao.m; sourceTree = "<group>"; };
+		8F31EC2514E2D2950034F8AE /* SetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDao.h; sourceTree = "<group>"; };
+		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +188,12 @@
 				8F1B288214E00845006C8638 /* BaseDao.m */,
 				8F1B288C14E015F8006C8638 /* TypeDao.h */,
 				8F1B288D14E015F8006C8638 /* TypeDao.m */,
+				8F31EC1F14E2D1CC0034F8AE /* HouseDao.h */,
+				8F31EC2014E2D1CC0034F8AE /* HouseDao.m */,
+				8F31EC2214E2D23A0034F8AE /* CrestDao.h */,
+				8F31EC2314E2D23A0034F8AE /* CrestDao.m */,
+				8F31EC2514E2D2950034F8AE /* SetDao.h */,
+				8F31EC2614E2D2950034F8AE /* SetDao.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -186,6 +207,10 @@
 				8F1B287814E0080F006C8638 /* AGoTCard.m */,
 				8F1B288614E00D58006C8638 /* AGoTSet.h */,
 				8F1B287B14E0080F006C8638 /* AGoTSet.m */,
+				8F31EC1814E2D0F20034F8AE /* AGoTHouse.h */,
+				8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */,
+				8F31EC1C14E2D1540034F8AE /* AGotCrest.h */,
+				8F31EC1D14E2D1540034F8AE /* AGotCrest.m */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -462,6 +487,11 @@
 				8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */,
 				8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */,
 				8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */,
+				8F31EC1A14E2D0F20034F8AE /* AGoTHouse.m in Sources */,
+				8F31EC1E14E2D1540034F8AE /* AGotCrest.m in Sources */,
+				8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */,
+				8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */,
+				8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
