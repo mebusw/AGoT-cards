@@ -10,7 +10,8 @@
 
 @interface SearchViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *_searchBar;
+@property (strong, nonatomic) IBOutlet UITableView *checkList;
 
 -(IBAction) tapTypes;
 -(IBAction) tapNext;

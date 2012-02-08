@@ -12,7 +12,7 @@
 
 
 -(NSString *)setTable:(NSString *)sql{
-    return [NSString stringWithFormat:sql,  @"t_houses"];
+    return [NSString stringWithFormat:sql,  @"t_sets"];
 }
 
 -(AGoTSet*) parseSelectResult: (FMResultSet*)rs {
