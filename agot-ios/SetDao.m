@@ -17,8 +17,12 @@
 
 -(AGoTSet*) parseSelectResult: (FMResultSet*)rs {
     AGoTSet *set = [[AGoTSet alloc] init];
-    set._id = [rs stringForColumnIndex:0];
-    set.crest = [rs stringForColumnIndex:1];
+    set.sets_s = [rs stringForColumnIndex:0];
+    set.setsId = [rs intForColumnIndex:1];
+    set.expId = [rs intForColumnIndex:2];
+    set._id = [rs intForColumnIndex:3];
+    set.setName = [rs stringForColumnIndex:4];
+    set.expName = [rs stringForColumnIndex:5];
     return set;
     
 }

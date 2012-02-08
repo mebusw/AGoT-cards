@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AGoTSets : NSObject {
+@interface AGoTSet : NSObject {
     
 }
 

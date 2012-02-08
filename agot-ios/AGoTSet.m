@@ -1,7 +1,7 @@
 
 #import "AGoTSet.h"
 
-@implementation AGoTSets
+@implementation AGoTSet
 @synthesize sets_s, setsId, expId, _id, setName, expName;
 
 - (BOOL)isBigExpansion {
