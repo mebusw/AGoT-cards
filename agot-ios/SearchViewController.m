@@ -21,6 +21,7 @@
 NSArray *types, *houses, *crests, *sets;
 NSString *pickedType;
 int selectedHouse = 0;
+NSArray *houseImages;
 
 @synthesize _searchBar, checkList;
 
@@ -56,10 +57,7 @@ int selectedHouse = 0;
     crests = [[[CrestDao alloc] init] select];
     sets = [[[SetDao alloc] init] select];
     
-//    UITableView *houseList = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f) style:UITableViewStylePlain];
-//    [self.view addSubview:houseList];
-//    houseList.delegate = (id)self;
-//    houseList.dataSource = (id)self;
+    houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", nil];
 
     
     _searchBar.showsCancelButton = YES;
@@ -116,7 +114,8 @@ int selectedHouse = 0;
     AGoTHouse *house = (AGoTHouse*)[houses objectAtIndex:indexPath.row];
     cell.textLabel.text = house.name;
     cell.selected = NO;
-        
+    UIImage *img = [UIImage imageNamed:[houseImages objectAtIndex:indexPath.row]];
+    cell.imageView.image = img;
     
     return cell;
 }
