@@ -20,6 +20,7 @@
 
 NSArray *types, *houses, *crests, *sets;
 NSString *pickedType;
+int selectedHouse = 0;
 
 @synthesize _searchBar, checkList;
 
@@ -55,7 +56,11 @@ NSString *pickedType;
     crests = [[[CrestDao alloc] init] select];
     sets = [[[SetDao alloc] init] select];
     
-    NSLog(@"%@", houses);
+//    UITableView *houseList = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f) style:UITableViewStylePlain];
+//    [self.view addSubview:houseList];
+//    houseList.delegate = (id)self;
+//    houseList.dataSource = (id)self;
+
     
     _searchBar.showsCancelButton = YES;
     
@@ -86,12 +91,14 @@ NSString *pickedType;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
+    NSLog(@"");
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    NSLog(@"");
     return [houses count];
 }
 
@@ -108,8 +115,19 @@ NSString *pickedType;
     
     AGoTHouse *house = (AGoTHouse*)[houses objectAtIndex:indexPath.row];
     cell.textLabel.text = house.name;
+    cell.selected = NO;
+        
     
     return cell;
+}
+
+- (UITableViewCellAccessoryType)tableView:(UITableView*)table accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
+    if(indexPath.row == selectedHouse) {
+        return UITableViewCellAccessoryCheckmark;
+    } else {
+        return UITableViewCellAccessoryNone;
+    }
 }
 
 
@@ -117,6 +135,9 @@ NSString *pickedType;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    selectedHouse = indexPath.row;
+    [tableView reloadData];
+
 
 }
 

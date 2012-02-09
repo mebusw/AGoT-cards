@@ -121,22 +121,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oqe-fP-hv1">
-                                <rect key="frame" x="0.0" y="44" width="160" height="352"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ipw-8d-XBN">
+                                <rect key="frame" x="0.0" y="44" width="160" height="335"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="DuX-bx-sMh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Udc-n3-VZa">
                                         <rect key="frame" x="0.0" y="22" width="160" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WYW-pb-ZZf">
-                                        <rect key="frame" x="0.0" y="66" width="160" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
@@ -146,7 +137,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="delegate" destination="hQj-xQ-laR" id="F3G-xm-Ako"/>
+                                    <outlet property="dataSource" destination="hQj-xQ-laR" id="ZGv-KM-BWY"/>
+                                    <outlet property="delegate" destination="hQj-xQ-laR" id="mNO-GX-dKM"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -154,8 +146,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="n3R-HZ-8GQ"/>
                     <connections>
-                        <outlet property="checkList" destination="oqe-fP-hv1" id="umM-an-8OD"/>
-                        <outlet property="searchBar" destination="BsF-f0-tWQ" id="W8O-2s-rwC"/>
+                        <outlet property="_searchBar" destination="BsF-f0-tWQ" id="R5I-9g-ZKI"/>
+                        <outlet property="checkList" destination="Ipw-8d-XBN" id="t7g-JN-5Ls"/>
                     </connections>
                 </viewController>
             </objects>
@@ -229,23 +221,6 @@
             <point key="canvasLocation" x="1976" y="64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardViewController.h"/>
-        </class>
-        <class className="ResultViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultViewController.h"/>
-        </class>
-        <class className="SearchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapNext"/>
-                <relationship kind="action" name="tapTypes"/>
-                <relationship kind="outlet" name="_searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="checkList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
