@@ -12,6 +12,12 @@
 
 @property (strong, nonatomic) IBOutlet UISearchBar *_searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *checkList;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithName;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithProperty;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithText;
+@property (strong, nonatomic) IBOutlet UIButton *btnType;
+
+
 
 -(IBAction) tapTypes;
 -(IBAction) tapNext;

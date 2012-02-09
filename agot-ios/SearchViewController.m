@@ -19,11 +19,20 @@
 @implementation SearchViewController
 
 NSArray *types, *houses, *crests, *sets;
+
 NSString *pickedType;
 int selectedHouse = 0;
+int selectedType = 0;
+
 NSArray *houseImages;
+UIPickerView *pickerV;
+
+UIToolbar *toolbar;
+
 
 @synthesize _searchBar, checkList;
+@synthesize isWithName, isWithText, isWithProperty;
+@synthesize btnType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,6 +91,10 @@ NSArray *houseImages;
     NSLog(@"text=%@", searchBar.text);
     
     
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark - Table view data source
@@ -143,9 +156,23 @@ NSArray *houseImages;
 #pragma mark - events
 -(IBAction) tapTypes {
     NSLog(@"");
-    UIPickerView *pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+    pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
     pickerV.delegate = (id)self;
+    pickerV.showsSelectionIndicator = YES;
     [self.view addSubview:pickerV];
+    
+    toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 160.0f, 320.0f, 40.0f)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTypes:)];
+    
+    NSArray *items = [NSArray arrayWithObject:item];
+    toolbar.items = items;
+    [self.view addSubview:toolbar];
+}
+
+-(void) doneTypes:(id)obj {
+    [pickerV removeFromSuperview];
+    [toolbar removeFromSuperview];
+    
 }
 
 -(IBAction) tapNext {
@@ -169,9 +196,11 @@ NSArray *houseImages;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 
     AGoTType* type = (AGoTType*)[types objectAtIndex:row];
-    pickedType = type._id;
-    NSLog(@"%d %@", row, pickedType);
-    [pickerView removeFromSuperview];
+    selectedType = row;
+
+
+    btnType.titleLabel.text = type.types;
+    [pickerV reloadAllComponents];
 }
 
 
