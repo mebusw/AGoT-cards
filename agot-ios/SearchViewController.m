@@ -15,6 +15,8 @@
 #import "AGotCrest.h"
 #import "SetDao.h"
 #import "AGoTSet.h"
+#import "CardDao.h"
+#import "CardBrief.h"
 
 #define PICKER_COMPONENT    1
 #define SELECTED_NONE   -1
@@ -26,7 +28,7 @@ enum {
 
 @implementation SearchViewController
 
-NSArray *types, *houses, *crests, *sets;
+NSArray *types, *houses, *crests, *sets, *challenges;
 
 int selectedSet = SELECTED_NONE;
 int selectedCrest = SELECTED_NONE;
@@ -81,12 +83,15 @@ UIToolbar *toolbar;
     crests = [NSArray arrayWithObjects:@"高贵", @"勇武", @"博学", @"崇圣", @"暗影", nil];
 
     houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", @"unique13.png", nil];
+    challenges = [NSArray arrayWithObjects:@"军事争夺", @"阴谋争夺", @"权力争夺", nil];
+    
     
     houseSet = [[NSMutableSet alloc] init];
     challengeSet = [[NSMutableSet alloc] init];
     multiHouseSelected = NO;
-    
-    }
+
+    NSLog(@"%@", ((CardBrief*)[[[[CardDao alloc] init] selectCardBrieves:nil] objectAtIndex:1]).title );
+}
 
 - (void)viewDidUnload
 {
@@ -105,7 +110,7 @@ UIToolbar *toolbar;
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"text=%@", searchBar.text);
-    
+    [self performSegueWithIdentifier:@"Results" sender:nil];
     
 }
 

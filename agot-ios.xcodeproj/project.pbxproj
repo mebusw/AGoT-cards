@@ -64,6 +64,7 @@
 		8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */; };
 		8FF6DA0E14E6ACE700AD1E2D /* names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6DA1014E6ACE700AD1E2D /* names.plist */; };
 		8FF6DA1214E6AEBB00AD1E2D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */; };
+		8FF6DA1614E6B27300AD1E2D /* CardBrief.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6DA1514E6B27300AD1E2D /* CardBrief.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		8FF6DA0F14E6ACE700AD1E2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/names.plist; sourceTree = "<group>"; };
 		8FF6DA1114E6ACFF00AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/names.plist"; sourceTree = "<group>"; };
 		8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		8FF6DA1414E6B27300AD1E2D /* CardBrief.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBrief.h; sourceTree = "<group>"; };
+		8FF6DA1514E6B27300AD1E2D /* CardBrief.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBrief.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 				8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */,
 				8F31EC1C14E2D1540034F8AE /* AGotCrest.h */,
 				8F31EC1D14E2D1540034F8AE /* AGotCrest.m */,
+				8FF6DA1414E6B27300AD1E2D /* CardBrief.h */,
+				8FF6DA1514E6B27300AD1E2D /* CardBrief.m */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */,
 				8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */,
 				8FBBD30114E6297200347C49 /* Another.m in Sources */,
+				8FF6DA1614E6B27300AD1E2D /* CardBrief.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

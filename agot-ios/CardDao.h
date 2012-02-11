@@ -12,8 +12,10 @@
 }
 
 -(NSMutableArray *)select;
--(void)insertWithTitle:(NSString *)title Body:(NSString *)body;
--(BOOL)updateAt:(int)index Title:(NSString *)title Body:(NSString *)body;
-- (BOOL)deleteAt:(int)index;
+//-(void)insertWithTitle:(NSString *)title Body:(NSString *)body;
+//-(BOOL)updateAt:(int)index Title:(NSString *)title Body:(NSString *)body;
+//- (BOOL)deleteAt:(int)index;
+
+-(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions;
 
 @end

@@ -3,6 +3,7 @@
 
 #import "CardDao.h"
 #import "AGoTCard.h"
+#import "CardBrief.h"
 
 @implementation CardDao
 
@@ -28,6 +29,30 @@
     return result;
 }
 
+-(NSString*) buildWheres: (NSDictionary*) conditions {
+    return @"_id<5";
+}
+
+- (CardBrief*) parseCardBrief: (FMResultSet*)rs {
+    CardBrief *cardBrief = [[CardBrief alloc] init];
+    cardBrief._id = [rs stringForColumnIndex:0];
+    cardBrief.title = [rs stringForColumnIndex:1];
+    cardBrief.type = [rs stringForColumnIndex:2];
+    cardBrief.set = [rs stringForColumnIndex:3];
+    return cardBrief;
+    
+}
+
+-(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions {
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
+    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@", [self buildWheres:conditions]]];
+    while ([rs next]) {
+        [result addObject:[self parseCardBrief:rs]];
+    }
+    [rs close];
+    return result;
+}
+/*
 // INSERT
 -(void)insertWithTitle:(NSString *)title Body:(NSString *)body{
   [db executeUpdate:[self setTable:@"INSERT INTO %@ (title, body) VALUES (?,?)"], title, body];
@@ -55,6 +80,7 @@
   }
   return success;
 }
+ */
 
 
 @end
