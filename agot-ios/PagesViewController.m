@@ -69,6 +69,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark -  page viw delegate
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSLog(@"");    
     if ([viewController.view.backgroundColor isEqual:[UIColor blackColor]]) {

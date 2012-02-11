@@ -1,2 +1,60 @@
 /* Localized versions of Info.plist keys */
 
+
+"shadow_crest" = "Shadow";
+"infinite" = "Infinite";
+"unique" = "Unique";
+"search_result_status" ="Totol found %1$d cards";
+/*
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+ <string name="app_name">权力的游戏卡牌搜索</string>
+ <string-array name="houses_name">
+ <item>史塔克</item>
+ <item>兰尼斯特</item>
+ <item>拜拉席恩</item>
+ <item>坦格利安</item>
+ <item>马泰尔</item>
+ <item>葛雷乔伊</item>
+ <item>中立</item>
+ <item>仅多家族</item>
+ </string-array>
+ <string name="search">搜</string>
+ <string-array name="search_scope">
+ <item>名称</item>
+ <item>属性</item>
+ <item>文字</item>
+ </string-array>
+ <string-array name="challenge_type"><item>军事争夺</item>
+ 
+ <item>阴谋争夺</item>
+ <item>权力争夺</item>
+ </string-array>
+ <string-array name="card_types">
+ <item>议政牌</item>
+ <item>战略牌</item>
+ <item>角色牌</item>
+ <item>地区牌</item>
+ <item>附属牌</item>
+ <item>事件牌</item>
+ </string-array>
+ <string-array name="crests">
+ <item >高贵</item>
+ <item >勇武</item>
+ <item >博学</item>
+ <item >崇圣</item>
+ <item >暗影</item>
+ </string-array>
+ <string name="shadow_crest">暗影</string>
+ <string name="infinite">无穷</string>
+ <string name="unique">独有</string>
+ <string name="non_unique">非独有</string>
+ <string name="military_challenge">军事争夺</string>
+ <string name="intrigue_challenge">阴谋争夺</string>
+ <string name="power_challenge">权力争夺</string>
+ <string name="agot_set_search_prompt">选择搜索范围</string>
+ <string name="agot_card_type_search_prompt">选择要搜索的卡牌类型</string>
+ <string name="agot_crest_search_prompt">选择要搜索的饰语</string>
+ <string name="search_result_status">共找到%1$d张卡牌。</string>
+ </resources>
+ */

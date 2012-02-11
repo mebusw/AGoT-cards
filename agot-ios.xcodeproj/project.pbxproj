@@ -13,7 +13,6 @@
 		8F1B288314E00845006C8638 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288214E00845006C8638 /* BaseDao.m */; };
 		8F1B288B14E01536006C8638 /* AGoTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288A14E01536006C8638 /* AGoTType.m */; };
 		8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B288D14E015F8006C8638 /* TypeDao.m */; };
-		8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B289014E01DC0006C8638 /* SearchViewController.m */; };
 		8F1B28A414E027BD006C8638 /* claim.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289914E027BD006C8638 /* claim.png */; };
 		8F1B28A514E027BD006C8638 /* gc16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289A14E027BD006C8638 /* gc16.png */; };
 		8F1B28A614E027BD006C8638 /* ginc.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B289B14E027BD006C8638 /* ginc.png */; };
@@ -63,6 +62,8 @@
 		8FBBD30114E6297200347C49 /* Another.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD30014E6297200347C49 /* Another.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 		8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */; };
+		8FF6DA0E14E6ACE700AD1E2D /* names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6DA1014E6ACE700AD1E2D /* names.plist */; };
+		8FF6DA1214E6AEBB00AD1E2D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +90,6 @@
 		8F1B288C14E015F8006C8638 /* TypeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDao.h; sourceTree = "<group>"; };
 		8F1B288D14E015F8006C8638 /* TypeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDao.m; sourceTree = "<group>"; };
 		8F1B288F14E01DC0006C8638 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		8F1B289014E01DC0006C8638 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		8F1B289914E027BD006C8638 /* claim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim.png; sourceTree = "<group>"; };
 		8F1B289A14E027BD006C8638 /* gc16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gc16.png; sourceTree = "<group>"; };
 		8F1B289B14E027BD006C8638 /* ginc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ginc.png; sourceTree = "<group>"; };
@@ -155,6 +155,13 @@
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGoTLCGCards.db; sourceTree = "<group>"; };
+		8FF6DA0014E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-iosTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		8FF6DA0214E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<absolute>"; };
+		8FF6DA0314E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<absolute>"; };
+		8FF6DA0414E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		8FF6DA0F14E6ACE700AD1E2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/names.plist; sourceTree = "<group>"; };
+		8FF6DA1114E6ACFF00AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/names.plist"; sourceTree = "<group>"; };
+		8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,7 +302,7 @@
 				8FBBD2FC14E624DA00347C49 /* PagesViewController.m */,
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
-				8F1B289014E01DC0006C8638 /* SearchViewController.m */,
+				8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */,
 				8FBF91E114E157D30058D09C /* ResultViewController.h */,
 				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
@@ -311,6 +318,7 @@
 				8F257E6D14DEBFC6008CF1D5 /* InfoPlist.strings */,
 				8F257E7014DEBFC6008CF1D5 /* main.m */,
 				8F257E7214DEBFC6008CF1D5 /* agot-ios-Prefix.pch */,
+				8FF6DA1014E6ACE700AD1E2D /* names.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -400,6 +408,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 8F257E5514DEBFC6008CF1D5;
 			productRefGroup = 8F257E6114DEBFC6008CF1D5 /* Products */;
@@ -444,6 +453,7 @@
 				8F1B28C514E027C7006C8638 /* tasm.png in Resources */,
 				8F1B28C614E027C7006C8638 /* unique13.png in Resources */,
 				8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */,
+				8FF6DA0E14E6ACE700AD1E2D /* names.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +499,7 @@
 				8F1B288314E00845006C8638 /* BaseDao.m in Sources */,
 				8F1B288B14E01536006C8638 /* AGoTType.m in Sources */,
 				8F1B288E14E015F8006C8638 /* TypeDao.m in Sources */,
-				8F1B289214E01DC1006C8638 /* SearchViewController.m in Sources */,
+				8FF6DA1214E6AEBB00AD1E2D /* SearchViewController.m in Sources */,
 				8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */,
 				8F31EC1A14E2D0F20034F8AE /* AGoTHouse.m in Sources */,
 				8F31EC1E14E2D1540034F8AE /* AGotCrest.m in Sources */,
@@ -524,6 +534,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E6E14DEBFC6008CF1D5 /* en */,
+				8FF6DA0414E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -532,6 +543,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E7714DEBFC6008CF1D5 /* en */,
+				8FF6DA0214E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -540,6 +552,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E7A14DEBFC6008CF1D5 /* en */,
+				8FF6DA0314E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -548,8 +561,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E9214DEBFC6008CF1D5 /* en */,
+				8FF6DA0014E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8FF6DA1014E6ACE700AD1E2D /* names.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FF6DA0F14E6ACE700AD1E2D /* en */,
+				8FF6DA1114E6ACFF00AD1E2D /* zh-Hans */,
+			);
+			name = names.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

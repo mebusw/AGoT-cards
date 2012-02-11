@@ -28,10 +28,12 @@ enum {
 
 NSArray *types, *houses, *crests, *sets;
 
-int selectedHouse = SELECTED_NONE;
 int selectedSet = SELECTED_NONE;
 int selectedCrest = SELECTED_NONE;
 int selectedType = SELECTED_NONE;
+BOOL multiHouseSelected;
+NSMutableSet *houseSet;
+NSMutableSet *challengeSet;
 
 NSArray *houseImages;
 UIPickerView *pickerV;
@@ -70,14 +72,19 @@ UIToolbar *toolbar;
     
     self.title = @"权力的游戏卡牌搜索";
 
+    //TODO
+    //NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:@"names.plist"];
+    //NSLog(@"%@", d);
 
-    types = [[[TypeDao alloc] init] select];
-    houses = [[[HouseDao alloc] init] select];
-    crests = [[[CrestDao alloc] init] select];
-    sets = [[[SetDao alloc] init] select];
+    houses = [NSArray arrayWithObjects:@"史塔克", @"兰尼斯特", @"拜拉席恩", @"坦格利安", @"马泰尔", @"葛雷乔伊", @"中立", @"仅多家族", nil];
+    types = [NSArray arrayWithObjects:@"议政牌", @"战略牌", @"角色牌", @"地区牌", @"附属牌", @"事件牌", nil];
+    crests = [NSArray arrayWithObjects:@"高贵", @"勇武", @"博学", @"崇圣", @"暗影", nil];
+
+    houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", @"unique13.png", nil];
     
-    houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", nil];
-
+    houseSet = [[NSMutableSet alloc] init];
+    challengeSet = [[NSMutableSet alloc] init];
+    multiHouseSelected = NO;
     
     }
 
@@ -95,6 +102,7 @@ UIToolbar *toolbar;
 }
 
 #pragma mark - searchBarDelegate
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"text=%@", searchBar.text);
     
@@ -139,35 +147,37 @@ UIToolbar *toolbar;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    AGoTHouse *house = (AGoTHouse*)[houses objectAtIndex:indexPath.row];
-    cell.textLabel.text = house.name;
+    cell.textLabel.text = [houses objectAtIndex:indexPath.row];
     cell.selected = NO;
     UIImage *img = [UIImage imageNamed:[houseImages objectAtIndex:indexPath.row]];
     cell.imageView.image = img;
     
-    if(indexPath.row == selectedHouse) {
+    if ([houseSet containsObject:[houses objectAtIndex:indexPath.row]]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    
+         
     return cell;
 }
-
-
 
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectedHouse = indexPath.row;
-    [tableView reloadData];
+    if ([houseSet containsObject:[houses objectAtIndex:indexPath.row]]) {
+        [houseSet removeObject:[houses objectAtIndex:indexPath.row]];
+    } else {
+        [houseSet addObject:[houses objectAtIndex:indexPath.row]];
+    }
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
 
 
 }
 
-#pragma mark - events
+#pragma mark - touch actions
+
 -(IBAction) tapPicker:(UIButton*)button {
     NSLog(@"%d", button.tag);
     pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
@@ -196,6 +206,7 @@ UIToolbar *toolbar;
 }
 
 #pragma mark - Picker delegate
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return PICKER_COMPONENT;
 }
