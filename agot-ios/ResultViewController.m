@@ -7,6 +7,7 @@
 //
 
 #import "ResultViewController.h"
+#import "PagesViewController.h"
 
 
 @implementation ResultViewController
@@ -149,13 +150,8 @@ NSArray *allItems;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    PagesViewController *pages = [[PagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    [self.navigationController pushViewController:pages animated:YES];
 }
 
 @end

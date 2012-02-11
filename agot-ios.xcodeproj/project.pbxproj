@@ -50,7 +50,6 @@
 		8F257E8B14DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
 		8F257E9314DEBFC6008CF1D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E9114DEBFC6008CF1D5 /* InfoPlist.strings */; };
 		8F257E9614DEBFC6008CF1D5 /* agot_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */; };
-		8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EA414DECA58008CF1D5 /* CardViewController.m */; };
 		8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EA914DECFD0008CF1D5 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -61,6 +60,8 @@
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
 		8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2314E2D23A0034F8AE /* CrestDao.m */; };
 		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
+		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
+		8FBBD30114E6297200347C49 /* Another.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD30014E6297200347C49 /* Another.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -130,8 +131,6 @@
 		8F257E9214DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F257E9414DEBFC6008CF1D5 /* agot_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = agot_iosTests.h; sourceTree = "<group>"; };
 		8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = agot_iosTests.m; sourceTree = "<group>"; };
-		8F257EA314DECA57008CF1D5 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
-		8F257EA414DECA58008CF1D5 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		8F257EA914DECFD0008CF1D5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
@@ -150,6 +149,10 @@
 		8F31EC2314E2D23A0034F8AE /* CrestDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrestDao.m; sourceTree = "<group>"; };
 		8F31EC2514E2D2950034F8AE /* SetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDao.h; sourceTree = "<group>"; };
 		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
+		8FBBD2FB14E624DA00347C49 /* PagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
+		8FBBD2FC14E624DA00347C49 /* PagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
+		8FBBD2FF14E6297200347C49 /* Another.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Another.h; sourceTree = "<group>"; };
+		8FBBD30014E6297200347C49 /* Another.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Another.m; sourceTree = "<group>"; };
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,8 +289,10 @@
 				8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */,
 				8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */,
 				8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */,
-				8F257EA314DECA57008CF1D5 /* CardViewController.h */,
-				8F257EA414DECA58008CF1D5 /* CardViewController.m */,
+				8FBBD2FF14E6297200347C49 /* Another.h */,
+				8FBBD30014E6297200347C49 /* Another.m */,
+				8FBBD2FB14E624DA00347C49 /* PagesViewController.h */,
+				8FBBD2FC14E624DA00347C49 /* PagesViewController.m */,
 				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
 				8F1B289014E01DC0006C8638 /* SearchViewController.m */,
@@ -475,7 +480,6 @@
 			files = (
 				8F257E7114DEBFC6008CF1D5 /* main.m in Sources */,
 				8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */,
-				8F257EA614DECA58008CF1D5 /* CardViewController.m in Sources */,
 				8F257EAF14DECFD0008CF1D5 /* FMDatabaseAdditions.m in Sources */,
 				8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */,
 				8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */,
@@ -492,6 +496,8 @@
 				8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */,
 				8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */,
 				8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */,
+				8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */,
+				8FBBD30114E6297200347C49 /* Another.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

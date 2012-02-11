@@ -58,7 +58,7 @@ UIToolbar *toolbar;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"权利的游戏卡牌搜索";
+    self.title = @"权力的游戏卡牌搜索";
 
 
     types = [[[TypeDao alloc] init] select];
@@ -130,17 +130,16 @@ UIToolbar *toolbar;
     UIImage *img = [UIImage imageNamed:[houseImages objectAtIndex:indexPath.row]];
     cell.imageView.image = img;
     
+    if(indexPath.row == selectedHouse) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView*)table accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-    if(indexPath.row == selectedHouse) {
-        return UITableViewCellAccessoryCheckmark;
-    } else {
-        return UITableViewCellAccessoryNone;
-    }
-}
+
 
 
 #pragma mark - Table view delegate
