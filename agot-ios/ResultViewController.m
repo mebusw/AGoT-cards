@@ -8,10 +8,11 @@
 
 #import "ResultViewController.h"
 #import "PagesViewController.h"
-
+#import "CardBrief.h"
 
 @implementation ResultViewController
-NSArray *allItems;
+
+@synthesize allItems;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,15 +37,10 @@ NSArray *allItems;
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    allItems = [NSArray arrayWithObjects:@"Jack", @"Jane", @"Hugh", nil];
+    self.title = @"共找到%d张";
     
 }
+
 
 - (void)viewDidUnload
 {
@@ -102,7 +98,9 @@ NSArray *allItems;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [allItems objectAtIndex:indexPath.row];
+    CardBrief *brief = (CardBrief*)[allItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = brief.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", brief.type, brief.set];
     
     return cell;
 }

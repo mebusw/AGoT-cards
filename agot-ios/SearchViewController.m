@@ -17,6 +17,7 @@
 #import "AGoTSet.h"
 #import "CardDao.h"
 #import "CardBrief.h"
+#import "ResultViewController.h"
 
 #define PICKER_COMPONENT    1
 #define SELECTED_NONE   -1
@@ -81,7 +82,9 @@ UIToolbar *toolbar;
     houses = [NSArray arrayWithObjects:@"史塔克", @"兰尼斯特", @"拜拉席恩", @"坦格利安", @"马泰尔", @"葛雷乔伊", @"中立", @"仅多家族", nil];
     types = [NSArray arrayWithObjects:@"议政牌", @"战略牌", @"角色牌", @"地区牌", @"附属牌", @"事件牌", nil];
     crests = [NSArray arrayWithObjects:@"高贵", @"勇武", @"博学", @"崇圣", @"暗影", nil];
-
+    sets = [[[SetDao alloc] init] select];
+    
+    
     houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", @"unique13.png", nil];
     challenges = [NSArray arrayWithObjects:@"军事争夺", @"阴谋争夺", @"权力争夺", nil];
     
@@ -90,7 +93,6 @@ UIToolbar *toolbar;
     challengeSet = [[NSMutableSet alloc] init];
     multiHouseSelected = NO;
 
-    NSLog(@"%@", ((CardBrief*)[[[[CardDao alloc] init] selectCardBrieves:nil] objectAtIndex:1]).title );
 }
 
 - (void)viewDidUnload
@@ -110,9 +112,16 @@ UIToolbar *toolbar;
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"text=%@", searchBar.text);
-    [self performSegueWithIdentifier:@"Results" sender:nil];
+   [self performSegueWithIdentifier:@"Results" sender:self];
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ResultViewController *dest = [segue destinationViewController];
+    dest.allItems = [[[CardDao alloc] init] selectCardBrieves:nil];
+}
+
+
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
@@ -206,9 +215,6 @@ UIToolbar *toolbar;
     
 }
 
--(IBAction) tapNext {
-    //[self.navigationController performSegueWithIdentifier:@"Result" sender:nil];
-}
 
 #pragma mark - Picker delegate
 
@@ -244,10 +250,10 @@ UIToolbar *toolbar;
             break;
         }
         case PICKER_CREST:
-            title = ((AGotCrest*)[crests objectAtIndex:row]).crest;
+            title = [crests objectAtIndex:row];
             break;
         case PICKER_TYPE:
-            title = ((AGoTType*)[types objectAtIndex:row]).types;
+            title = [types objectAtIndex:row];
             break;
         default:
             break;
@@ -269,14 +275,12 @@ UIToolbar *toolbar;
         }
         case PICKER_CREST: {
             selectedCrest = row;
-            AGotCrest* crest = (AGotCrest*)[crests objectAtIndex:row];
-            btnCrest.titleLabel.text = crest.crest;
+            btnCrest.titleLabel.text = [crests objectAtIndex:row];
             break;
         }
         case PICKER_TYPE: {
             selectedType = row;
-            AGoTType* type = (AGoTType*)[types objectAtIndex:row];
-            btnType.titleLabel.text = type.types;
+            btnType.titleLabel.text = [types objectAtIndex:row];
             break;
         }
         default:
