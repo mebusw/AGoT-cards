@@ -16,13 +16,22 @@
 #import "SetDao.h"
 #import "AGoTSet.h"
 
+#define PICKER_COMPONENT    1
+#define SELECTED_NONE   -1
+enum {
+    PICKER_SET = 0,
+    PICKER_CREST = 1,
+    PICKER_TYPE = 2
+};
+
 @implementation SearchViewController
 
 NSArray *types, *houses, *crests, *sets;
 
-NSString *pickedType;
-int selectedHouse = 0;
-int selectedType = 0;
+int selectedHouse = SELECTED_NONE;
+int selectedSet = SELECTED_NONE;
+int selectedCrest = SELECTED_NONE;
+int selectedType = SELECTED_NONE;
 
 NSArray *houseImages;
 UIPickerView *pickerV;
@@ -32,7 +41,8 @@ UIToolbar *toolbar;
 
 @synthesize _searchBar, checkList;
 @synthesize isWithName, isWithText, isWithProperty;
-@synthesize btnType;
+@synthesize isWithInt, isWithMil, isWithPow;
+@synthesize btnType, btnSet, btnCrest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,8 +79,6 @@ UIToolbar *toolbar;
     houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", nil];
 
     
-    _searchBar.showsCancelButton = YES;
-    
     }
 
 - (void)viewDidUnload
@@ -97,27 +105,34 @@ UIToolbar *toolbar;
     [searchBar resignFirstResponder];
 }
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    searchBar.showsCancelButton = YES;
+    return YES;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
+    searchBar.showsCancelButton = NO;
+    return YES; 
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    NSLog(@"");
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"");
     return [houses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
-    NSLog(@"");
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -153,22 +168,24 @@ UIToolbar *toolbar;
 }
 
 #pragma mark - events
--(IBAction) tapTypes {
-    NSLog(@"");
+-(IBAction) tapPicker:(UIButton*)button {
+    NSLog(@"%d", button.tag);
     pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
     pickerV.delegate = (id)self;
     pickerV.showsSelectionIndicator = YES;
+    pickerV.tag = button.tag;
+    //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
     [self.view addSubview:pickerV];
     
     toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 160.0f, 320.0f, 40.0f)];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTypes:)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
     
     NSArray *items = [NSArray arrayWithObject:item];
     toolbar.items = items;
     [self.view addSubview:toolbar];
 }
 
--(void) doneTypes:(id)obj {
+-(void) dismissPicker:(id)obj {
     [pickerV removeFromSuperview];
     [toolbar removeFromSuperview];
     
@@ -180,26 +197,77 @@ UIToolbar *toolbar;
 
 #pragma mark - Picker delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return PICKER_COMPONENT;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return [types count];
+    int count;
+    switch (pickerView.tag) {
+        case PICKER_SET:
+            count = [sets count];
+            break;
+        case PICKER_CREST:
+            count = [crests count];
+            break;
+        case PICKER_TYPE:
+            count = [types count];
+            break;
+        default:
+            count = 0;
+            break;
+    }
+    return count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    AGoTType* type = (AGoTType*)[types objectAtIndex:row];
-    return type.types;
+    NSString *title;
+    switch (pickerView.tag) {
+        case PICKER_SET: {
+            AGoTSet *set = (AGoTSet*)[sets objectAtIndex:row];
+            title = [set composeNames];
+            break;
+        }
+        case PICKER_CREST:
+            title = ((AGotCrest*)[crests objectAtIndex:row]).crest;
+            break;
+        case PICKER_TYPE:
+            title = ((AGoTType*)[types objectAtIndex:row]).types;
+            break;
+        default:
+            break;
+    }
+    
+    return title;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 
-    AGoTType* type = (AGoTType*)[types objectAtIndex:row];
-    selectedType = row;
+    NSLog(@"%d", row);
 
-
-    btnType.titleLabel.text = type.types;
-    [pickerV reloadAllComponents];
+    switch (pickerView.tag) {
+        case PICKER_SET: {
+            selectedSet = row;
+            AGoTSet *set = (AGoTSet*)[sets objectAtIndex:row];
+            btnSet.titleLabel.text = [set composeNames];
+            break;
+        }
+        case PICKER_CREST: {
+            selectedCrest = row;
+            AGotCrest* crest = (AGotCrest*)[crests objectAtIndex:row];
+            btnCrest.titleLabel.text = crest.crest;
+            break;
+        }
+        case PICKER_TYPE: {
+            selectedType = row;
+            AGoTType* type = (AGoTType*)[types objectAtIndex:row];
+            btnType.titleLabel.text = type.types;
+            break;
+        }
+        default:
+            break;
+    }
+    
+    [pickerV reloadComponent:component];
 }
 
 

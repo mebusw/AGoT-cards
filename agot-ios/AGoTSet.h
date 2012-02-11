@@ -22,5 +22,6 @@
 @property (nonatomic, strong) NSString *expName;
 
 -(BOOL)isBigExpansion; 
+- (NSString*) composeNames;
 
 @end
