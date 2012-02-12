@@ -14,8 +14,8 @@
 @property (nonatomic) int _id;
 @property (nonatomic) int sortID;
 @property (nonatomic, strong) NSString *sets_s;
-@property (nonatomic) int setsID;
-@property (nonatomic) int expID;
+@property (nonatomic, strong) NSString *setsID;
+@property (nonatomic, strong) NSString *expID;
 @property (nonatomic) int cardID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *uniques;

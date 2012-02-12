@@ -78,7 +78,7 @@
     _conditions = conditions;
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
     //TODO
-    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@ and _id < 15", [self buildWheres]]];
+    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@", [self buildWheres]]];
     while ([rs next]) {
         [result addObject:[self parseCardBrief:rs]];
     }

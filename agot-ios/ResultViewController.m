@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"找到的牌";
+    self.title = [NSString stringWithFormat:@"找到%d张牌", [allItems count]];
     
 }
 
