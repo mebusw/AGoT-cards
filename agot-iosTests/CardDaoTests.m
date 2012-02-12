@@ -36,7 +36,7 @@ NSMutableDictionary *conditions;
     STAssertTrue((1 + 1) == 2, @"Compiler isn't feeling well today :-(");
 }
 
--(void) testBuildHouseWhereClauseNoneSelected {
+-(void) testBuildHouseWhereClauseWithNoHoused {
     [conditions setValue:nil forKey:HOUSE_SELECTED];
     [conditions setObject:[NSNumber numberWithBool:NO] forKey:MULTI_HOUSE_FLAG];
     
@@ -60,8 +60,23 @@ NSMutableDictionary *conditions;
     
     NSString *expect = @"(0 or house like '%1%')"; 
     STAssertTrue([expect isEqual:result], @"actual=%@", result);
-    
 }
 
+
+-(void) testBuildHouseWhereClauseWithOneHousesAndMHFlag {
+    AGoTHouse *house1 = [[AGoTHouse alloc] init];
+    house1._id = 1;
+    house1.name = @"zerg";
+    
+    NSSet *houseSelected = [NSSet setWithObjects:house1,  nil];
+    [conditions setValue:houseSelected forKey:HOUSE_SELECTED];
+    [conditions setObject:[NSNumber numberWithBool:YES] forKey:MULTI_HOUSE_FLAG];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildHouseWhereClause];
+    
+    NSString *expect = @"(1 and house like '%,%' and house like '%1%')"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
 
 @end
