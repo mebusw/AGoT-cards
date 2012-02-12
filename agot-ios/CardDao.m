@@ -6,6 +6,7 @@
 #import "AGoTHouse.h"
 #import "AGoTSet.h"
 #import "AGoTType.h"
+#import "AGotCrest.h"
 #import "CardBrief.h"
 #import "dictKeys.h"
 
@@ -63,8 +64,12 @@
 
 
 -(NSString*) buildCrestWhereClause {
-    return @"";
-    
+    AGotCrest *crest = [_conditions objectForKey:CREST_SELECTED];
+    if (0 == crest._id) {
+        return @"(1)";
+    } else {
+        return [NSString stringWithFormat:@"(crests=%d)", crest._id];
+    }
 }
 
 -(NSString*) buildTypeWhereClause {

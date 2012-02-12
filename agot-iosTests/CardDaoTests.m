@@ -150,4 +150,31 @@ NSMutableDictionary *conditions;
     STAssertTrue([expect isEqual:result], @"actual=%@", result);
 }
 
+#pragma mark -
+
+-(void) testBuildCrestWhereClause {
+    AGotCrest *crest1 = [[AGotCrest alloc] init];
+    crest1._id = 0;
+    [conditions setValue:crest1 forKey:CREST_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildCrestWhereClause];
+    
+    NSString *expect = @"(1)"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
+
+
+-(void) testBuildCrestWhereClauseACrest {
+    AGotCrest *crest1 = [[AGotCrest alloc] init];
+    crest1._id = 5;
+    [conditions setValue:crest1 forKey:CREST_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildCrestWhereClause];
+    
+    NSString *expect = @"(crests=5)"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
+
 @end
