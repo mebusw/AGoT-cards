@@ -22,5 +22,8 @@
 
 
 -(NSString*) buildHouseWhereClause;
+-(NSString*) buildSetWhereClause;
+-(NSString*) buildCrestWhereClause;
+-(NSString*) buildTypeWhereClause;
 
 @end

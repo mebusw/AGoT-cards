@@ -43,9 +43,9 @@
 }
 */
 
--(UIViewController*) buildACardView:(CardBrief*)card  {
+-(UIViewController*) buildACardView  {
+    CardBrief *card = [cards objectAtIndex:cursor];
     CharacterCardViewController *viewCtrl = [[CharacterCardViewController alloc] init];
-    NSLog(@"%@",  card.title);
     viewCtrl.card = card;
     return viewCtrl;    
 }
@@ -61,7 +61,7 @@
     self.delegate = (id)self;
     self.dataSource = (id)self;
 
-    UIViewController *startCtrl = [self buildACardView:[cards objectAtIndex:cursor]];
+    UIViewController *startCtrl = [self buildACardView];
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -90,7 +90,7 @@
         return nil;
     } else {
         cursor--;
-        return [self buildACardView:[cards objectAtIndex:cursor]];
+        return [self buildACardView];
     }
 }
 
@@ -101,7 +101,7 @@
         return nil;
     } else {
         cursor++;
-        return [self buildACardView:[cards objectAtIndex:cursor]];
+        return [self buildACardView];
     }
 
 }

@@ -13,6 +13,9 @@
 
 #define HOUSE_SELECTED @"housesSelected"
 #define MULTI_HOUSE_FLAG @"multiHouseFlag"
+#define SET_SELECTED @"SetSelected"
+#define CREST_SELECTED @"CrestSelected"
+#define TYPE_SELECTED @"TypeSelected"
 
 
 #endif

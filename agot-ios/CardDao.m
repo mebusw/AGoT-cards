@@ -4,6 +4,8 @@
 #import "CardDao.h"
 #import "AGoTCard.h"
 #import "AGoTHouse.h"
+#import "AGoTSet.h"
+#import "AGoTType.h"
 #import "CardBrief.h"
 #import "dictKeys.h"
 
@@ -57,6 +59,30 @@
     NSLog(@"result=%@", result);
     
     return result;
+}
+
+
+-(NSString*) buildCrestWhereClause {
+    return @"";
+    
+}
+
+-(NSString*) buildTypeWhereClause {
+    return @"";
+    
+}
+
+
+-(NSString*) buildSetWhereClause {
+    AGoTSet *set = [_conditions objectForKey:SET_SELECTED];
+    if (0 == set.setsId) {
+        return @"(1)";
+    }
+    if (set.isBigExpansion) {
+        return [NSString stringWithFormat:@"(setsID=%d)", set.setsId];
+    } else {
+        return [NSString stringWithFormat:@"(expID=%d)", set.expId];        
+    }
 }
 
 -(NSString*) buildWheres {
