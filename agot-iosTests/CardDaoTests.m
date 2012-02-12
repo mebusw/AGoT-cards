@@ -106,7 +106,7 @@ NSMutableDictionary *conditions;
     
     NSString *result = [dao buildSetWhereClause];
     
-    NSString *expect = @"(setsID=5)"; 
+    NSString *expect = @"(setsID='5')"; 
     STAssertTrue([expect isEqual:result], @"actual=%@", result);
 }
 
@@ -120,7 +120,33 @@ NSMutableDictionary *conditions;
     
     NSString *result = [dao buildSetWhereClause];
     
-    NSString *expect = @"(expID=6)"; 
+    NSString *expect = @"(expID='6')"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
+
+#pragma mark -
+
+-(void) testBuildTypeWhereClauseAnyType {
+    AGoTType *type1 = [[AGoTType alloc] init];
+    type1._id = 0;
+    [conditions setValue:type1 forKey:TYPE_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildTypeWhereClause];
+    
+    NSString *expect = @"(1)"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
+
+-(void) testBuildTypeWhereClauseAType {
+    AGoTType *type1 = [[AGoTType alloc] init];
+    type1._id = 3;
+    [conditions setValue:type1 forKey:TYPE_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildTypeWhereClause];
+    
+    NSString *expect = @"(types=3)"; 
     STAssertTrue([expect isEqual:result], @"actual=%@", result);
 }
 

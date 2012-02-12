@@ -68,8 +68,12 @@
 }
 
 -(NSString*) buildTypeWhereClause {
-    return @"";
-    
+    AGoTType *type = [_conditions objectForKey:TYPE_SELECTED];
+    if (0 == type._id) {
+        return @"(1)";
+    } else {
+        return [NSString stringWithFormat:@"(types=%d)", type._id];
+    }
 }
 
 
@@ -79,9 +83,9 @@
         return @"(1)";
     }
     if (set.isBigExpansion) {
-        return [NSString stringWithFormat:@"(setsID=%d)", set.setsId];
+        return [NSString stringWithFormat:@"(setsID='%d')", set.setsId];
     } else {
-        return [NSString stringWithFormat:@"(expID=%d)", set.expId];        
+        return [NSString stringWithFormat:@"(expID='%d')", set.expId];        
     }
 }
 
