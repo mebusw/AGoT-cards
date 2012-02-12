@@ -43,7 +43,6 @@
 		8F257E7114DEBFC6008CF1D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E7014DEBFC6008CF1D5 /* main.m */; };
 		8F257E7514DEBFC6008CF1D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */; };
 		8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */; };
-		8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */; };
 		8F257E8914DEBFC6008CF1D5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */; };
 		8F257E8A14DEBFC6008CF1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6414DEBFC6008CF1D5 /* UIKit.framework */; };
 		8F257E8B14DEBFC6008CF1D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257E6614DEBFC6008CF1D5 /* Foundation.framework */; };
@@ -127,7 +126,6 @@
 		8F257E7314DEBFC6008CF1D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F257E7414DEBFC6008CF1D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8F257E7714DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		8F257E7A14DEBFC6008CF1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		8F257E8714DEBFC6008CF1D5 /* agot-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "agot-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F257E8814DEBFC6008CF1D5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F257E9014DEBFC6008CF1D5 /* agot-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agot-iosTests-Info.plist"; sourceTree = "<group>"; };
@@ -162,12 +160,7 @@
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGoTLCGCards.db; sourceTree = "<group>"; };
-		8FF6DA0014E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-iosTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
-		8FF6DA0214E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<absolute>"; };
-		8FF6DA0314E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<absolute>"; };
-		8FF6DA0414E6A40900AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/mebusw/Desktop/agot-ios/agot-ios/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		8FF6DA0F14E6ACE700AD1E2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/names.plist; sourceTree = "<group>"; };
-		8FF6DA1114E6ACFF00AD1E2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/names.plist"; sourceTree = "<group>"; };
 		8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		8FF6DA1414E6B27300AD1E2D /* CardBrief.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBrief.h; sourceTree = "<group>"; };
 		8FF6DA1514E6B27300AD1E2D /* CardBrief.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBrief.m; sourceTree = "<group>"; };
@@ -309,7 +302,6 @@
 				8F257E7614DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard */,
 				8FBBD2FB14E624DA00347C49 /* PagesViewController.h */,
 				8FBBD2FC14E624DA00347C49 /* PagesViewController.m */,
-				8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
 				8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */,
 				8FBF91E114E157D30058D09C /* ResultViewController.h */,
@@ -443,7 +435,6 @@
 			files = (
 				8F257E6F14DEBFC6008CF1D5 /* InfoPlist.strings in Resources */,
 				8F257E7814DEBFC6008CF1D5 /* MainStoryboard_iPhone.storyboard in Resources */,
-				8F257E7B14DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard in Resources */,
 				8F1B28A414E027BD006C8638 /* claim.png in Resources */,
 				8F1B28A514E027BD006C8638 /* gc16.png in Resources */,
 				8F1B28A614E027BD006C8638 /* ginc.png in Resources */,
@@ -552,7 +543,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E6E14DEBFC6008CF1D5 /* en */,
-				8FF6DA0414E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -561,25 +551,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F257E7714DEBFC6008CF1D5 /* en */,
-				8FF6DA0214E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		8F257E7914DEBFC6008CF1D5 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8F257E7A14DEBFC6008CF1D5 /* en */,
-				8FF6DA0314E6A40900AD1E2D /* zh-Hans */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		8F257E9114DEBFC6008CF1D5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8F257E9214DEBFC6008CF1D5 /* en */,
-				8FF6DA0014E6A40900AD1E2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -588,7 +567,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8FF6DA0F14E6ACE700AD1E2D /* en */,
-				8FF6DA1114E6ACFF00AD1E2D /* zh-Hans */,
 			);
 			name = names.plist;
 			sourceTree = "<group>";
