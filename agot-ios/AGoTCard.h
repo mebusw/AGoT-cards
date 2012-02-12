@@ -11,12 +11,12 @@
     
 }
 
-@property (nonatomic, strong) NSString *_id;
-@property (nonatomic, strong) NSString *sortID;
+@property (nonatomic) int _id;
+@property (nonatomic) int sortID;
 @property (nonatomic, strong) NSString *sets_s;
-@property (nonatomic, strong) NSString *setsID;
-@property (nonatomic, strong) NSString *expID;
-@property (nonatomic, strong) NSString *cardID;
+@property (nonatomic) int setsID;
+@property (nonatomic) int expID;
+@property (nonatomic) int cardID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *uniques;
 @property (nonatomic, strong) NSString *house;

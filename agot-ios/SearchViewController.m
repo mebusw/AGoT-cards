@@ -29,14 +29,15 @@ enum {
 
 @implementation SearchViewController
 
-NSArray *types, *houses, *crests, *sets, *challenges;
+NSMutableArray *types, *houses, *crests, *sets, *challenges;
 
 int selectedSet = SELECTED_NONE;
 int selectedCrest = SELECTED_NONE;
 int selectedType = SELECTED_NONE;
-BOOL multiHouseSelected;
-NSMutableSet *houseSet;
-NSMutableSet *challengeSet;
+BOOL multiHouseFlag;
+int multiHouseId;
+NSMutableSet *housesSelected;
+NSMutableSet *challengeSelected;
 
 NSArray *houseImages;
 UIPickerView *pickerV;
@@ -78,10 +79,16 @@ UIToolbar *toolbar;
     //TODO
     //NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:@"names.plist"];
     //NSLog(@"%@", d);
-
-    houses = [NSArray arrayWithObjects:@"史塔克", @"兰尼斯特", @"拜拉席恩", @"坦格利安", @"马泰尔", @"葛雷乔伊", @"中立", @"仅多家族", nil];
-    types = [NSArray arrayWithObjects:@"议政牌", @"战略牌", @"角色牌", @"地区牌", @"附属牌", @"事件牌", nil];
-    crests = [NSArray arrayWithObjects:@"高贵", @"勇武", @"博学", @"崇圣", @"暗影", nil];
+    
+    houses = [[[HouseDao alloc] init] select];
+    multiHouseId = [houses count];
+    AGoTHouse *mh = [[AGoTHouse alloc] init];
+    mh._id = multiHouseId;
+    mh.name = @"仅多家族";
+    [houses addObject:mh];
+    
+    types = [[[TypeDao alloc] init] select];
+    crests = [[[CrestDao alloc] init] select];
     sets = [[[SetDao alloc] init] select];
     
     
@@ -89,9 +96,9 @@ UIToolbar *toolbar;
     challenges = [NSArray arrayWithObjects:@"军事争夺", @"阴谋争夺", @"权力争夺", nil];
     
     
-    houseSet = [[NSMutableSet alloc] init];
-    challengeSet = [[NSMutableSet alloc] init];
-    multiHouseSelected = NO;
+    housesSelected = [[NSMutableSet alloc] init];
+    challengeSelected = [[NSMutableSet alloc] init];
+    multiHouseFlag = NO;
 
 }
 
@@ -118,7 +125,16 @@ UIToolbar *toolbar;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ResultViewController *dest = [segue destinationViewController];
-    dest.allItems = [[[CardDao alloc] init] selectCardBrieves:nil];
+    NSMutableDictionary *conditions = [[NSMutableDictionary alloc] init];
+    
+    [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:@"multiHouseFlag"];
+    NSMutableSet *houseIds = [[NSMutableSet alloc] init];
+    for (NSString *str in housesSelected) {
+        [houseIds addObject:[NSNumber numberWithInt:[houses indexOfObject:str]]];
+    }
+    [conditions setObject:houseIds forKey:@"houseIds"];
+    
+    dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
 }
 
 
@@ -161,17 +177,20 @@ UIToolbar *toolbar;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [houses objectAtIndex:indexPath.row];
+    cell.textLabel.text = ((AGoTHouse*)[houses objectAtIndex:indexPath.row]).name;
     cell.selected = NO;
     UIImage *img = [UIImage imageNamed:[houseImages objectAtIndex:indexPath.row]];
     cell.imageView.image = img;
     
-    if ([houseSet containsObject:[houses objectAtIndex:indexPath.row]]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (multiHouseId == indexPath.row) {
+        cell.accessoryType = multiHouseFlag ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        if ([housesSelected containsObject:[houses objectAtIndex:indexPath.row]]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }
-         
     return cell;
 }
 
@@ -180,11 +199,21 @@ UIToolbar *toolbar;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([houseSet containsObject:[houses objectAtIndex:indexPath.row]]) {
-        [houseSet removeObject:[houses objectAtIndex:indexPath.row]];
+    if (multiHouseId == indexPath.row) {
+        if (multiHouseFlag) {
+            multiHouseFlag = NO;
+        } else {
+            multiHouseFlag = YES;
+        }
     } else {
-        [houseSet addObject:[houses objectAtIndex:indexPath.row]];
+        if ([housesSelected containsObject:[houses objectAtIndex:indexPath.row]]) {
+            [housesSelected removeObject:[houses objectAtIndex:indexPath.row]];
+        } else {
+            [housesSelected addObject:[houses objectAtIndex:indexPath.row]];
+        }
     }
+    
+    
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
 
 
@@ -249,12 +278,16 @@ UIToolbar *toolbar;
             title = [set composeNames];
             break;
         }
-        case PICKER_CREST:
-            title = [crests objectAtIndex:row];
+        case PICKER_CREST: {
+            AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
+            title = crest.crest;
             break;
-        case PICKER_TYPE:
-            title = [types objectAtIndex:row];
+        }
+        case PICKER_TYPE: {
+            AGoTType *type = (AGoTType*)[types objectAtIndex:row];
+            title = type.types;
             break;
+        }
         default:
             break;
     }
@@ -275,12 +308,14 @@ UIToolbar *toolbar;
         }
         case PICKER_CREST: {
             selectedCrest = row;
-            btnCrest.titleLabel.text = [crests objectAtIndex:row];
+            AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
+            btnCrest.titleLabel.text = crest.crest;
             break;
         }
         case PICKER_TYPE: {
             selectedType = row;
-            btnType.titleLabel.text = [types objectAtIndex:row];
+            AGoTType *type = (AGoTType*)[types objectAtIndex:row];
+            btnType.titleLabel.text = type.types;
             break;
         }
         default:

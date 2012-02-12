@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"共找到%d张";
+    self.title = @"找到的牌";
     
 }
 

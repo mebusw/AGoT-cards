@@ -17,7 +17,7 @@
 
 -(AGotCrest*) parseSelectResult: (FMResultSet*)rs {
     AGotCrest *crest = [[AGotCrest alloc] init];
-    crest._id = [rs stringForColumnIndex:0];
+    crest._id = [rs intForColumnIndex:0];
     crest.crest = [rs stringForColumnIndex:1];
     return crest;
     

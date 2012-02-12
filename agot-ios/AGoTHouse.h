@@ -10,7 +10,7 @@
 
 @interface AGoTHouse : NSObject
 
-@property (strong, nonatomic) NSString *_id;
+@property (nonatomic) int _id;
 @property (strong, nonatomic) NSString *name;
 
 

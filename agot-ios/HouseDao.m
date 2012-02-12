@@ -17,7 +17,7 @@
 
 -(AGoTHouse*) parseSelectResult: (FMResultSet*)rs {
     AGoTHouse *house = [[AGoTHouse alloc] init];
-    house._id = [rs stringForColumnIndex:0];
+    house._id = [rs intForColumnIndex:0];
     house.name = [rs stringForColumnIndex:1];
     return house;
     

@@ -7,6 +7,8 @@
 
 @implementation CardDao
 
+NSDictionary* _conditions;
+
 -(NSString *)setTable:(NSString *)sql{
     return [NSString stringWithFormat:sql,  @"t_cards"];
 }
@@ -29,8 +31,35 @@
     return result;
 }
 
--(NSString*) buildWheres: (NSDictionary*) conditions {
-    return @"_id<5";
+-(NSString*) buildHouseWhereClause {
+    NSSet *houseSet = [_conditions objectForKey:@"houseIds"];
+    BOOL multiHouse = [(NSNumber*)[_conditions objectForKey:@"multiHouse"] boolValue];
+    NSString *connector;
+    NSMutableString *result = [NSMutableString stringWithString:@""];
+            
+    if (0 == [houseSet count]) {
+        return @"(1)";
+    }
+    
+    if (multiHouse) {
+        connector = @" AND ";
+        [result appendString:@"( 1 and house like '%,%' "];
+    } else {
+        connector = @" OR ";
+        [result appendString:@"( 0"];
+    }
+    for (NSNumber *houseId in houseSet) {
+        [result appendFormat:@"%@ house like '%%d%' ", connector, houseId, nil];
+    }
+    [result appendString:@" )"];
+    NSLog(@"result=%@", result);
+    
+    return result;
+}
+
+-(NSString*) buildWheres {
+    NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], nil];
+    return [wheres componentsJoinedByString:@" AND "];
 }
 
 - (CardBrief*) parseCardBrief: (FMResultSet*)rs {
@@ -44,8 +73,10 @@
 }
 
 -(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions {
+    _conditions = conditions;
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
-    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@", [self buildWheres:conditions]]];
+    //TODO
+    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@ and _id < 15", [self buildWheres]]];
     while ([rs next]) {
         [result addObject:[self parseCardBrief:rs]];
     }
