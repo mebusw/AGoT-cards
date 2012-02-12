@@ -13,9 +13,9 @@
 
 
 @implementation PagesViewController
-@synthesize cards;
+@synthesize cards, cursor;
 
-int cursor;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,7 +61,6 @@ int cursor;
     self.delegate = (id)self;
     self.dataSource = (id)self;
 
-    cursor = 0;
     UIViewController *startCtrl = [self buildACardView:[cards objectAtIndex:cursor]];
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];

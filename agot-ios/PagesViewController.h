@@ -11,5 +11,6 @@
 @interface PagesViewController : UIPageViewController
 
 @property (nonatomic, strong) NSArray *cards;
+@property (nonatomic) int cursor;
 
 @end
