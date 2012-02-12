@@ -58,6 +58,7 @@
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
 		8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2314E2D23A0034F8AE /* CrestDao.m */; };
 		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
+		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
 		8FBBD30114E6297200347C49 /* Another.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD30014E6297200347C49 /* Another.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
@@ -149,6 +150,9 @@
 		8F31EC2314E2D23A0034F8AE /* CrestDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrestDao.m; sourceTree = "<group>"; };
 		8F31EC2514E2D2950034F8AE /* SetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDao.h; sourceTree = "<group>"; };
 		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
+		8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDaoTests.h; sourceTree = "<group>"; };
+		8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDaoTests.m; sourceTree = "<group>"; };
+		8F7FAC0E14E7BB74004737F2 /* dictKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; path = dictKeys.h; sourceTree = "<group>"; };
 		8FBBD2FB14E624DA00347C49 /* PagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
 		8FBBD2FC14E624DA00347C49 /* PagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		8FBBD2FF14E6297200347C49 /* Another.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Another.h; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				8FBF91E114E157D30058D09C /* ResultViewController.h */,
 				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
+				8F7FAC0E14E7BB74004737F2 /* dictKeys.h */,
 			);
 			path = "agot-ios";
 			sourceTree = "<group>";
@@ -334,6 +339,8 @@
 				8F257E9414DEBFC6008CF1D5 /* agot_iosTests.h */,
 				8F257E9514DEBFC6008CF1D5 /* agot_iosTests.m */,
 				8F257E8F14DEBFC6008CF1D5 /* Supporting Files */,
+				8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */,
+				8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */,
 			);
 			path = "agot-iosTests";
 			sourceTree = "<group>";
@@ -522,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F257E9614DEBFC6008CF1D5 /* agot_iosTests.m in Sources */,
+				8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

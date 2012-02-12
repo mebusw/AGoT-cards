@@ -3,11 +3,13 @@
 
 #import "CardDao.h"
 #import "AGoTCard.h"
+#import "AGoTHouse.h"
 #import "CardBrief.h"
+#import "dictKeys.h"
 
 @implementation CardDao
 
-NSDictionary* _conditions;
+@synthesize _conditions;
 
 -(NSString *)setTable:(NSString *)sql{
     return [NSString stringWithFormat:sql,  @"t_cards"];
@@ -20,7 +22,7 @@ NSDictionary* _conditions;
     
 }
 
-// SELECT
+// SELECT All
 -(NSMutableArray*)select {
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
     FMResultSet *rs = [db executeQuery:[self setTable:@"SELECT * FROM %@"]];
@@ -32,26 +34,26 @@ NSDictionary* _conditions;
 }
 
 -(NSString*) buildHouseWhereClause {
-    NSSet *houseSet = [_conditions objectForKey:@"houseIds"];
-    BOOL multiHouse = [(NSNumber*)[_conditions objectForKey:@"multiHouse"] boolValue];
+    NSSet *houseSelected = [_conditions objectForKey:HOUSE_SELECTED];
+    BOOL multiHouseFlag = [(NSNumber*)[_conditions objectForKey:MULTI_HOUSE_FLAG] boolValue];
     NSString *connector;
     NSMutableString *result = [NSMutableString stringWithString:@""];
             
-    if (0 == [houseSet count]) {
+    if (0 == [houseSelected count]) {
         return @"(1)";
     }
     
-    if (multiHouse) {
-        connector = @" AND ";
-        [result appendString:@"( 1 and house like '%,%' "];
+    if (multiHouseFlag) {
+        connector = @" and ";
+        [result appendString:@"(1 and house like '%,%'"];
     } else {
-        connector = @" OR ";
-        [result appendString:@"( 0"];
+        connector = @" or ";
+        [result appendString:@"(0"];
     }
-    for (NSNumber *houseId in houseSet) {
-        [result appendFormat:@"%@ house like '%%d%' ", connector, houseId, nil];
+    for (AGoTHouse *house in houseSelected) {
+        [result appendFormat:@"%@house like '%%%d%%'", connector, house._id, nil];
     }
-    [result appendString:@" )"];
+    [result appendString:@")"];
     NSLog(@"result=%@", result);
     
     return result;
@@ -59,7 +61,7 @@ NSDictionary* _conditions;
 
 -(NSString*) buildWheres {
     NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], nil];
-    return [wheres componentsJoinedByString:@" AND "];
+    return [wheres componentsJoinedByString:@" and "];
 }
 
 - (CardBrief*) parseCardBrief: (FMResultSet*)rs {

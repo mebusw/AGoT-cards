@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in agot-iosTests");
+    //STFail(@"Unit tests are not implemented yet in agot-iosTests");
 }
 
 @end

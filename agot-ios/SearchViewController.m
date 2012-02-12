@@ -18,6 +18,7 @@
 #import "CardDao.h"
 #import "CardBrief.h"
 #import "ResultViewController.h"
+#import "dictKeys.h"
 
 #define PICKER_COMPONENT    1
 #define SELECTED_NONE   -1
@@ -127,12 +128,9 @@ UIToolbar *toolbar;
     ResultViewController *dest = [segue destinationViewController];
     NSMutableDictionary *conditions = [[NSMutableDictionary alloc] init];
     
-    [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:@"multiHouseFlag"];
-    NSMutableSet *houseIds = [[NSMutableSet alloc] init];
-    for (NSString *str in housesSelected) {
-        [houseIds addObject:[NSNumber numberWithInt:[houses indexOfObject:str]]];
-    }
-    [conditions setObject:houseIds forKey:@"houseIds"];
+    [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:MULTI_HOUSE_FLAG];
+
+    [conditions setObject:housesSelected forKey:HOUSE_SELECTED];
     
     dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
 }

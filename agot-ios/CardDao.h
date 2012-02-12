@@ -11,11 +11,16 @@
 @interface CardDao : BaseDao {
 }
 
+@property (nonatomic, strong) NSDictionary* _conditions;
+
 -(NSMutableArray *)select;
 //-(void)insertWithTitle:(NSString *)title Body:(NSString *)body;
 //-(BOOL)updateAt:(int)index Title:(NSString *)title Body:(NSString *)body;
 //- (BOOL)deleteAt:(int)index;
 
 -(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions;
+
+
+-(NSString*) buildHouseWhereClause;
 
 @end
