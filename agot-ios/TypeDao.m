@@ -18,7 +18,7 @@
 -(AGoTType*) parseSelectResult: (FMResultSet*)rs {
     AGoTType *type = [[AGoTType alloc] init];
     type._id = [rs intForColumnIndex:0];
-    type.types = [rs stringForColumnIndex:1];
+    type.name = [rs stringForColumnIndex:1];
     return type;
     
 }

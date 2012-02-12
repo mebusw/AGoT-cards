@@ -9,6 +9,6 @@
 #import "AGoTType.h"
 
 @implementation AGoTType
-@synthesize _id, types;
+@synthesize _id, name;
 
 @end

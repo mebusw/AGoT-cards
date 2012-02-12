@@ -10,5 +10,5 @@
 
 @implementation AGotCrest
 
-@synthesize _id, crest;
+@synthesize _id, name;
 @end

@@ -11,7 +11,7 @@
 @interface AGoTType : NSObject
 
 @property (nonatomic) int _id;
-@property (strong, nonatomic) NSString *types;
+@property (strong, nonatomic) NSString *name;
 
 
 @end

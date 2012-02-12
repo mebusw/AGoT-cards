@@ -11,7 +11,7 @@
 @interface AGotCrest : NSObject
 
 @property (nonatomic) int _id;
-@property (strong, nonatomic) NSString *crest;
+@property (strong, nonatomic) NSString *name;
 
 
 @end

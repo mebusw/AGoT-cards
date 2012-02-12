@@ -280,12 +280,12 @@ UIToolbar *toolbar;
         }
         case PICKER_CREST: {
             AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
-            title = crest.crest;
+            title = crest.name;
             break;
         }
         case PICKER_TYPE: {
             AGoTType *type = (AGoTType*)[types objectAtIndex:row];
-            title = type.types;
+            title = type.name;
             break;
         }
         default:
@@ -309,13 +309,13 @@ UIToolbar *toolbar;
         case PICKER_CREST: {
             selectedCrest = row;
             AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
-            btnCrest.titleLabel.text = crest.crest;
+            btnCrest.titleLabel.text = crest.name;
             break;
         }
         case PICKER_TYPE: {
             selectedType = row;
             AGoTType *type = (AGoTType*)[types objectAtIndex:row];
-            btnType.titleLabel.text = type.types;
+            btnType.titleLabel.text = type.name;
             break;
         }
         default:
