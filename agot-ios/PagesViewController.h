@@ -10,4 +10,6 @@
 
 @interface PagesViewController : UIPageViewController
 
+@property (nonatomic, strong) NSArray *cards;
+
 @end

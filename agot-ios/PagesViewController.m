@@ -7,9 +7,15 @@
 //
 
 #import "PagesViewController.h"
-#import "Another.h"
+#import "CharacterCardViewController.h"
+#import "CardBrief.h"
+#import "AGoTCard.h"
+
 
 @implementation PagesViewController
+@synthesize cards;
+
+int cursor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +43,13 @@
 }
 */
 
+-(UIViewController*) buildACardView:(CardBrief*)card  {
+    CharacterCardViewController *viewCtrl = [[CharacterCardViewController alloc] init];
+    NSLog(@"%@",  card.title);
+    viewCtrl.card = card;
+    return viewCtrl;    
+}
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -48,8 +61,8 @@
     self.delegate = (id)self;
     self.dataSource = (id)self;
 
-    UIViewController *startCtrl = [[UIViewController alloc] init];
-    startCtrl.view.backgroundColor = [UIColor blueColor];
+    cursor = 0;
+    UIViewController *startCtrl = [self buildACardView:[cards objectAtIndex:cursor]];
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -69,37 +82,29 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -  page viw delegate
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSLog(@"");    
-    if ([viewController.view.backgroundColor isEqual:[UIColor blackColor]]) {
+#pragma mark -  page view delegate
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {  
+
+    NSLog(@"%d", cursor);
+    if (cursor <= 0) {
         return nil;
-    } 
-    
-    UIViewController *viewCtrl = [[UIViewController alloc] init];
-    if ([viewController.view.backgroundColor isEqual:[UIColor blueColor]]) {
-        viewCtrl.view.backgroundColor = [UIColor blackColor];
     } else {
-        viewCtrl.view.backgroundColor = [UIColor blueColor];
+        cursor--;
+        return [self buildACardView:[cards objectAtIndex:cursor]];
     }
-        return viewCtrl;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSLog(@"");
-    if ([viewController.view.backgroundColor isEqual:[UIColor redColor]]) {
+
+    NSLog(@"%d", cursor);
+    if (cursor >= [cards count]) {
         return nil;
-    } 
-    
-    UIViewController *viewCtrl = [[UIViewController alloc] init];
-    if ([viewController.view.backgroundColor isEqual:[UIColor blueColor]]) {
-        viewCtrl.view.backgroundColor = [UIColor redColor];
     } else {
-        viewCtrl.view.backgroundColor = [UIColor blueColor];
+        cursor++;
+        return [self buildACardView:[cards objectAtIndex:cursor]];
     }
-    
-    
-    return viewCtrl;
+
 }
                                                                                                                                                 
 

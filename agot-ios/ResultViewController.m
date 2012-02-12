@@ -149,6 +149,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PagesViewController *pages = [[PagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    pages.cards = allItems;
     [self.navigationController pushViewController:pages animated:YES];
 }
 
