@@ -10,7 +10,7 @@
 
 - (NSString*) composeNames {
     if (nil != self.expName) {
-        return [NSString stringWithFormat:@"%@ - %@", self.setName, self.expName];
+        return [NSString stringWithFormat:@" -- %@", self.expName];
     } else {
         return self.setName;
     }

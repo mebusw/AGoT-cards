@@ -92,6 +92,22 @@ UIToolbar *toolbar;
     crests = [[[CrestDao alloc] init] select];
     sets = [[[SetDao alloc] init] select];
     
+    NSMutableSet *majorSets = [[NSMutableSet alloc] init];
+    for (int i = 0; i < [sets count]; i++) {
+        AGoTSet *aSet = [sets objectAtIndex:i];
+        NSNumber *setNum = [NSNumber numberWithInt:aSet.setsId];
+        if (aSet.expId > 0 && ![majorSets member:setNum]) {
+            AGoTSet *aMajorSet = [[AGoTSet alloc] init];
+            aMajorSet.setsId = aSet.setsId;
+            aMajorSet.expId = 0;
+            aMajorSet.setName = aSet.setName;
+            aMajorSet.expName = nil;
+            [sets insertObject:aMajorSet atIndex:i];
+            i++;
+            [majorSets addObject:setNum];
+        }
+    }
+    
     
     houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", @"unique13.png", nil];
     challenges = [NSArray arrayWithObjects:@"军事争夺", @"阴谋争夺", @"权力争夺", nil];
