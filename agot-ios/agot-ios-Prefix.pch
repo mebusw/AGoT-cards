@@ -21,4 +21,4 @@
 
 #define STR(format...)     ([NSString stringWithFormat:format])
 
-#define STAssertEqualStr(expect, actual, msg, ...) STAssertTrue([expect isEqual:actual], @"expect=<%@>, but actual=<%@>. " msg, expect, actual, ##__VA_ARGS__);
+#define STAssertEqualStr(expect, actual, msg, ...) STAssertTrue([expect isEqualToString:actual], @"expect=<%@>, but actual=<%@>. " msg, expect, actual, ##__VA_ARGS__);

@@ -109,7 +109,7 @@
     BOOL traitsFlag = [(NSNumber*)[_conditions objectForKey:TRAITS_FLAG] boolValue];
     BOOL rulesFlag = [(NSNumber*)[_conditions objectForKey:RULES_FLAG] boolValue];
     NSString *searchText = [_conditions objectForKey:SEARCH_TEXT];
-    if (! (titleFlag || traitsFlag || rulesFlag)) {
+    if ([searchText isEqualToString:@""] || !(titleFlag || traitsFlag || rulesFlag)) {
         return @"(1)";
     }
     

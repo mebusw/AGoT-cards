@@ -208,7 +208,9 @@ NSMutableDictionary *conditions;
 
 -(void) testBuildSearchCriteriaWhereClauseEmptyText {
     [conditions setValue:@"" forKey:SEARCH_TEXT];
-    dao._conditions = conditions;
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:TITLE_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:TRAITS_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:RULES_FLAG];    dao._conditions = conditions;
     
     NSString *result = [dao buildSearchCriteriaWhereClause];
     
