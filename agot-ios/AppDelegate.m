@@ -32,8 +32,8 @@
         success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
         if(!success){
             NSLog(@"%@", [error localizedDescription]);
+            success = NO;
         }
-        success = NO;
     }
     if(success){
         db = [FMDatabase databaseWithPath:writableDBPath];

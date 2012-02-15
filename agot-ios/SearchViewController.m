@@ -32,15 +32,22 @@ enum {
 
 NSMutableArray *types, *houses, *crests, *sets, *challenges;
 
+/** For search conditions */
+NSMutableSet *housesSelected;
+BOOL multiHouseFlag = NO;
 int selectedSet = SELECTED_NONE;
 int selectedCrest = SELECTED_NONE;
 int selectedType = SELECTED_NONE;
-BOOL multiHouseFlag;
-int multiHouseId;
-NSMutableSet *housesSelected;
 NSMutableSet *challengeSelected;
+BOOL titleFlag = NO;
+BOOL traitsFlag = NO;
+BOOL rulesFlage = NO;
+NSString *searchText;
+
+
 
 NSArray *houseImages;
+int multiHouseId;
 UIPickerView *pickerV;
 
 UIToolbar *toolbar;
@@ -135,8 +142,8 @@ UIToolbar *toolbar;
 #pragma mark - searchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"text=%@", searchBar.text);
-   [self performSegueWithIdentifier:@"Results" sender:self];
+    searchText = searchBar.text;
+    [self performSegueWithIdentifier:@"Results" sender:self];
     
 }
 
@@ -145,7 +152,6 @@ UIToolbar *toolbar;
     NSMutableDictionary *conditions = [[NSMutableDictionary alloc] init];
     
     [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:MULTI_HOUSE_FLAG];
-
     [conditions setObject:housesSelected forKey:HOUSE_SELECTED];
     
     dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
@@ -205,6 +211,7 @@ UIToolbar *toolbar;
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }
+
     return cell;
 }
 
