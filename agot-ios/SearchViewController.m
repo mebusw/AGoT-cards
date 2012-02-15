@@ -244,7 +244,7 @@ UIToolbar *toolbar;
     //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
     [self.view addSubview:pickerV];
     
-    toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 160.0f, 320.0f, 40.0f)];
+    toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
     
     NSArray *items = [NSArray arrayWithObject:item];

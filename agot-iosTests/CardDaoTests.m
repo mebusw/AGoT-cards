@@ -177,4 +177,30 @@ NSMutableDictionary *conditions;
     STAssertTrue([expect isEqual:result], @"actual=%@", result);
 }
 
+
+#pragma mark -
+
+-(void) testBuildChallengeWhereClauseNone {
+    NSSet *challengesSelected = [NSSet setWithObjects: nil];
+    [conditions setValue:challengesSelected forKey:CHALLENGES_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildChallengeWhereClause];
+    
+    NSString *expect = @"(1)"; 
+    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+}
+
+-(void) testBuildChallengeWhereClausePowAndInt {
+    NSSet *challengesSelected = [NSSet setWithObjects: POWER, INTELIGENCE, nil];
+    [conditions setValue:challengesSelected forKey:CHALLENGES_SELECTED];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildChallengeWhereClause];
+    
+    NSString *expect = STR(@"(1) and challenge like '%%%@%%' and challenge like '%%%@%%'", POWER, INTELIGENCE); 
+    STAssertEqualStr(expect, result, @"");
+}
+
 @end
+

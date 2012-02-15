@@ -94,6 +94,19 @@
     }
 }
 
+
+-(NSString*) buildChallengeWhereClause {
+    NSMutableString *result = [NSMutableString stringWithString:@"(1)"];
+    NSSet *challengesSelected = [_conditions objectForKey:CHALLENGES_SELECTED];
+
+    for (NSString *challenge in challengesSelected) {
+        [result appendFormat:@" and challenge like '%%%@%%'", challenge];
+    }
+    
+    return result;
+}
+
+
 -(NSString*) buildWheres {
     NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], nil];
     return [wheres componentsJoinedByString:@" and "];
