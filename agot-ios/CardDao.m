@@ -57,7 +57,6 @@
         [result appendFormat:@"%@house like '%%%d%%'", connector, house._id, nil];
     }
     [result appendString:@")"];
-    NSLog(@"result=%@", result);
     
     return result;
 }
@@ -102,7 +101,29 @@
     for (NSString *challenge in challengesSelected) {
         [result appendFormat:@" and challenge like '%%%@%%'", challenge];
     }
+    return result;
+}
+
+-(NSString*) buildSearchCriteriaWhereClause {
+    BOOL titleFlag = [(NSNumber*)[_conditions objectForKey:TITLE_FLAG] boolValue];
+    BOOL traitsFlag = [(NSNumber*)[_conditions objectForKey:TRAITS_FLAG] boolValue];
+    BOOL rulesFlag = [(NSNumber*)[_conditions objectForKey:RULES_FLAG] boolValue];
+    NSString *searchText = [_conditions objectForKey:SEARCH_TEXT];
+    if (! (titleFlag || traitsFlag || rulesFlag)) {
+        return @"(1)";
+    }
     
+    NSMutableString *result = [NSMutableString stringWithString:@"(0"];
+    if (titleFlag) {
+        [result appendFormat:@" or title like '%%%@%%'", searchText];
+    }
+    if (traitsFlag) {
+        [result appendFormat:@" or traits like '%%%@%%'", searchText];
+    }    
+    if (rulesFlag) {
+        [result appendFormat:@" or rules like '%%%@%%'", searchText];
+    }
+    [result appendString:@")"];
     return result;
 }
 

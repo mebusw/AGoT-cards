@@ -46,7 +46,8 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildHouseWhereClause];
     
     NSString *expect = @"(1)"; 
-    STAssertTrue([expect isEqual:result], @"where clause not correct");
+    STAssertEqualStr(expect, result, @"");
+
 }
 
 -(void) testBuildHouseWhereClauseWithOneHouses {
@@ -62,7 +63,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildHouseWhereClause];
     
     NSString *expect = @"(0 or house like '%1%')"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 
@@ -79,7 +80,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildHouseWhereClause];
     
     NSString *expect = @"(1 and house like '%,%' and house like '%1%')"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 #pragma mark -
@@ -93,7 +94,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildSetWhereClause];
     
     NSString *expect = @"(1)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 
@@ -107,7 +108,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildSetWhereClause];
     
     NSString *expect = @"(setsID='5')"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 -(void) testBuildSetWhereClauseSmallExp {
@@ -121,7 +122,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildSetWhereClause];
     
     NSString *expect = @"(expID='6')"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 #pragma mark -
@@ -135,7 +136,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildTypeWhereClause];
     
     NSString *expect = @"(1)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 -(void) testBuildTypeWhereClauseAType {
@@ -147,7 +148,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildTypeWhereClause];
     
     NSString *expect = @"(types=3)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 #pragma mark -
@@ -161,7 +162,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildCrestWhereClause];
     
     NSString *expect = @"(1)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 
@@ -174,7 +175,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildCrestWhereClause];
     
     NSString *expect = @"(crests=5)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 
@@ -188,7 +189,7 @@ NSMutableDictionary *conditions;
     NSString *result = [dao buildChallengeWhereClause];
     
     NSString *expect = @"(1)"; 
-    STAssertTrue([expect isEqual:result], @"actual=%@", result);
+    STAssertEqualStr(expect, result, @"");
 }
 
 -(void) testBuildChallengeWhereClausePowAndInt {
@@ -201,6 +202,64 @@ NSMutableDictionary *conditions;
     NSString *expect = STR(@"(1) and challenge like '%%%@%%' and challenge like '%%%@%%'", POWER, INTELIGENCE); 
     STAssertEqualStr(expect, result, @"");
 }
+
+
+#pragma mark -
+
+-(void) testBuildSearchCriteriaWhereClauseEmptyText {
+    [conditions setValue:@"" forKey:SEARCH_TEXT];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildSearchCriteriaWhereClause];
+    
+    NSString *expect = @"(1)"; 
+    STAssertEqualStr(expect, result, @"");
+
+}
+
+-(void) testBuildSearchCriteriaWhereClauseNoneChecked {
+    [conditions setValue:@"abc" forKey:SEARCH_TEXT];
+    [conditions setValue:[NSNumber numberWithBool:NO] forKey:TITLE_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:NO] forKey:TRAITS_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:NO] forKey:RULES_FLAG];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildSearchCriteriaWhereClause];
+    
+    NSString *expect = @"(1)"; 
+    STAssertEqualStr(expect, result, @"");
+    
+}
+
+-(void) testBuildSearchCriteriaWhereClauseRulesAndTitleChecked {
+    [conditions setValue:@"abc" forKey:SEARCH_TEXT];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:TITLE_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:NO] forKey:TRAITS_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:RULES_FLAG];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildSearchCriteriaWhereClause];
+    
+    NSString *expect = STR(@"(0 or title like '%%%@%%' or rules like '%%%@%%')", @"abc", @"abc"); 
+    STAssertEqualStr(expect, result, @"");
+    
+}
+
+-(void) testBuildSearchCriteriaWhereClauseRulesAndTraitsChecked {
+    [conditions setValue:@"abc" forKey:SEARCH_TEXT];
+    [conditions setValue:[NSNumber numberWithBool:NO] forKey:TITLE_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:TRAITS_FLAG];
+    [conditions setValue:[NSNumber numberWithBool:YES] forKey:RULES_FLAG];
+    dao._conditions = conditions;
+    
+    NSString *result = [dao buildSearchCriteriaWhereClause];
+    
+    NSString *expect = STR(@"(0 or traits like '%%%@%%' or rules like '%%%@%%')", @"abc", @"abc"); 
+    STAssertEqualStr(expect, result, @"");
+    
+}
+
+
 
 @end
 

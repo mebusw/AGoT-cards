@@ -23,6 +23,6 @@
 #define MILITARY @"军事争夺"
 #define POWER @"权力争夺"
 #define INTELIGENCE @"阴谋争夺"
-
+#define SEARCH_TEXT @"searchText"
 
 #endif

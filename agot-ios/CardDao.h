@@ -26,5 +26,7 @@
 -(NSString*) buildCrestWhereClause;
 -(NSString*) buildTypeWhereClause;
 -(NSString*) buildChallengeWhereClause;
+-(NSString*) buildSearchCriteriaWhereClause;
+
 
 @end
