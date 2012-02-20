@@ -1,15 +1,16 @@
 //
-//  CharacterCardViewController.m
+//  EventCardViewController.m
 //  agot-ios
 //
-//  Created by mebusw on 12-2-12.
+//  Created by mebusw on 12-2-20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "CharacterCardViewController.h"
+#import "EventCardViewController.h"
 
-@implementation CharacterCardViewController
-@synthesize lblCardTitle, lblCardSet, lblCardType;
+@implementation EventCardViewController
+
+@synthesize lblCardSet, lblCardTitle, lblCardType;
 @synthesize card;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,7 +36,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%@", card.title);
     lblCardTitle.text = card.title;
     lblCardSet.text = card.set;
     lblCardType.text = card.type;

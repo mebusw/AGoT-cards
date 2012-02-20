@@ -57,6 +57,8 @@
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
 		8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2314E2D23A0034F8AE /* CrestDao.m */; };
 		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
+		8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DF50C14F21F9E0034018C /* EventCardViewController.m */; };
+		8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
 		8F7FAC1C14E7EA80004737F2 /* CharacterCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC1A14E7EA80004737F2 /* CharacterCardViewController.m */; };
 		8F7FAC1D14E7EA80004737F2 /* CharacterCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7FAC1B14E7EA80004737F2 /* CharacterCardViewController.xib */; };
@@ -149,6 +151,9 @@
 		8F31EC2314E2D23A0034F8AE /* CrestDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrestDao.m; sourceTree = "<group>"; };
 		8F31EC2514E2D2950034F8AE /* SetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDao.h; sourceTree = "<group>"; };
 		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
+		8F7DF50B14F21F9E0034018C /* EventCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCardViewController.h; sourceTree = "<group>"; };
+		8F7DF50C14F21F9E0034018C /* EventCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCardViewController.m; sourceTree = "<group>"; };
+		8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCardViewController.xib; sourceTree = "<group>"; };
 		8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDaoTests.h; sourceTree = "<group>"; };
 		8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDaoTests.m; sourceTree = "<group>"; };
 		8F7FAC0E14E7BB74004737F2 /* dictKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictKeys.h; sourceTree = "<group>"; };
@@ -311,6 +316,9 @@
 				8F7FAC1B14E7EA80004737F2 /* CharacterCardViewController.xib */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 				8F7FAC0E14E7BB74004737F2 /* dictKeys.h */,
+				8F7DF50B14F21F9E0034018C /* EventCardViewController.h */,
+				8F7DF50C14F21F9E0034018C /* EventCardViewController.m */,
+				8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */,
 			);
 			path = "agot-ios";
 			sourceTree = "<group>";
@@ -461,6 +469,7 @@
 				8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */,
 				8FF6DA0E14E6ACE700AD1E2D /* names.plist in Resources */,
 				8F7FAC1D14E7EA80004737F2 /* CharacterCardViewController.xib in Resources */,
+				8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +525,7 @@
 				8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */,
 				8FF6DA1614E6B27300AD1E2D /* CardBrief.m in Sources */,
 				8F7FAC1C14E7EA80004737F2 /* CharacterCardViewController.m in Sources */,
+				8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

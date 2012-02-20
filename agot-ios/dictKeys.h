@@ -25,4 +25,7 @@
 #define INTELIGENCE @"阴谋争夺"
 #define SEARCH_TEXT @"searchText"
 
+#define EVENT_CARD @"事件牌"
+#define CHARACTER_CARD @"角色牌"
+
 #endif

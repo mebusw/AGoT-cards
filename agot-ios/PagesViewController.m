@@ -8,9 +8,15 @@
 
 #import "PagesViewController.h"
 #import "CharacterCardViewController.h"
+#import "EventCardViewController.h"
 #import "CardBrief.h"
 #import "AGoTCard.h"
+#import "dictKeys.h"
 
+enum {
+    kEventCard = 1,
+    kCharacterCard = 4,
+    };
 
 @implementation PagesViewController
 @synthesize cards, cursor;
@@ -45,8 +51,16 @@
 
 -(UIViewController*) buildACardView  {
     CardBrief *card = [cards objectAtIndex:cursor];
-    CharacterCardViewController *viewCtrl = [[CharacterCardViewController alloc] init];
-    viewCtrl.card = card;
+    UIViewController *viewCtrl;
+    if ([card.type isEqualToString:EVENT_CARD]) {
+        EventCardViewController *v = [[EventCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    } else if ([card.type isEqualToString:CHARACTER_CARD]) {
+        CharacterCardViewController *v = [[CharacterCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    }
     return viewCtrl;    
 }
 
