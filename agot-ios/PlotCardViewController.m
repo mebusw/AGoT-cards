@@ -11,6 +11,7 @@
 @implementation PlotCardViewController
 
 @synthesize lblCardIni, lblCardSet, lblCardGinc, lblCardClaim, lblCardRules, lblCardTitle;
+@synthesize card;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +36,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"%@", card.title);
+    lblCardTitle.text = card.title;
+    lblCardSet.text = card.set;
 }
 
 - (void)viewDidUnload

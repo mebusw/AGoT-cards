@@ -9,6 +9,10 @@
 #import "PagesViewController.h"
 #import "CharacterCardViewController.h"
 #import "EventCardViewController.h"
+#import "AttachmentCardViewController.h"
+#import "AgendaCardViewController.h"
+#import "LocationCardViewController.h"
+#import "PlotCardViewController.h"
 #import "CardBrief.h"
 #import "AGoTCard.h"
 #import "dictKeys.h"
@@ -56,12 +60,29 @@ enum {
 -(UIViewController*) buildACardView  {
     CardBrief *card = [cards objectAtIndex:cursor];
     UIViewController *viewCtrl;
+    
     if ([card.type isEqualToString:EVENT_CARD]) {
         EventCardViewController *v = [[EventCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
     } else if ([card.type isEqualToString:CHARACTER_CARD]) {
         CharacterCardViewController *v = [[CharacterCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    } else if ([card.type isEqualToString:ATTACHMENT_CARD]) {
+        AttachmentCardViewController *v = [[AttachmentCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    } else if ([card.type isEqualToString:AGENDA_CARD]) {
+        AgendaCardViewController *v = [[AgendaCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    } else if ([card.type isEqualToString:LOCATION_CARD]) {
+        LocationCardViewController *v = [[LocationCardViewController alloc] init];
+        v.card = card;
+        viewCtrl = v;
+    } else if ([card.type isEqualToString:PLOT_CARD]) {
+        PlotCardViewController *v = [[PlotCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
     }

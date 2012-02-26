@@ -27,5 +27,8 @@
 
 #define EVENT_CARD @"事件牌"
 #define CHARACTER_CARD @"角色牌"
-
+#define AGENDA_CARD @"议政牌"
+#define ATTACHMENT_CARD @"附属牌"
+#define LOCATION_CARD @"地区牌"
+#define PLOT_CARD @"战略牌"
 #endif

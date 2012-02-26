@@ -1,5 +1,5 @@
 //
-//  StrategyCardViewController.h
+//  AttachmentCardViewController.h
 //  agot-ios
 //
 //  Created by mebusw on 12-2-26.
@@ -7,15 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardBrief.h"
 
-@interface StrategyCardViewController : UIViewController
-
+@interface AttachmentCardViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardRules;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardGinc;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardIni;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardClaim;
+
+@property (nonatomic, strong) CardBrief *card;
 
 @end

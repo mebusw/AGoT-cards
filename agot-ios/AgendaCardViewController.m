@@ -1,16 +1,15 @@
 //
-//  EventCardViewController.m
+//  AgendaCardViewController.m
 //  agot-ios
 //
-//  Created by mebusw on 12-2-20.
+//  Created by mebusw on 12-2-26.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "EventCardViewController.h"
+#import "AgendaCardViewController.h"
 
-@implementation EventCardViewController
-
-@synthesize lblCardSet, lblCardTitle;
+@implementation AgendaCardViewController
+@synthesize lblCardTitle, lblCardSet, lblCardRules;
 @synthesize card;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

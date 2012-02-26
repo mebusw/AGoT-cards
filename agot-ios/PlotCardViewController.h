@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardBrief.h"
 
 @interface PlotCardViewController : UIViewController
 
@@ -17,5 +18,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *lblCardGinc;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardIni;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardClaim;
+
+@property (nonatomic, strong) CardBrief *card;
 
 @end
