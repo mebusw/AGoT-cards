@@ -10,6 +10,7 @@
 
 @implementation CardViewController
 @synthesize card;
+@synthesize lblCardTitle, lblCardSet, lblCardRules;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,13 +38,16 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@", self.card.title);
+    self.lblCardTitle.text = self.card.title;
+    self.lblCardSet.text = self.card.set;
 }
-*/
+
 
 - (void)viewDidUnload
 {

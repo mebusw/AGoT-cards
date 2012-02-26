@@ -9,7 +9,6 @@
 #import "LocationCardViewController.h"
 
 @implementation LocationCardViewController
-@synthesize lblCardRules, lblCardSet, lblCardTitle;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,9 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%@", self.card.title);
-    lblCardTitle.text = self.card.title;
-    lblCardSet.text = self.card.set;
+
 }
 
 - (void)viewDidUnload

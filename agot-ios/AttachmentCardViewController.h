@@ -11,9 +11,5 @@
 
 @interface AttachmentCardViewController : CardViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardRules;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
-
 
 @end

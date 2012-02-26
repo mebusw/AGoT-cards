@@ -11,9 +11,7 @@
 
 @interface CharacterCardViewController : CardViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardRules;
+
 @property (nonatomic, strong) IBOutlet UILabel *lblGold;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardStr;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardFamily;

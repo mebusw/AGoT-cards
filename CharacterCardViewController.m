@@ -9,7 +9,7 @@
 #import "CharacterCardViewController.h"
 
 @implementation CharacterCardViewController
-@synthesize lblCardTitle, lblCardSet, lblCardRules, lblGold, lblCardStr, lblCardFamily;
+@synthesize lblGold, lblCardStr, lblCardFamily;
 @synthesize imgInt, imgMil, imgPow, imgIcon, imgFamily;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,9 +35,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%@", self.card.title);
-    lblCardTitle.text = self.card.title;
-    lblCardSet.text = self.card.set;
+
 }
 
 - (void)viewDidUnload
