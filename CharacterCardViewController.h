@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardBrief.h"
+#import "CardViewController.h"
 
-@interface CharacterCardViewController : UIViewController
+@interface CharacterCardViewController : CardViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
@@ -24,8 +24,6 @@
 @property (nonatomic, strong) IBOutlet UIImageView *imgIcon;
 
 
-
-@property (nonatomic, strong) CardBrief *card;
 
 
 @end

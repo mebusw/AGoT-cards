@@ -70,6 +70,7 @@
 		8F81E3DB14FA79CF00C65640 /* AgendaCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3D914FA79CF00C65640 /* AgendaCardViewController.xib */; };
 		8F81E3DF14FA7A5500C65640 /* LocationCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3DD14FA7A5300C65640 /* LocationCardViewController.m */; };
 		8F81E3E014FA7A5500C65640 /* LocationCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3DE14FA7A5400C65640 /* LocationCardViewController.xib */; };
+		8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3E214FA7E5800C65640 /* CardViewController.m */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 		8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */; };
@@ -180,6 +181,8 @@
 		8F81E3DC14FA7A5300C65640 /* LocationCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCardViewController.h; sourceTree = "<group>"; };
 		8F81E3DD14FA7A5300C65640 /* LocationCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCardViewController.m; sourceTree = "<group>"; };
 		8F81E3DE14FA7A5400C65640 /* LocationCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCardViewController.xib; sourceTree = "<group>"; };
+		8F81E3E114FA7E5700C65640 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		8F81E3E214FA7E5800C65640 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		8FBBD2FB14E624DA00347C49 /* PagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
 		8FBBD2FC14E624DA00347C49 /* PagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 				8F7FAC0E14E7BB74004737F2 /* dictKeys.h */,
+				8F81E3E114FA7E5700C65640 /* CardViewController.h */,
+				8F81E3E214FA7E5800C65640 /* CardViewController.m */,
 				8F81E3D714FA79CE00C65640 /* AgendaCardViewController.h */,
 				8F81E3D814FA79CE00C65640 /* AgendaCardViewController.m */,
 				8F81E3D914FA79CF00C65640 /* AgendaCardViewController.xib */,
@@ -566,6 +571,7 @@
 				8F81E3D514FA796300C65640 /* AttachmentCardViewController.m in Sources */,
 				8F81E3DA14FA79CF00C65640 /* AgendaCardViewController.m in Sources */,
 				8F81E3DF14FA7A5500C65640 /* LocationCardViewController.m in Sources */,
+				8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

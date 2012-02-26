@@ -1,15 +1,15 @@
 //
-//  AgendaCardViewController.m
+//  CardViewController.m
 //  agot-ios
 //
 //  Created by mebusw on 12-2-26.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "AgendaCardViewController.h"
+#import "CardViewController.h"
 
-@implementation AgendaCardViewController
-@synthesize lblCardTitle, lblCardSet, lblCardRules;
+@implementation CardViewController
+@synthesize card;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,15 +30,20 @@
 
 #pragma mark - View lifecycle
 
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    NSLog(@"%@", self.card.title);
-    lblCardTitle.text = self.card.title;
-    lblCardSet.text = self.card.set;
 }
+*/
 
 - (void)viewDidUnload
 {

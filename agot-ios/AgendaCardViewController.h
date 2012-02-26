@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardBrief.h"
+#import "CardViewController.h"
 
-@interface AgendaCardViewController : UIViewController
+@interface AgendaCardViewController : CardViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardRules;
 @property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
 
-@property (nonatomic, strong) CardBrief *card;
 
 @end
