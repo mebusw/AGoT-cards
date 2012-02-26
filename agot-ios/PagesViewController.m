@@ -16,6 +16,10 @@
 enum {
     kEventCard = 1,
     kCharacterCard = 4,
+    kAgenda,
+    kAttachment,
+    kLocation,
+    kPlot
     };
 
 @implementation PagesViewController
