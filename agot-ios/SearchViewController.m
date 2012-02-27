@@ -152,6 +152,17 @@ UIToolbar *toolbar;
         searchText = @"";
     }
     
+    [challengeSelected removeAllObjects];
+    if ([isWithMil isOn]) {
+        [challengeSelected addObject:MILITARY];
+    }
+    if ([isWithInt isOn]) {
+        [challengeSelected addObject:INTELIGENCE];
+    }
+    if ([isWithPow isOn]) {
+        [challengeSelected addObject:POWER];
+    }
+    
     [self performSegueWithIdentifier:@"Results" sender:self];
     
 }
