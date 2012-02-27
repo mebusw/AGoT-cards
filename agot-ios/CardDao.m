@@ -86,6 +86,8 @@
     if (0 == set.setsId) {
         return @"(1)";
     }
+
+    NSLog(@"%d-%d", set.setsId, set.expId);
     if (set.isBigExpansion) {
         return [NSString stringWithFormat:@"(setsID='%d')", set.setsId];
     } else {
@@ -129,7 +131,7 @@
 
 
 -(NSString*) buildWheres {
-    NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], [self buildSearchCriteriaWhereClause], nil];
+    NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], [self buildSearchCriteriaWhereClause], [self buildChallengeWhereClause], [self buildSetWhereClause], [self buildCrestWhereClause], [self buildTypeWhereClause], nil];
     return [wheres componentsJoinedByString:@" and "];
 }
 

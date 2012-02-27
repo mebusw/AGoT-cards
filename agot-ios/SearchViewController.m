@@ -35,9 +35,9 @@ NSMutableArray *types, *houses, *crests, *sets, *challenges;
 /** For search conditions */
 NSMutableSet *housesSelected;
 BOOL multiHouseFlag = NO;
-int selectedSet = SELECTED_NONE;
-int selectedCrest = SELECTED_NONE;
-int selectedType = SELECTED_NONE;
+AGoTSet *selectedSet;
+AGotCrest *selectedCrest;
+AGoTType *selectedType;
 NSMutableSet *challengeSelected;
 BOOL titleFlag = NO;
 BOOL traitsFlag = NO;
@@ -80,6 +80,7 @@ UIToolbar *toolbar;
     
     self.title = @"权力的游戏卡牌搜索";
 
+    
     //TODO
     //NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:@"names.plist"];
     //NSLog(@"%@", d);
@@ -121,6 +122,12 @@ UIToolbar *toolbar;
     multiHouseFlag = NO;
     
     _searchBar.text= @" ";
+    selectedSet = [[AGoTSet alloc] init];
+    selectedSet.setsId = 0;
+    selectedCrest = [[AGotCrest alloc] init];
+    selectedCrest._id = 0;
+    selectedType = [[AGoTType alloc] init];
+    selectedType._id = 0;
 
 }
 
@@ -160,6 +167,11 @@ UIToolbar *toolbar;
     [conditions setObject:[NSNumber numberWithBool:[isWithTraits isOn]] forKey:TRAITS_FLAG];
     [conditions setObject:[NSNumber numberWithBool:[isWithRules isOn]] forKey:RULES_FLAG];
     [conditions setObject:searchText forKey:SEARCH_TEXT];
+    
+    [conditions setObject:challengeSelected forKey:CHALLENGES_SELECTED];
+    [conditions setObject:selectedSet forKey:SET_SELECTED];
+    [conditions setObject:selectedCrest forKey:CREST_SELECTED];
+    [conditions setObject:selectedType forKey:TYPE_SELECTED];
     
     dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
 }
@@ -329,21 +341,18 @@ UIToolbar *toolbar;
 
     switch (pickerView.tag) {
         case PICKER_SET: {
-            selectedSet = row;
-            AGoTSet *set = (AGoTSet*)[sets objectAtIndex:row];
-            btnSet.titleLabel.text = [set composeNames];
+            selectedSet = (AGoTSet*)[sets objectAtIndex:row];
+            btnSet.titleLabel.text = [selectedSet composeNames];
             break;
         }
         case PICKER_CREST: {
-            selectedCrest = row;
-            AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
-            btnCrest.titleLabel.text = crest.name;
+            selectedCrest = (AGotCrest*)[crests objectAtIndex:row];
+            btnCrest.titleLabel.text = selectedCrest.name;
             break;
         }
         case PICKER_TYPE: {
-            selectedType = row;
-            AGoTType *type = (AGoTType*)[types objectAtIndex:row];
-            btnType.titleLabel.text = type.name;
+            selectedType = (AGoTType*)[types objectAtIndex:row];
+            btnType.titleLabel.text = selectedType.name;
             break;
         }
         default:
