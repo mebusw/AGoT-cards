@@ -188,9 +188,12 @@
                         <outlet property="btnSet" destination="K1e-4R-7CZ" id="gKk-YC-tCa"/>
                         <outlet property="btnType" destination="kiR-QY-Bz6" id="mHj-k0-lMB"/>
                         <outlet property="checkList" destination="Ipw-8d-XBN" id="t7g-JN-5Ls"/>
-                        <outlet property="isWithName" destination="Xck-hU-Fpz" id="FXM-Cz-sC8"/>
-                        <outlet property="isWithProperty" destination="fyh-Rk-erl" id="xKg-OO-Ak1"/>
-                        <outlet property="isWithText" destination="DpF-5N-VTg" id="WTQ-Of-nOr"/>
+                        <outlet property="isWithInt" destination="fyh-Rk-erl" id="exc-BA-eaq"/>
+                        <outlet property="isWithMil" destination="Xck-hU-Fpz" id="2FZ-Tz-X1e"/>
+                        <outlet property="isWithPow" destination="DpF-5N-VTg" id="dGw-sw-g8y"/>
+                        <outlet property="isWithRules" destination="ThG-9t-0he" id="rBM-O1-9Fd"/>
+                        <outlet property="isWithTitle" destination="3YN-pN-pVa" id="V5K-Ky-O5i"/>
+                        <outlet property="isWithTraits" destination="aHI-VA-xew" id="Fwp-mF-LIz"/>
                         <segue destination="LZy-xn-x2R" kind="push" identifier="Results" id="v3d-dI-KaG"/>
                     </connections>
                 </viewController>
@@ -263,10 +266,10 @@
                 <relationship kind="outlet" name="checkList" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="isWithInt" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="isWithMil" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="isWithName" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="isWithPow" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="isWithProperty" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="isWithText" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="isWithRules" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="isWithTitle" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="isWithTraits" candidateClass="UISwitch"/>
             </relationships>
         </class>
     </classes>

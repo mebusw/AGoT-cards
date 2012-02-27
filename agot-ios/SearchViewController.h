@@ -13,9 +13,9 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *_searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *checkList;
 
-@property (strong, nonatomic) IBOutlet UISwitch *isWithName;
-@property (strong, nonatomic) IBOutlet UISwitch *isWithProperty;
-@property (strong, nonatomic) IBOutlet UISwitch *isWithText;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithTitle;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithTraits;
+@property (strong, nonatomic) IBOutlet UISwitch *isWithRules;
 @property (strong, nonatomic) IBOutlet UISwitch *isWithInt;
 @property (strong, nonatomic) IBOutlet UISwitch *isWithMil;
 @property (strong, nonatomic) IBOutlet UISwitch *isWithPow;

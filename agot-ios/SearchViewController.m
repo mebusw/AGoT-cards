@@ -44,17 +44,13 @@ BOOL traitsFlag = NO;
 BOOL rulesFlage = NO;
 NSString *searchText;
 
-
-
 NSArray *houseImages;
 int multiHouseId;
 UIPickerView *pickerV;
-
 UIToolbar *toolbar;
 
-
 @synthesize _searchBar, checkList;
-@synthesize isWithName, isWithText, isWithProperty;
+@synthesize isWithRules, isWithTitle, isWithTraits;
 @synthesize isWithInt, isWithMil, isWithPow;
 @synthesize btnType, btnSet, btnCrest;
 
@@ -123,6 +119,8 @@ UIToolbar *toolbar;
     housesSelected = [[NSMutableSet alloc] init];
     challengeSelected = [[NSMutableSet alloc] init];
     multiHouseFlag = NO;
+    
+    _searchBar.text= @" ";
 
 }
 
@@ -143,6 +141,10 @@ UIToolbar *toolbar;
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     searchText = searchBar.text;
+    if ([searchText isEqualToString:@" "] || nil == searchText) {
+        searchText = @"";
+    }
+    
     [self performSegueWithIdentifier:@"Results" sender:self];
     
 }
@@ -153,6 +155,11 @@ UIToolbar *toolbar;
     
     [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:MULTI_HOUSE_FLAG];
     [conditions setObject:housesSelected forKey:HOUSE_SELECTED];
+    
+    [conditions setObject:[NSNumber numberWithBool:[isWithTitle isOn]] forKey:TITLE_FLAG];
+    [conditions setObject:[NSNumber numberWithBool:[isWithTraits isOn]] forKey:TRAITS_FLAG];
+    [conditions setObject:[NSNumber numberWithBool:[isWithRules isOn]] forKey:RULES_FLAG];
+    [conditions setObject:searchText forKey:SEARCH_TEXT];
     
     dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
 }

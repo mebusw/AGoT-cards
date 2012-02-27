@@ -129,7 +129,7 @@
 
 
 -(NSString*) buildWheres {
-    NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], nil];
+    NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], [self buildSearchCriteriaWhereClause], nil];
     return [wheres componentsJoinedByString:@" and "];
 }
 
