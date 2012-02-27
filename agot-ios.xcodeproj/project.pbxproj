@@ -57,6 +57,7 @@
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
 		8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2314E2D23A0034F8AE /* CrestDao.m */; };
 		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
+		8F7A51CA14FBBF8700A2065F /* TimesGoT_1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */; };
 		8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DF50C14F21F9E0034018C /* EventCardViewController.m */; };
 		8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
@@ -160,6 +161,7 @@
 		8F31EC2314E2D23A0034F8AE /* CrestDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrestDao.m; sourceTree = "<group>"; };
 		8F31EC2514E2D2950034F8AE /* SetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDao.h; sourceTree = "<group>"; };
 		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
+		8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimesGoT_1.ttf; sourceTree = "<group>"; };
 		8F7DF50B14F21F9E0034018C /* EventCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCardViewController.h; sourceTree = "<group>"; };
 		8F7DF50C14F21F9E0034018C /* EventCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCardViewController.m; sourceTree = "<group>"; };
 		8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCardViewController.xib; sourceTree = "<group>"; };
@@ -260,6 +262,8 @@
 		8F1B289814E027A4006C8638 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */,
+				8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */,
 				8F1B28AF14E027C7006C8638 /* basm.png */,
 				8F1B28B014E027C7006C8638 /* gjsm.png */,
 				8F1B28B114E027C7006C8638 /* icon.png */,
@@ -363,7 +367,6 @@
 		8F257E6B14DEBFC6008CF1D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8FF6D9FA14E6434300AD1E2D /* AGoTLCGCards.db */,
 				8F257E6C14DEBFC6008CF1D5 /* agot-ios-Info.plist */,
 				8F257E6D14DEBFC6008CF1D5 /* InfoPlist.strings */,
 				8F257E7014DEBFC6008CF1D5 /* main.m */,
@@ -511,6 +514,7 @@
 				8F81E3D614FA796300C65640 /* AttachmentCardViewController.xib in Resources */,
 				8F81E3DB14FA79CF00C65640 /* AgendaCardViewController.xib in Resources */,
 				8F81E3E014FA7A5500C65640 /* LocationCardViewController.xib in Resources */,
+				8F7A51CA14FBBF8700A2065F /* TimesGoT_1.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

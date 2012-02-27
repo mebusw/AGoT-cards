@@ -46,6 +46,7 @@
     NSLog(@"%@", self.card.title);
     self.lblCardTitle.text = self.card.title;
     self.lblCardSet.text = self.card.set;
+    self.lblCardRules.font = [UIFont fontWithName:@"TimesGoT" size:17];
 }
 
 
