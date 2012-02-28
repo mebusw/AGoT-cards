@@ -13,9 +13,13 @@
 
 @property (nonatomic, strong) CardBrief *card;
 
-@property (nonatomic, strong) IBOutlet UILabel *lblCardTitle;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardRules;
-@property (nonatomic, strong) IBOutlet UILabel *lblCardSet;
-
+@property (nonatomic, strong) IBOutlet UILabel *lblTitle;
+@property (nonatomic, strong) IBOutlet UILabel *lblTraits;
+@property (nonatomic, strong) IBOutlet UILabel *lblCost;
+@property (nonatomic, strong) IBOutlet UIWebView *wvRules;
+@property (nonatomic, strong) IBOutlet UIImageView *imgCrest;
+@property (nonatomic, strong) IBOutlet UILabel *lblInfuluence;
+@property (nonatomic, strong) IBOutlet UILabel *lblIncome;
+@property (nonatomic, strong) IBOutlet UILabel *lblInitiative;
 
 @end

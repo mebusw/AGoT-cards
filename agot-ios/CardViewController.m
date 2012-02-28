@@ -10,7 +10,7 @@
 
 @implementation CardViewController
 @synthesize card;
-@synthesize lblCardTitle, lblCardSet, lblCardRules;
+@synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,9 +44,9 @@
 {
     [super viewDidLoad];
     NSLog(@"%@", self.card.title);
-    self.lblCardTitle.text = self.card.title;
-    self.lblCardSet.text = self.card.set;
-    self.lblCardRules.font = [UIFont fontWithName:@"TimesGoT" size:17];
+    self.lblTitle.text = self.card.title;
+    NSString *strForWebView = @"<b style='font-family:\"TimesGoT\"'>RULES@^</b>";
+    [self.wvRules loadHTMLString:strForWebView baseURL:nil];
 }
 
 

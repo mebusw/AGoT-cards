@@ -1,17 +1,16 @@
 //
-//  StrategyCardViewController.m
+//  PlotCardViewController.m
 //  agot-ios
 //
-//  Created by mebusw on 12-2-26.
+//  Created by mebusw on 12-2-28.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "PlotCardViewController.h"
 
 @implementation PlotCardViewController
-
-@synthesize lblCardIni, lblCardGinc, lblCardClaim;
-
+@synthesize card;
+@synthesize lblPrior, lblGold, lblEfficacy;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,8 +35,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
-
 }
 
 - (void)viewDidUnload
