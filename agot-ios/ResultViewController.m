@@ -8,7 +8,6 @@
 
 #import "ResultViewController.h"
 #import "PagesViewController.h"
-#import "CardBrief.h"
 #import "AGoTCard.h"
 
 @implementation ResultViewController

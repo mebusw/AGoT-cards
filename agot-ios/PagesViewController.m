@@ -13,18 +13,9 @@
 #import "AgendaCardViewController.h"
 #import "LocationCardViewController.h"
 #import "PlotCardViewController.h"
-#import "CardBrief.h"
 #import "AGoTCard.h"
 #import "dictKeys.h"
 
-enum {
-    kEventCard = 1,
-    kCharacterCard = 4,
-    kAgenda,
-    kAttachment,
-    kLocation,
-    kPlot
-    };
 
 @implementation PagesViewController
 @synthesize cards, cursor;

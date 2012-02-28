@@ -16,7 +16,6 @@
 #import "SetDao.h"
 #import "AGoTSet.h"
 #import "CardDao.h"
-#import "CardBrief.h"
 #import "ResultViewController.h"
 #import "dictKeys.h"
 

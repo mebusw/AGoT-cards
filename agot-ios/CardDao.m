@@ -7,7 +7,6 @@
 #import "AGoTSet.h"
 #import "AGoTType.h"
 #import "AGotCrest.h"
-#import "CardBrief.h"
 #import "dictKeys.h"
 
 @implementation CardDao
@@ -25,16 +24,6 @@
     
 }
 
-// SELECT All
--(NSMutableArray*)select {
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
-    FMResultSet *rs = [db executeQuery:[self setTable:@"SELECT * FROM %@"]];
-    while ([rs next]) {
-        [result addObject:[self parseSelectResult:rs]];
-    }
-    [rs close];
-    return result;
-}
 
 -(NSString*) buildHouseWhereClause {
     NSSet *houseSelected = [_conditions objectForKey:HOUSE_SELECTED];
@@ -133,28 +122,6 @@
 -(NSString*) buildWheres {
     NSArray *wheres = [NSArray arrayWithObjects:[self buildHouseWhereClause], [self buildSearchCriteriaWhereClause], [self buildChallengeWhereClause], [self buildSetWhereClause], [self buildCrestWhereClause], [self buildTypeWhereClause], nil];
     return [wheres componentsJoinedByString:@" and "];
-}
-
-- (CardBrief*) parseCardBrief: (FMResultSet*)rs {
-    CardBrief *cardBrief = [[CardBrief alloc] init];
-    cardBrief._id = [rs stringForColumnIndex:0];
-    cardBrief.title = [rs stringForColumnIndex:1];
-    cardBrief.type = [rs stringForColumnIndex:2];
-    cardBrief.set = [rs stringForColumnIndex:3];
-    return cardBrief;
-    
-}
-
-
--(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions {
-    _conditions = conditions;
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
-    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@", [self buildWheres]]];
-    while ([rs next]) {
-        [result addObject:[self parseCardBrief:rs]];
-    }
-    [rs close];
-    return result;
 }
 
 

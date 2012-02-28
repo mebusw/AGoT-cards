@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardBrief.h"
 #import "AGoTCard.h"
 
 @interface CardViewController : UIViewController
