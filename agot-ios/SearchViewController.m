@@ -184,7 +184,8 @@ UIToolbar *toolbar;
     [conditions setObject:selectedCrest forKey:CREST_SELECTED];
     [conditions setObject:selectedType forKey:TYPE_SELECTED];
     
-    dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
+    //dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
+    dest.allItems = [[[CardDao alloc] init] selectCards:conditions];
 }
 
 

@@ -19,6 +19,7 @@
 //- (BOOL)deleteAt:(int)index;
 
 -(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions;
+-(NSMutableArray*)selectCards: (NSDictionary*) conditions;
 
 
 -(NSString*) buildHouseWhereClause;

@@ -45,6 +45,7 @@
     [super viewDidLoad];
     NSLog(@"%@", self.card.title);
     self.lblTitle.text = self.card.title;
+    self.lblTraits.text = self.card.traits;
     NSString *strForWebView = @"<b style='font-family:\"TimesGoT\"'>RULES@^</b>";
     [self.wvRules loadHTMLString:strForWebView baseURL:nil];
 }

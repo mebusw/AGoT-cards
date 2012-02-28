@@ -9,6 +9,7 @@
 #import "ResultViewController.h"
 #import "PagesViewController.h"
 #import "CardBrief.h"
+#import "AGoTCard.h"
 
 @implementation ResultViewController
 
@@ -98,9 +99,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    CardBrief *brief = (CardBrief*)[allItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = brief.title;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", brief.type, brief.set];
+    AGoTCard *card = (AGoTCard*)[allItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = card.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", card.type_name, card.set_name];
     
     return cell;
 }

@@ -145,10 +145,10 @@
     
 }
 
+
 -(NSMutableArray*)selectCardBrieves: (NSDictionary*) conditions {
     _conditions = conditions;
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
-    //TODO
     FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select _id, title, type_name, set_name from v_main_search where %@", [self buildWheres]]];
     while ([rs next]) {
         [result addObject:[self parseCardBrief:rs]];
@@ -156,6 +156,49 @@
     [rs close];
     return result;
 }
+
+
+- (AGoTCard*) parseCards: (FMResultSet*)rs {
+    AGoTCard *card = [[AGoTCard alloc] init];
+    card._id = [rs stringForColumnIndex:0];
+    card.title = [rs stringForColumnIndex:6];
+    card.uniques = [rs stringForColumnIndex:7];
+    card.house = [rs stringForColumnIndex:8];
+    card.onlys = [rs stringForColumnIndex:9];
+    card.types = [rs stringForColumnIndex:10];
+    card.cost = [rs stringForColumnIndex:11];
+    card.strength = [rs stringForColumnIndex:12];
+    card.traits = [rs stringForColumnIndex:13];    
+    card.challenge = [rs stringForColumnIndex:14];    
+    card.keywords = [rs stringForColumnIndex:15];
+    card.rules = [rs stringForColumnIndex:16];    
+    card.crests = [rs stringForColumnIndex:17];    
+    card.influence = [rs stringForColumnIndex:18];    
+    card.income = [rs stringForColumnIndex:19];    
+    card.initiative = [rs stringForColumnIndex:20];
+    card.golds = [rs stringForColumnIndex:21];    
+    card.prior = [rs stringForColumnIndex:22];
+    card.efficacy = [rs stringForColumnIndex:23];
+    card.type_name = [rs stringForColumnIndex:26];
+    card.set_name = [rs stringForColumnIndex:27];    
+    
+    return card;
+    
+}
+
+
+-(NSMutableArray*)selectCards: (NSDictionary*) conditions {
+    _conditions = conditions;
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
+
+    FMResultSet *rs = [db executeQuery: [NSString stringWithFormat:@"select * from v_main_search where %@", [self buildWheres]]];
+    while ([rs next]) {
+        [result addObject:[self parseCards:rs]];
+    }
+    [rs close];
+    return result;
+}
+
 /*
 // INSERT
 -(void)insertWithTitle:(NSString *)title Body:(NSString *)body{

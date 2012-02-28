@@ -11,12 +11,13 @@
     
 }
 
-@property (nonatomic) int _id;
-@property (nonatomic) int sortID;
+
+@property (nonatomic, strong) NSString *_id;
+@property (nonatomic, strong) NSString *sortID;
 @property (nonatomic, strong) NSString *sets_s;
 @property (nonatomic, strong) NSString *setsID;
 @property (nonatomic, strong) NSString *expID;
-@property (nonatomic) int cardID;
+@property (nonatomic, strong) NSString *cardID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *uniques;
 @property (nonatomic, strong) NSString *house;
@@ -37,6 +38,7 @@
 @property (nonatomic, strong) NSString *efficacy;
 @property (nonatomic, strong) NSString *pub;
 @property (nonatomic, strong) NSString *old_title;
-
+@property (nonatomic, strong) NSString *type_name;
+@property (nonatomic, strong) NSString *set_name;
 
 @end

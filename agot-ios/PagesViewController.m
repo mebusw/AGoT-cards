@@ -58,30 +58,30 @@ enum {
 */
 
 -(UIViewController*) buildACardView  {
-    CardBrief *card = [cards objectAtIndex:cursor];
+    AGoTCard *card = [cards objectAtIndex:cursor];
     UIViewController *viewCtrl;
     
-    if ([card.type isEqualToString:EVENT_CARD]) {
+    if ([card.type_name isEqualToString:EVENT_CARD]) {
         EventCardViewController *v = [[EventCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
-    } else if ([card.type isEqualToString:CHARACTER_CARD]) {
+    } else if ([card.type_name isEqualToString:CHARACTER_CARD]) {
         CharacterCardViewController *v = [[CharacterCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
-    } else if ([card.type isEqualToString:ATTACHMENT_CARD]) {
+    } else if ([card.type_name isEqualToString:ATTACHMENT_CARD]) {
         AttachmentCardViewController *v = [[AttachmentCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
-    } else if ([card.type isEqualToString:AGENDA_CARD]) {
+    } else if ([card.type_name isEqualToString:AGENDA_CARD]) {
         AgendaCardViewController *v = [[AgendaCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
-    } else if ([card.type isEqualToString:LOCATION_CARD]) {
+    } else if ([card.type_name isEqualToString:LOCATION_CARD]) {
         LocationCardViewController *v = [[LocationCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;
-    } else if ([card.type isEqualToString:PLOT_CARD]) {
+    } else if ([card.type_name isEqualToString:PLOT_CARD]) {
         PlotCardViewController *v = [[PlotCardViewController alloc] init];
         v.card = card;
         viewCtrl = v;

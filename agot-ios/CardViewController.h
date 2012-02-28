@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CardBrief.h"
+#import "AGoTCard.h"
 
 @interface CardViewController : UIViewController
 
-@property (nonatomic, strong) CardBrief *card;
+@property (nonatomic, strong) AGoTCard *card;
 
 @property (nonatomic, strong) IBOutlet UILabel *lblTitle;
 @property (nonatomic, strong) IBOutlet UILabel *lblTraits;
