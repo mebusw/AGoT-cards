@@ -39,15 +39,20 @@
 */
 
 
+-(NSString*) formatRules:(NSString*) ruleText {
+    return STR(@"<p style='font-family:\"TimesGoT\"'>%@ ^@&</p>", ruleText);
+    
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSLog(@"%@", self.card.title);
-    self.lblTitle.text = self.card.title;
-    self.lblTraits.text = self.card.traits;
-    NSString *strForWebView = @"<b style='font-family:\"TimesGoT\"'>RULES@^</b>";
-    [self.wvRules loadHTMLString:strForWebView baseURL:nil];
+    lblTitle.text = card.title;
+    lblTraits.text = card.traits;
+    lblCost.text = card.cost;
+    [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
 }
 
 

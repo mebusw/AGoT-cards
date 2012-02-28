@@ -9,7 +9,7 @@
 #import "PlotCardViewController.h"
 
 @implementation PlotCardViewController
-@synthesize card;
+
 @synthesize lblPrior, lblGold, lblEfficacy;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
