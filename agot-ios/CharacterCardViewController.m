@@ -31,10 +31,30 @@
 
 #pragma mark - View lifecycle
 
+-(void) toogleChanllengeIcons {
+    imgInt.hidden = YES;
+    imgMil.hidden = YES;
+    imgPow.hidden = YES;
+    NSLog(@"%@", self.card.challenge);
+    NSArray *challengesStrings = [self.card.challenge componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",，"]];
+    for (NSString *c in challengesStrings) {
+        NSLog(@"%@", c);
+        if ([c isEqualToString:MILITARY]) {
+            imgMil.hidden = NO;
+        } else if ([c isEqualToString:INTELIGENCE]) {
+            imgInt.hidden = NO;
+        } else if ([c isEqualToString:POWER]) {
+            imgPow.hidden = NO;
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self toogleChanllengeIcons];
+
 }
 
 - (void)viewDidUnload
