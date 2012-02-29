@@ -18,6 +18,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *lblCost;
 @property (nonatomic, strong) IBOutlet UIWebView *wvRules;
 @property (nonatomic, strong) IBOutlet UIImageView *imgCrest;
+@property (nonatomic, strong) IBOutlet UIImageView *imgCost;
 @property (nonatomic, strong) IBOutlet UILabel *lblInfuluence;
 @property (nonatomic, strong) IBOutlet UILabel *lblIncome;
 @property (nonatomic, strong) IBOutlet UILabel *lblInitiative;

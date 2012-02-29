@@ -10,7 +10,7 @@
 
 @implementation CardViewController
 @synthesize card;
-@synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative;
+@synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative, imgCost;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,9 +69,16 @@
         icon.image = [UIImage imageNamed:[houseImages objectAtIndex:[h intValue]]];
         [self.view addSubview:icon];    
         y += 24;
-    }
+    }   
+}
 
-    
+-(void) drawCostIcon {
+    if ([card.cost isEqualToString:@"0"] || [card.cost isEqualToString:@"NULL"]) {
+        lblCost.hidden = YES;
+        imgCost.hidden = YES;
+    } else {
+        lblCost.text = card.cost;
+    }
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -84,6 +91,7 @@
     lblCost.text = card.cost;
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
     [self drawHouseIcons];
+    [self drawCostIcon];
 }
 
 

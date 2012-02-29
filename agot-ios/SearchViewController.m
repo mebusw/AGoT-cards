@@ -146,10 +146,7 @@ UIToolbar *toolbar;
 #pragma mark - searchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    searchText = searchBar.text;
-    if ([searchText isEqualToString:@" "] || nil == searchText) {
-        searchText = @"";
-    }
+    searchText = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     [challengeSelected removeAllObjects];
     if ([isWithMil isOn]) {

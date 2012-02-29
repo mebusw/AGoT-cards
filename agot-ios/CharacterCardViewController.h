@@ -12,7 +12,7 @@
 @interface CharacterCardViewController : CardViewController
 
 
-@property (nonatomic, strong) IBOutlet UILabel *lblStrenth;
+@property (nonatomic, strong) IBOutlet UILabel *lblStrength;
 @property (nonatomic, strong) IBOutlet UIImageView *imgMil;
 @property (nonatomic, strong) IBOutlet UIImageView *imgPow;
 @property (nonatomic, strong) IBOutlet UIImageView *imgInt;

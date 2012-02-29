@@ -9,7 +9,7 @@
 #import "CharacterCardViewController.h"
 
 @implementation CharacterCardViewController
-@synthesize lblStrenth;
+@synthesize lblStrength;
 @synthesize imgInt, imgMil, imgPow;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,6 +54,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self toogleChanllengeIcons];
+    lblStrength.text = self.card.strength;
 
 }
 
