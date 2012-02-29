@@ -31,4 +31,14 @@
 #define ATTACHMENT_CARD @"附属牌"
 #define LOCATION_CARD @"地区牌"
 #define PLOT_CARD @"战略牌"
+
+#define ICON_STARK @"stsm.png"
+#define ICON_BARATHEON @"basm.png"
+#define ICON_LANNISTER @"lasm.png"
+#define ICON_TARGRARYEN @"tasm.png"
+#define ICON_MARTELL @"masm.png"
+#define ICON_GREYJOY @"gjsm.png"
+#define ICON_NEUTRAL @"nesm.png"
+#define ICON_UNIQUE @"unique13.png"
+
 #endif

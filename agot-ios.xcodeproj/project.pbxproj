@@ -66,6 +66,7 @@
 		8F7B063014FD2BD20099F351 /* PlotCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */; };
 		8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DF50C14F21F9E0034018C /* EventCardViewController.m */; };
 		8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */; };
+		8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
 		8F81E3D514FA796300C65640 /* AttachmentCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3D314FA796200C65640 /* AttachmentCardViewController.m */; };
 		8F81E3D614FA796300C65640 /* AttachmentCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3D414FA796200C65640 /* AttachmentCardViewController.xib */; };
@@ -174,6 +175,8 @@
 		8F7DF50B14F21F9E0034018C /* EventCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCardViewController.h; sourceTree = "<group>"; };
 		8F7DF50C14F21F9E0034018C /* EventCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCardViewController.m; sourceTree = "<group>"; };
 		8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCardViewController.xib; sourceTree = "<group>"; };
+		8F7E8CD314FE595F0045BB23 /* ConditionPickers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionPickers.h; sourceTree = "<group>"; };
+		8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionPickers.m; sourceTree = "<group>"; };
 		8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDaoTests.h; sourceTree = "<group>"; };
 		8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDaoTests.m; sourceTree = "<group>"; };
 		8F7FAC0E14E7BB74004737F2 /* dictKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictKeys.h; sourceTree = "<group>"; };
@@ -337,6 +340,8 @@
 				8FBBD2FC14E624DA00347C49 /* PagesViewController.m */,
 				8F1B288F14E01DC0006C8638 /* SearchViewController.h */,
 				8FF6DA1314E6AEBB00AD1E2D /* SearchViewController.m */,
+				8F7E8CD314FE595F0045BB23 /* ConditionPickers.h */,
+				8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */,
 				8FBF91E114E157D30058D09C /* ResultViewController.h */,
 				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
@@ -578,6 +583,7 @@
 				8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */,
 				8F7B062414FD15EB0099F351 /* CharacterCardViewController.m in Sources */,
 				8F7B062F14FD2BD20099F351 /* PlotCardViewController.m in Sources */,
+				8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
