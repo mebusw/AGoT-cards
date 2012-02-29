@@ -112,8 +112,8 @@ UIToolbar *toolbar;
     }
     
     
-    houseImages = [NSArray arrayWithObjects:@"stsm.png", @"lasm.png", @"basm.png", @"tasm.png", @"masm.png", @"gjsm.png", @"nesm.png", @"unique13.png", nil];
-    challenges = [NSArray arrayWithObjects:@"军事争夺", @"阴谋争夺", @"权力争夺", nil];
+    houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN,  ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
+    challenges = [NSArray arrayWithObjects:MILITARY, INTELIGENCE, POWER, nil];
     
     
     housesSelected = [[NSMutableSet alloc] init];

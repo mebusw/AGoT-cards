@@ -28,17 +28,18 @@
 -(NSString*) buildHouseWhereClause {
     NSSet *houseSelected = [_conditions objectForKey:HOUSE_SELECTED];
     BOOL multiHouseFlag = [(NSNumber*)[_conditions objectForKey:MULTI_HOUSE_FLAG] boolValue];
+
     NSString *connector;
     NSMutableString *result = [NSMutableString stringWithString:@""];
             
-    if (0 == [houseSelected count]) {
-        return @"(1)";
-    }
     
     if (multiHouseFlag) {
         connector = @" and ";
         [result appendString:@"(1 and house like '%,%'"];
     } else {
+        if (0 == [houseSelected count]) {
+            return @"(1)";
+        }
         connector = @" or ";
         [result appendString:@"(0"];
     }

@@ -44,6 +44,21 @@
     
 }
 
+-(void) drawHouseIcons {
+    NSArray *houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN,  ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
+    NSArray *housesNumStrings = [card.house componentsSeparatedByString:@","];
+    
+    int y = 8;
+    for (NSString *h in housesNumStrings) {
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(290, y, 24, 24)];
+        icon.image = [UIImage imageNamed:[houseImages objectAtIndex:[h intValue]]];
+        [self.view addSubview:icon];    
+        y += 24;
+    }
+
+    
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -53,6 +68,7 @@
     lblTraits.text = card.traits;
     lblCost.text = card.cost;
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
+    [self drawHouseIcons];
 }
 
 

@@ -22,4 +22,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *lblIncome;
 @property (nonatomic, strong) IBOutlet UILabel *lblInitiative;
 
+
+-(void) drawHouseIcons;
+
 @end
