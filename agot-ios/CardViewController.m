@@ -38,9 +38,20 @@
 }
 */
 
+-(NSString*) replaceMarksOfRuleWithSpecialIcon:(NSString*)text {
+    NSString *replaced = text;
+    NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:@"%", @"（hs)", @"%", @"(hs)", @"&", @"(hb)", nil];
+    for (NSString *key in mapping) {
+        NSString *value = [mapping objectForKey:key];
+        replaced = [replaced stringByReplacingOccurrencesOfString:key withString:value];
+    }
+
+    return replaced;
+}
 
 -(NSString*) formatRules:(NSString*) ruleText {
-    return STR(@"<p style='font-family:\"TimesGoT\"'>%@ ^@&</p>", ruleText);
+    
+    return STR(@"<p style='font-family:\"TimesGoT\"'>%@</p>", [self replaceMarksOfRuleWithSpecialIcon:ruleText]);
     
 }
 

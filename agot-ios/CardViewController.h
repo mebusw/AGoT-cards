@@ -24,5 +24,5 @@
 
 
 -(void) drawHouseIcons;
-
+-(NSString*) replaceMarksOfRuleWithSpecialIcon:(NSString*)text;
 @end
