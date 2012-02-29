@@ -40,10 +40,14 @@
 
 -(NSString*) replaceMarksOfRuleWithSpecialIcon:(NSString*)text {
     NSString *replaced = text;
-    NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:@"%", @"（hs)", @"%", @"(hs)", @"&", @"(hb)", nil];
+    NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:@"{", @"cn", @"}", @"cl", @"<", @"cw", @"\\", @"ch", @"|", @"cs", @"%", @"hs", @"^", @"hl", @"&", @"hb", @"~", @"ht", @"_", @"hg", @">", @"hm", @"@", @"m", @"#", @"i", @"$", @"p", nil];
     for (NSString *key in mapping) {
         NSString *value = [mapping objectForKey:key];
-        replaced = [replaced stringByReplacingOccurrencesOfString:key withString:value];
+        
+        replaced = [replaced stringByReplacingOccurrencesOfString:STR(@"(%@)", key) withString:value];
+        replaced = [replaced stringByReplacingOccurrencesOfString:STR(@"（%@)", key) withString:value];
+        replaced = [replaced stringByReplacingOccurrencesOfString:STR(@"(%@）", key) withString:value];
+        replaced = [replaced stringByReplacingOccurrencesOfString:STR(@"（%@）", key) withString:value];        
     }
 
     return replaced;
@@ -56,7 +60,7 @@
 }
 
 -(void) drawHouseIcons {
-    NSArray *houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN,  ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
+    NSArray *houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN, ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
     NSArray *housesNumStrings = [card.house componentsSeparatedByString:@","];
     
     int y = 8;
