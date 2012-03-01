@@ -387,6 +387,30 @@
 					</object>
 					<int key="connectionID">30</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imgIncome</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="702289076"/>
+					</object>
+					<int key="connectionID">31</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imgInfuluence</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="762557272"/>
+					</object>
+					<int key="connectionID">32</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imgInitiative</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1009908404"/>
+					</object>
+					<int key="connectionID">33</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -518,7 +542,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">30</int>
+			<int key="maxID">33</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -528,6 +552,9 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imgCost">UIImageView</string>
 						<string key="imgCrest">UIImageView</string>
+						<string key="imgIncome">UIImageView</string>
+						<string key="imgInfuluence">UIImageView</string>
+						<string key="imgInitiative">UIImageView</string>
 						<string key="lblCost">UILabel</string>
 						<string key="lblIncome">UILabel</string>
 						<string key="lblInfuluence">UILabel</string>
@@ -543,6 +570,18 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="imgCrest">
 							<string key="name">imgCrest</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgIncome">
+							<string key="name">imgIncome</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgInfuluence">
+							<string key="name">imgInfuluence</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgInitiative">
+							<string key="name">imgInitiative</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="lblCost">

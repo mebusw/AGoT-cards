@@ -24,7 +24,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *lblInfuluence;
 @property (nonatomic, strong) IBOutlet UILabel *lblIncome;
 @property (nonatomic, strong) IBOutlet UILabel *lblInitiative;
-
+@property (nonatomic, strong) IBOutlet UIImageView *imgInfuluence;
+@property (nonatomic, strong) IBOutlet UIImageView *imgIncome;
+@property (nonatomic, strong) IBOutlet UIImageView *imgInitiative;
 
 -(void) drawHouseIcons;
 -(NSString*) replaceMarksOfRuleWithSpecialIcon:(NSString*)text;

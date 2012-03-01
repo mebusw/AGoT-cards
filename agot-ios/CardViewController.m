@@ -10,7 +10,7 @@
 
 @implementation CardViewController
 @synthesize card, pageId;
-@synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative, imgCost;
+@synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative, imgCost, imgIncome, imgInfuluence, imgInitiative;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,6 +91,29 @@
     }
 }
 
+-(void) draw3I {
+    if ([card.influence isEqualToString:@"0"] || [card.influence isEqualToString:@"NULL"]) {
+        lblInfuluence.hidden = YES;
+        imgInfuluence.hidden = YES;
+    } else {
+        lblInfuluence.text = card.influence;
+    }
+    
+    if ([card.income isEqualToString:@"0"] || [card.income isEqualToString:@"NULL"]) {
+        lblIncome.hidden = YES;
+        imgIncome.hidden = YES;
+    } else {
+        lblIncome.text = card.income;
+    }
+    
+    if ([card.initiative isEqualToString:@"0"] || [card.initiative isEqualToString:@"NULL"]) {
+        lblInitiative.hidden = YES;
+        imgInitiative.hidden = YES;
+    } else {
+        lblInitiative.text = card.initiative;
+    }
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -103,6 +126,7 @@
     [self drawHouseIcons];
     [self drawCostIcon];
     [self drawCrestIcon];
+    [self draw3I];
     
 }
 
