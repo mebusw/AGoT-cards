@@ -18,7 +18,7 @@
 
 
 @implementation PagesViewController
-@synthesize cards, cursor;
+@synthesize cards, startPageId;
 
 
 
@@ -48,9 +48,10 @@
 }
 */
 
--(UIViewController*) buildACardView  {
-    AGoTCard *card = [cards objectAtIndex:cursor];
-    UIViewController *viewCtrl;
+-(CardViewController*) buildACardViewForPageId:(int)pageId  {
+    AGoTCard *card = [cards objectAtIndex:pageId];
+    
+    CardViewController *viewCtrl;
     
     if ([card.type_name isEqualToString:EVENT_CARD]) {
         EventCardViewController *v = [[EventCardViewController alloc] init];
@@ -77,6 +78,9 @@
         v.card = card;
         viewCtrl = v;
     }
+    
+    viewCtrl.pageId = pageId;
+
     return viewCtrl;    
 }
 
@@ -91,7 +95,7 @@
     self.delegate = (id)self;
     self.dataSource = (id)self;
 
-    UIViewController *startCtrl = [self buildACardView];
+    CardViewController *startCtrl = [self buildACardViewForPageId:startPageId];
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -113,25 +117,25 @@
 
 #pragma mark -  page view delegate
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {  
-
-    NSLog(@"%d", cursor);
-    if (cursor <= 0) {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    int pageId = ((CardViewController*)viewController).pageId;
+    NSLog(@"%d", pageId);
+    if (pageId <= 0) {
         return nil;
     } else {
-        cursor--;
-        return [self buildACardView];
+        pageId--;
+        return [self buildACardViewForPageId:pageId];
     }
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-
-    NSLog(@"%d", cursor);
-    if (cursor >= [cards count]) {
+    int pageId = ((CardViewController*)viewController).pageId;
+    NSLog(@"%d", pageId);
+    if (pageId >= [cards count]) {
         return nil;
     } else {
-        cursor++;
-        return [self buildACardView];
+        pageId++;
+        return [self buildACardViewForPageId:pageId];
     }
 
 }

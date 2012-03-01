@@ -150,7 +150,7 @@
 {
     PagesViewController *pages = [[PagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pages.cards = allItems;
-    pages.cursor = indexPath.row;
+    pages.startPageId = indexPath.row;
     [self.navigationController pushViewController:pages animated:YES];
 }
 

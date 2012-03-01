@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PagesViewController : UIPageViewController
 
 @property (nonatomic, strong) NSArray *cards;
-@property (nonatomic) int cursor;
-
+@property (nonatomic) int startPageId;
 @end
+

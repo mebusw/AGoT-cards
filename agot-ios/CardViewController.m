@@ -9,7 +9,7 @@
 #import "CardViewController.h"
 
 @implementation CardViewController
-@synthesize card;
+@synthesize card, pageId;
 @synthesize lblCost, lblTitle, lblTraits, wvRules, imgCrest, lblIncome, lblInfuluence, lblInitiative, imgCost;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

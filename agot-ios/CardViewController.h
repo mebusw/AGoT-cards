@@ -12,6 +12,8 @@
 @interface CardViewController : UIViewController
 
 @property (nonatomic, strong) AGoTCard *card;
+@property (nonatomic) int pageId;
+
 
 @property (nonatomic, strong) IBOutlet UILabel *lblTitle;
 @property (nonatomic, strong) IBOutlet UILabel *lblTraits;
