@@ -15,6 +15,7 @@
 -(int) count;
 
 @property (nonatomic, strong) NSArray *elements;
+@property (nonatomic, strong) UIButton *button;
 
 @end
 

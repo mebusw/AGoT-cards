@@ -18,6 +18,7 @@
 #import "CardDao.h"
 #import "ResultViewController.h"
 #import "dictKeys.h"
+#import "ConditionPickers.h"
 
 #define PICKER_COMPONENT    1
 #define SELECTED_NONE   -1
@@ -45,8 +46,8 @@ NSString *searchText;
 
 NSArray *houseImages;
 int multiHouseId;
-UIPickerView *pickerV;
 UIToolbar *toolbar;
+UIPickerView *pickerV;
 
 @synthesize _searchBar, checkList;
 @synthesize isWithRules, isWithTitle, isWithTraits;
@@ -269,18 +270,43 @@ UIToolbar *toolbar;
 
 #pragma mark - touch actions
 
+-(UIPickerView*) pickerFactory:(int)tag { 
+    UIPickerView<ConditionPicker> *pv = nil;
+    switch (tag) {
+        case PICKER_SET: {
+            pv = [[SetPicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+            pv.elements = sets;
+            pv.button = btnSet;
+            break;
+        }
+        case PICKER_CREST: {
+            pv = [[CrestPicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+            pv.elements = crests;
+            pv.button = btnCrest;
+            break;
+        }
+        case PICKER_TYPE: {
+            pv = [[TypePicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+            pv.elements = types;
+            pv.button = btnType;
+            break;
+        }
+        default:
+            break;
+    }
+    pv.tag = tag;
+    pv.delegate = (id)self;
+    pv.showsSelectionIndicator = YES;
+    return pv;
+}
+
 -(IBAction) tapPicker:(UIButton*)button {
-    NSLog(@"%d", button.tag);
-    pickerV = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
-    pickerV.delegate = (id)self;
-    pickerV.showsSelectionIndicator = YES;
-    pickerV.tag = button.tag;
+    pickerV = [self pickerFactory:button.tag];
     //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
     [self.view addSubview:pickerV];
     
     toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
-    
     NSArray *items = [NSArray arrayWithObject:item];
     toolbar.items = items;
     [self.view addSubview:toolbar];
@@ -300,74 +326,37 @@ UIToolbar *toolbar;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int count;
-    switch (pickerView.tag) {
-        case PICKER_SET:
-            count = [sets count];
-            break;
-        case PICKER_CREST:
-            count = [crests count];
-            break;
-        case PICKER_TYPE:
-            count = [types count];
-            break;
-        default:
-            count = 0;
-            break;
-    }
-    return count;
+
+    return [(UIPickerView<ConditionPicker>*)pickerView count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *title;
-    switch (pickerView.tag) {
-        case PICKER_SET: {
-            AGoTSet *set = (AGoTSet*)[sets objectAtIndex:row];
-            title = [set composeNames];
-            break;
-        }
-        case PICKER_CREST: {
-            AGotCrest *crest = (AGotCrest*)[crests objectAtIndex:row];
-            title = crest.name;
-            break;
-        }
-        case PICKER_TYPE: {
-            AGoTType *type = (AGoTType*)[types objectAtIndex:row];
-            title = type.name;
-            break;
-        }
-        default:
-            break;
-    }
-    
-    return title;
+
+    return [(UIPickerView<ConditionPicker>*)pickerView titleForIndex:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 
-    NSLog(@"%d", row);
-
-    switch (pickerView.tag) {
+    UIPickerView<ConditionPicker> *pv = (UIPickerView<ConditionPicker>*)pickerView;
+    switch (pv.tag) {
         case PICKER_SET: {
             selectedSet = (AGoTSet*)[sets objectAtIndex:row];
-            btnSet.titleLabel.text = [selectedSet composeNames];
             break;
         }
         case PICKER_CREST: {
             selectedCrest = (AGotCrest*)[crests objectAtIndex:row];
-            btnCrest.titleLabel.text = selectedCrest.name;
             break;
         }
         case PICKER_TYPE: {
             selectedType = (AGoTType*)[types objectAtIndex:row];
-            btnType.titleLabel.text = selectedType.name;
             break;
         }
         default:
             break;
     }
     
-    [pickerV reloadComponent:component];
+    pv.button.titleLabel.text = [pv titleForIndex:row];  
+    [pv reloadComponent:component];
 }
 
 
