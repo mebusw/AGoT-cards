@@ -31,10 +31,18 @@
 
 #pragma mark - View lifecycle
 
+-(void) drawGPE {
+    lblGold.text = self.card.golds;
+    lblEfficacy.text = self.card.efficacy;
+    lblPrior.text = self.card.prior;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self drawGPE];
 }
 
 - (void)viewDidUnload

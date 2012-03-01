@@ -71,7 +71,7 @@
 					<object class="IBUILabel" id="649412481">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{144, 0}, {171, 40}}</string>
+						<string key="NSFrame">{{123, 0}, {167, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="710745852"/>
@@ -137,7 +137,7 @@
 					<object class="IBUIImageView" id="397066491">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{7, 5}, {24, 24}}</string>
+						<string key="NSFrame">{{4, 5}, {24, 24}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="88811559"/>
@@ -152,7 +152,7 @@
 					<object class="IBUIImageView" id="782026356">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{55, 5}, {24, 24}}</string>
+						<string key="NSFrame">{{45, 5}, {24, 24}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="529976108"/>
@@ -167,7 +167,7 @@
 					<object class="IBUIImageView" id="838177303">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{94, 5}, {24, 24}}</string>
+						<string key="NSFrame">{{83, 5}, {24, 24}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="148405067"/>
@@ -182,7 +182,7 @@
 					<object class="IBUILabel" id="88811559">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{33, 5}, {19, 21}}</string>
+						<string key="NSFrame">{{29, 5}, {19, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="782026356"/>
@@ -203,7 +203,7 @@
 					<object class="IBUILabel" id="529976108">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{81, 5}, {16, 21}}</string>
+						<string key="NSFrame">{{68, 5}, {16, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="838177303"/>
@@ -224,7 +224,7 @@
 					<object class="IBUILabel" id="148405067">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{121, 5}, {21, 21}}</string>
+						<string key="NSFrame">{{108, 5}, {21, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="651808862"/>
@@ -337,8 +337,8 @@
 							<reference ref="529976108"/>
 							<reference ref="838177303"/>
 							<reference ref="148405067"/>
-							<reference ref="649412481"/>
 							<reference ref="651808862"/>
+							<reference ref="649412481"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -436,6 +436,9 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imgCost">UIImageView</string>
 						<string key="imgCrest">UIImageView</string>
+						<string key="imgIncome">UIImageView</string>
+						<string key="imgInfuluence">UIImageView</string>
+						<string key="imgInitiative">UIImageView</string>
 						<string key="lblCost">UILabel</string>
 						<string key="lblIncome">UILabel</string>
 						<string key="lblInfuluence">UILabel</string>
@@ -451,6 +454,18 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="imgCrest">
 							<string key="name">imgCrest</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgIncome">
+							<string key="name">imgIncome</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgInfuluence">
+							<string key="name">imgInfuluence</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imgInitiative">
+							<string key="name">imgInitiative</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="lblCost">
