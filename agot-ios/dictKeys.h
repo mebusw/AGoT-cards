@@ -47,4 +47,10 @@
 #define ICON_BW_HOLY @"holybw.png"
 #define ICON_BW_SHADOWS @"shadowsbw.png"
 
+#define STR_BW_NOBLE @"高贵"
+#define STR_BW_LEARNED @"博学"
+#define STR_BW_WAR @"勇武"
+#define STR_BW_HOLY @"崇圣"
+#define STR_BW_SHADOWS @"暗影"
+
 #endif

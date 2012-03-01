@@ -81,6 +81,16 @@
     }
 }
 
+
+-(void) drawCrestIcon {
+    if ([card.crests isEqualToString:@""] || [card.cost isEqualToString:@"NULL"]) {
+        imgCrest.hidden = YES;
+    } else {
+        //TODO now crest strings only equals "暗影"
+        imgCrest.image = [UIImage imageNamed:ICON_BW_SHADOWS];
+    }
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -92,6 +102,8 @@
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
     [self drawHouseIcons];
     [self drawCostIcon];
+    [self drawCrestIcon];
+    
 }
 
 

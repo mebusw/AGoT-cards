@@ -54,9 +54,11 @@
 
 -(NSString*) buildCrestWhereClause {
     AGotCrest *crest = [_conditions objectForKey:CREST_SELECTED];
+    NSLog(@"%d %@", crest._id, crest.name);
     if (0 == crest._id) {
         return @"(1)";
     } else {
+        //TODO crests is string or number in DB?
         return [NSString stringWithFormat:@"(crests=%d)", crest._id];
     }
 }
