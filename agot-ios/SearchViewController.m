@@ -35,19 +35,19 @@ NSMutableArray *types, *houses, *crests, *sets, *challenges;
 /** For search conditions */
 NSMutableSet *housesSelected;
 BOOL multiHouseFlag = NO;
-AGoTSet *selectedSet;
-AGotCrest *selectedCrest;
-AGoTType *selectedType;
+int multiHouseId;
 NSMutableSet *challengeSelected;
 BOOL titleFlag = NO;
 BOOL traitsFlag = NO;
 BOOL rulesFlage = NO;
 NSString *searchText;
+NSMutableDictionary *conditions;
 
+/* controls */
 NSArray *houseImages;
-int multiHouseId;
 UIToolbar *toolbar;
 UIPickerView *pickerV;
+
 
 @synthesize _searchBar, checkList;
 @synthesize isWithRules, isWithTitle, isWithTraits;
@@ -122,13 +122,17 @@ UIPickerView *pickerV;
     multiHouseFlag = NO;
     
     _searchBar.text= @" ";
-    selectedSet = [[AGoTSet alloc] init];
+    AGoTSet *selectedSet = [[AGoTSet alloc] init];
     selectedSet.setsId = 0;
-    selectedCrest = [[AGotCrest alloc] init];
+    AGotCrest *selectedCrest = [[AGotCrest alloc] init];
     selectedCrest._id = 0;
-    selectedType = [[AGoTType alloc] init];
+    AGoTType *selectedType = [[AGoTType alloc] init];
     selectedType._id = 0;
-
+    
+    conditions = [[NSMutableDictionary alloc] init];
+    [conditions setObject:selectedSet forKey:SET_SELECTED];
+    [conditions setObject:selectedCrest forKey:CREST_SELECTED];
+    [conditions setObject:selectedType forKey:TYPE_SELECTED];
 }
 
 - (void)viewDidUnload
@@ -166,7 +170,6 @@ UIPickerView *pickerV;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ResultViewController *dest = [segue destinationViewController];
-    NSMutableDictionary *conditions = [[NSMutableDictionary alloc] init];
     
     [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:MULTI_HOUSE_FLAG];
     [conditions setObject:housesSelected forKey:HOUSE_SELECTED];
@@ -177,11 +180,7 @@ UIPickerView *pickerV;
     [conditions setObject:searchText forKey:SEARCH_TEXT];
     
     [conditions setObject:challengeSelected forKey:CHALLENGES_SELECTED];
-    [conditions setObject:selectedSet forKey:SET_SELECTED];
-    [conditions setObject:selectedCrest forKey:CREST_SELECTED];
-    [conditions setObject:selectedType forKey:TYPE_SELECTED];
-    
-    //dest.allItems = [[[CardDao alloc] init] selectCardBrieves:conditions];
+
     dest.allItems = [[[CardDao alloc] init] selectCards:conditions];
 }
 
@@ -261,10 +260,8 @@ UIPickerView *pickerV;
             [housesSelected addObject:[houses objectAtIndex:indexPath.row]];
         }
     }
-    
-    
+        
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
-
 
 }
 
@@ -277,18 +274,21 @@ UIPickerView *pickerV;
             pv = [[SetPicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
             pv.elements = sets;
             pv.button = btnSet;
+            pv.conditionKey = SET_SELECTED;
             break;
         }
         case PICKER_CREST: {
             pv = [[CrestPicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
             pv.elements = crests;
             pv.button = btnCrest;
+            pv.conditionKey = CREST_SELECTED;
             break;
         }
         case PICKER_TYPE: {
             pv = [[TypePicker alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
             pv.elements = types;
             pv.button = btnType;
+            pv.conditionKey = TYPE_SELECTED;
             break;
         }
         default:
@@ -338,22 +338,8 @@ UIPickerView *pickerV;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 
     UIPickerView<ConditionPicker> *pv = (UIPickerView<ConditionPicker>*)pickerView;
-    switch (pv.tag) {
-        case PICKER_SET: {
-            selectedSet = (AGoTSet*)[sets objectAtIndex:row];
-            break;
-        }
-        case PICKER_CREST: {
-            selectedCrest = (AGotCrest*)[crests objectAtIndex:row];
-            break;
-        }
-        case PICKER_TYPE: {
-            selectedType = (AGoTType*)[types objectAtIndex:row];
-            break;
-        }
-        default:
-            break;
-    }
+    
+    [conditions setObject:[pv.elements objectAtIndex:row] forKey:pv.conditionKey];
     
     pv.button.titleLabel.text = [pv titleForIndex:row];  
     [pv reloadComponent:component];

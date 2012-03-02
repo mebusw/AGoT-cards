@@ -13,7 +13,7 @@
 
 
 @implementation CrestPicker
-@synthesize elements, button;
+@synthesize elements, button, conditionKey;
 
 -(int) count {
     return [elements count];
@@ -28,7 +28,7 @@
 
 
 @implementation TypePicker
-@synthesize elements, button;
+@synthesize elements, button, conditionKey;
 
 -(int) count {
     return [elements count];
@@ -43,7 +43,7 @@
 
 
 @implementation SetPicker
-@synthesize elements, button;
+@synthesize elements, button, conditionKey;
 
 -(int) count {
     return [elements count];
