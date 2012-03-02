@@ -41,16 +41,16 @@
 #define ICON_NEUTRAL @"nesm.png"
 #define ICON_UNIQUE @"unique13.png"
 
-#define ICON_BW_NOBLE @"noblebw.png"
-#define ICON_BW_LEARNED @"learnedbw.png"
 #define ICON_BW_WAR @"warbw.png"
+#define ICON_BW_LEARNED @"learnedbw.png"
 #define ICON_BW_HOLY @"holybw.png"
 #define ICON_BW_SHADOWS @"shadowsbw.png"
+#define ICON_BW_NOBLE @"noblebw.png"
 
-#define STR_BW_NOBLE @"高贵"
-#define STR_BW_LEARNED @"博学"
 #define STR_BW_WAR @"勇武"
+#define STR_BW_LEARNED @"博学"
 #define STR_BW_HOLY @"崇圣"
 #define STR_BW_SHADOWS @"暗影"
+#define STR_BW_NOBLE @"高贵"
 
 #endif

@@ -83,11 +83,11 @@
 
 
 -(void) drawCrestIcon {
+    NSArray *iconArray = [NSArray arrayWithObjects:ICON_BW_WAR, ICON_BW_LEARNED, ICON_BW_HOLY, ICON_BW_SHADOWS, ICON_BW_NOBLE, nil];
     if ([card.crests isEqualToString:@""] || [card.cost isEqualToString:@"NULL"]) {
         imgCrest.hidden = YES;
     } else {
-        //TODO now crest strings only equals "暗影"
-        imgCrest.image = [UIImage imageNamed:ICON_BW_SHADOWS];
+        imgCrest.image = [UIImage imageNamed:[iconArray objectAtIndex:[card.crests intValue] - 1]];
     }
 }
 
