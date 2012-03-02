@@ -79,11 +79,6 @@ UIPickerView *pickerV;
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"权力的游戏卡牌搜索";
-
-    
-    //TODO
-    //NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:@"names.plist"];
-    //NSLog(@"%@", d);
     
     houses = [[[HouseDao alloc] init] select];
     multiHouseId = [houses count];
@@ -91,10 +86,35 @@ UIPickerView *pickerV;
     mh._id = multiHouseId;
     mh.name = @"仅多家族";
     [houses addObject:mh];
+     
+
+    houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN,  ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
+    challenges = [NSArray arrayWithObjects:MILITARY, INTELIGENCE, POWER, nil];
+    
+    
+    housesSelected = [[NSMutableSet alloc] init];
+    challengeSelected = [[NSMutableSet alloc] init];
+    multiHouseFlag = NO;
+    
+    _searchBar.text= @" ";
     
     types = [[[TypeDao alloc] init] select];
+    AGoTType *anyType = [[AGoTType alloc] init];
+    anyType._id = ANY;
+    anyType.name = @"所有类型";
+    [types insertObject:anyType atIndex:0];
+
     crests = [[[CrestDao alloc] init] select];
+    AGotCrest *anyCrest = [[AGotCrest alloc] init];
+    anyCrest._id = ANY;
+    anyCrest.name = @"不限饰语";
+    [crests insertObject:anyCrest atIndex:0];
+    
     sets = [[[SetDao alloc] init] select];
+    AGoTSet *anySet = [[AGoTSet alloc] init];
+    anySet.setsId = ANY;
+    anySet.setName = @"不限范围";
+    [sets insertObject:anySet atIndex:0];
     
     NSMutableSet *majorSets = [[NSMutableSet alloc] init];
     for (int i = 0; i < [sets count]; i++) {
@@ -111,28 +131,11 @@ UIPickerView *pickerV;
             [majorSets addObject:setNum];
         }
     }
-    
-    
-    houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN,  ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
-    challenges = [NSArray arrayWithObjects:MILITARY, INTELIGENCE, POWER, nil];
-    
-    
-    housesSelected = [[NSMutableSet alloc] init];
-    challengeSelected = [[NSMutableSet alloc] init];
-    multiHouseFlag = NO;
-    
-    _searchBar.text= @" ";
-    AGoTSet *selectedSet = [[AGoTSet alloc] init];
-    selectedSet.setsId = 0;
-    AGotCrest *selectedCrest = [[AGotCrest alloc] init];
-    selectedCrest._id = 0;
-    AGoTType *selectedType = [[AGoTType alloc] init];
-    selectedType._id = 0;
-    
+   
     conditions = [[NSMutableDictionary alloc] init];
-    [conditions setObject:selectedSet forKey:SET_SELECTED];
-    [conditions setObject:selectedCrest forKey:CREST_SELECTED];
-    [conditions setObject:selectedType forKey:TYPE_SELECTED];
+    [conditions setObject:anySet forKey:SET_SELECTED];
+    [conditions setObject:anyCrest forKey:CREST_SELECTED];
+    [conditions setObject:anyType forKey:TYPE_SELECTED];
 }
 
 - (void)viewDidUnload
@@ -302,8 +305,9 @@ UIPickerView *pickerV;
 
 -(IBAction) tapPicker:(UIButton*)button {
     pickerV = [self pickerFactory:button.tag];
-    //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
     [self.view addSubview:pickerV];
+    //TODO
+    //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
     
     toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
@@ -313,6 +317,7 @@ UIPickerView *pickerV;
 }
 
 -(void) dismissPicker:(id)obj {
+    NSLog(@"%d", [pickerV selectedRowInComponent:PICKER_COMPONENT - 1]);
     [pickerV removeFromSuperview];
     [toolbar removeFromSuperview];
     
@@ -336,7 +341,8 @@ UIPickerView *pickerV;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-
+    NSLog(@"r=%d", row);
+    
     UIPickerView<ConditionPicker> *pv = (UIPickerView<ConditionPicker>*)pickerView;
     
     [conditions setObject:[pv.elements objectAtIndex:row] forKey:pv.conditionKey];

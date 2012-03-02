@@ -100,7 +100,7 @@ NSMutableDictionary *conditions;
 
 -(void) testBuildSetWhereClauseAnySet {
     AGoTSet *set1 = [[AGoTSet alloc] init];
-    set1.setsId = 0;
+    set1.setsId = ANY;
     [conditions setValue:set1 forKey:SET_SELECTED];
     dao._conditions = conditions;
     
@@ -142,7 +142,7 @@ NSMutableDictionary *conditions;
 
 -(void) testBuildTypeWhereClauseAnyType {
     AGoTType *type1 = [[AGoTType alloc] init];
-    type1._id = 0;
+    type1._id = ANY;
     [conditions setValue:type1 forKey:TYPE_SELECTED];
     dao._conditions = conditions;
     
@@ -168,7 +168,7 @@ NSMutableDictionary *conditions;
 
 -(void) testBuildCrestWhereClause {
     AGotCrest *crest1 = [[AGotCrest alloc] init];
-    crest1._id = 0;
+    crest1._id = ANY;
     [conditions setValue:crest1 forKey:CREST_SELECTED];
     dao._conditions = conditions;
     

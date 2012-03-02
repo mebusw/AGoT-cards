@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *elements;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, weak) NSString *conditionKey;
+
 @end
 
 

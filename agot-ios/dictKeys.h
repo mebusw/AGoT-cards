@@ -10,6 +10,7 @@
 #define agot_ios_Header_h
 
 /** define the keys of NSDictionary containing SQL conditions passing from SearchView to ResultView */
+#define ANY 0
 
 #define HOUSE_SELECTED @"housesSelected"
 #define MULTI_HOUSE_FLAG @"multiHouseFlag"

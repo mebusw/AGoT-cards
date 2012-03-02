@@ -55,7 +55,7 @@
 -(NSString*) buildCrestWhereClause {
     AGotCrest *crest = [_conditions objectForKey:CREST_SELECTED];
     NSLog(@"%d %@", crest._id, crest.name);
-    if (0 == crest._id) {
+    if (ANY == crest._id) {
         return @"(1)";
     } else {
         //TODO crests is string or number in DB?
@@ -65,7 +65,7 @@
 
 -(NSString*) buildTypeWhereClause {
     AGoTType *type = [_conditions objectForKey:TYPE_SELECTED];
-    if (0 == type._id) {
+    if (ANY == type._id) {
         return @"(1)";
     } else {
         return [NSString stringWithFormat:@"(types=%d)", type._id];
@@ -75,7 +75,7 @@
 
 -(NSString*) buildSetWhereClause {
     AGoTSet *set = [_conditions objectForKey:SET_SELECTED];
-    if (0 == set.setsId) {
+    if (ANY == set.setsId) {
         return @"(1)";
     }
 

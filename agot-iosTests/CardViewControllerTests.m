@@ -27,11 +27,7 @@ CardViewController *vc;
     [super tearDown];
 }
 
--(void) testDrawHouseIconsOneHouse {
-    vc.card.house = @"0";
-    [vc drawHouseIcons];
-    //TODO  kiwi is Mock class for iOS
-}
+
 
 -(void) testReplaceMarksOfRuleWithSpecialIcon {
     STAssertEqualStr(@"更多的%[贵族]角色", [vc replaceMarksOfRuleWithSpecialIcon:@"更多的（hs)[贵族]角色"], @"");
