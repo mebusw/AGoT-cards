@@ -118,6 +118,14 @@
     }
 }
 
+-(void) drawGold {
+    if ([card.crests isEqualToString:@"4"]) { //TODO magic number, need to align with DB
+        lblCost.text = STR(@"s%@", card.cost);
+    } else {
+        lblCost.text = card.cost;
+    }
+    
+}
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -125,13 +133,13 @@
     NSLog(@"%@", self.card.title);
     lblTitle.text = card.title;
     lblTraits.text = card.traits;
-    lblCost.text = card.cost;
+    
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
     [self drawHouseIcons];
     [self drawCostIcon];
     [self drawCrestIcon];
     [self draw3I];
-    
+    [self drawGold];
 }
 
 
