@@ -91,7 +91,7 @@
     if ([self isEmptyString:card.crests]) {
         imgCrest.hidden = YES;
     } else {
-        imgCrest.image = [UIImage imageNamed:[iconArray objectAtIndex:[card.crests intValue] - 1]];
+        imgCrest.image = [UIImage imageNamed:[iconArray objectAtIndex:[card.crests intValue] - 1]]; //TODO magic number, because in DB it starts from 1
     }
 }
 

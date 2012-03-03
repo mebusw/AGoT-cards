@@ -20,7 +20,7 @@
 #import "dictKeys.h"
 #import "ConditionPickers.h"
 
-#define PICKER_COMPONENT    1
+#define PICKER_COMPONENT    0
 #define SELECTED_NONE   -1
 enum {
     PICKER_SET = 0,
@@ -41,12 +41,13 @@ BOOL titleFlag = NO;
 BOOL traitsFlag = NO;
 BOOL rulesFlage = NO;
 NSString *searchText;
+NSMutableDictionary *selectedPickerRows;
 NSMutableDictionary *conditions;
 
 /* controls */
 NSArray *houseImages;
 UIToolbar *toolbar;
-UIPickerView *pickerV;
+UIPickerView<ConditionPicker> *pickerV;
 
 
 @synthesize _searchBar, checkList;
@@ -72,6 +73,18 @@ UIPickerView *pickerV;
 }
 
 #pragma mark - View lifecycle
+
+-(int)getSelectedRowForPicker:(NSString*)key {
+    NSNumber *n = (NSNumber*)[selectedPickerRows objectForKey:key];
+    return [n intValue];
+}
+
+
+-(void)setSelectedRow:(int)row ForPicker:(NSString*)key {
+    NSNumber *n = [NSNumber numberWithInt:row];
+    [selectedPickerRows setObject:n forKey:key];
+}
+
 
 - (void)viewDidLoad
 {
@@ -133,10 +146,12 @@ UIPickerView *pickerV;
     }
    
     conditions = [[NSMutableDictionary alloc] init];
-    [conditions setObject:anySet forKey:SET_SELECTED];
-    [conditions setObject:anyCrest forKey:CREST_SELECTED];
-    [conditions setObject:anyType forKey:TYPE_SELECTED];
     
+    selectedPickerRows = [NSMutableDictionary dictionary];
+    [self setSelectedRow:ANY ForPicker:SET_SELECTED];
+    [self setSelectedRow:ANY ForPicker:CREST_SELECTED];
+    [self setSelectedRow:ANY ForPicker:TYPE_SELECTED];
+
     btnSet.titleLabel.numberOfLines = 1;
     btnSet.titleLabel.adjustsFontSizeToFitWidth = YES;
 
@@ -188,6 +203,10 @@ UIPickerView *pickerV;
     
     [conditions setObject:challengeSelected forKey:CHALLENGES_SELECTED];
 
+    [conditions setObject:[sets objectAtIndex:[self getSelectedRowForPicker:SET_SELECTED]] forKey:SET_SELECTED];
+    [conditions setObject:[crests objectAtIndex:[self getSelectedRowForPicker:CREST_SELECTED]] forKey:CREST_SELECTED];
+    [conditions setObject:[types objectAtIndex:[self getSelectedRowForPicker:TYPE_SELECTED]] forKey:TYPE_SELECTED];
+      
     dest.allItems = [[[CardDao alloc] init] selectCards:conditions];
 }
 
@@ -274,7 +293,7 @@ UIPickerView *pickerV;
 
 #pragma mark - touch actions
 
--(UIPickerView*) pickerFactory:(int)tag { 
+-(UIPickerView<ConditionPicker>*) pickerFactory:(int)tag { 
     UIPickerView<ConditionPicker> *pv = nil;
     switch (tag) {
         case PICKER_SET: {
@@ -310,8 +329,7 @@ UIPickerView *pickerV;
 -(IBAction) tapPicker:(UIButton*)button {
     pickerV = [self pickerFactory:button.tag];
     [self.view addSubview:pickerV];
-    //TODO
-    //[pickerV selectRow:selectedType inComponent:PICKER_COMPONENT animated:NO];
+    [pickerV selectRow:[self getSelectedRowForPicker:pickerV.conditionKey] inComponent:PICKER_COMPONENT animated:NO];
     
     toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
@@ -321,7 +339,7 @@ UIPickerView *pickerV;
 }
 
 -(void) dismissPicker:(id)obj {
-    NSLog(@"%d", [pickerV selectedRowInComponent:PICKER_COMPONENT - 1]);
+    NSLog(@"%d", [pickerV selectedRowInComponent:PICKER_COMPONENT]);
     [pickerV removeFromSuperview];
     [toolbar removeFromSuperview];
     
@@ -331,7 +349,7 @@ UIPickerView *pickerV;
 #pragma mark - Picker delegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return PICKER_COMPONENT;
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -348,9 +366,7 @@ UIPickerView *pickerV;
     NSLog(@"r=%d", row);
     
     UIPickerView<ConditionPicker> *pv = (UIPickerView<ConditionPicker>*)pickerView;
-    
-    [conditions setObject:[pv.elements objectAtIndex:row] forKey:pv.conditionKey];
-    
+    [self setSelectedRow:row ForPicker:pv.conditionKey];
     pv.button.titleLabel.text = [pv titleForIndex:row];
     [pv reloadComponent:component];
 }
