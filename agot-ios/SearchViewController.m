@@ -136,6 +136,10 @@ UIPickerView *pickerV;
     [conditions setObject:anySet forKey:SET_SELECTED];
     [conditions setObject:anyCrest forKey:CREST_SELECTED];
     [conditions setObject:anyType forKey:TYPE_SELECTED];
+    
+    btnSet.titleLabel.numberOfLines = 1;
+    btnSet.titleLabel.adjustsFontSizeToFitWidth = YES;
+
 }
 
 - (void)viewDidUnload
@@ -264,7 +268,7 @@ UIPickerView *pickerV;
         }
     }
         
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
 }
 
@@ -347,7 +351,7 @@ UIPickerView *pickerV;
     
     [conditions setObject:[pv.elements objectAtIndex:row] forKey:pv.conditionKey];
     
-    pv.button.titleLabel.text = [pv titleForIndex:row];  
+    pv.button.titleLabel.text = [pv titleForIndex:row];
     [pv reloadComponent:component];
 }
 

@@ -38,6 +38,10 @@
 }
 */
 
+-(BOOL) isEmptyString:(NSString*) str {
+    return (!str || [str isEqualToString:@""] || [str isEqualToString:@"NULL"]);
+}
+
 -(NSString*) replaceMarksOfRuleWithSpecialIcon:(NSString*)text {
     NSString *replaced = text;
     NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:@"{", @"cn", @"}", @"cl", @"<", @"cw", @"\\", @"ch", @"|", @"cs", @"%", @"hs", @"^", @"hl", @"&", @"hb", @"~", @"ht", @"_", @"hg", @">", @"hm", @"@", @"m", @"#", @"i", @"$", @"p", nil];
@@ -73,7 +77,7 @@
 }
 
 -(void) drawCostIcon {
-    if ([card.cost isEqualToString:@"0"] || [card.cost isEqualToString:@"NULL"]) {
+    if ([self isEmptyString:card.cost]) {
         lblCost.hidden = YES;
         imgCost.hidden = YES;
     } else {
@@ -84,7 +88,7 @@
 
 -(void) drawCrestIcon {
     NSArray *iconArray = [NSArray arrayWithObjects:ICON_BW_WAR, ICON_BW_LEARNED, ICON_BW_HOLY, ICON_BW_SHADOWS, ICON_BW_NOBLE, nil];
-    if ([card.crests isEqualToString:@""] || [card.cost isEqualToString:@"NULL"]) {
+    if ([self isEmptyString:card.crests]) {
         imgCrest.hidden = YES;
     } else {
         imgCrest.image = [UIImage imageNamed:[iconArray objectAtIndex:[card.crests intValue] - 1]];
@@ -92,21 +96,21 @@
 }
 
 -(void) draw3I {
-    if ([card.influence isEqualToString:@"0"] || [card.influence isEqualToString:@"NULL"]) {
+    if ([self isEmptyString:card.influence]) {
         lblInfuluence.hidden = YES;
         imgInfuluence.hidden = YES;
     } else {
         lblInfuluence.text = card.influence;
     }
     
-    if ([card.income isEqualToString:@"0"] || [card.income isEqualToString:@"NULL"]) {
+    if ([self isEmptyString:card.income]) {
         lblIncome.hidden = YES;
         imgIncome.hidden = YES;
     } else {
         lblIncome.text = card.income;
     }
     
-    if ([card.initiative isEqualToString:@"0"] || [card.initiative isEqualToString:@"NULL"]) {
+    if ([self isEmptyString:card.initiative]) {
         lblInitiative.hidden = YES;
         imgInitiative.hidden = YES;
     } else {
