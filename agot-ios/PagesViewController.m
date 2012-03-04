@@ -91,7 +91,7 @@
     [super viewDidLoad];
     NSLog(@"");
     self.view.backgroundColor = [UIColor yellowColor];
-    self.title = @"Pages";
+    self.title = @"卡牌";
     self.delegate = (id)self;
     self.dataSource = (id)self;
 

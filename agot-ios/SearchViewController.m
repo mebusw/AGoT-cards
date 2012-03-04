@@ -339,7 +339,7 @@ UIPickerView<ConditionPicker> *pickerV;
 }
 
 -(void) dismissPicker:(id)obj {
-    NSLog(@"%d", [pickerV selectedRowInComponent:PICKER_COMPONENT]);
+    pickerV.button.titleLabel.text = [pickerV titleForIndex:[self getSelectedRowForPicker:pickerV.conditionKey]];
     [pickerV removeFromSuperview];
     [toolbar removeFromSuperview];
     
