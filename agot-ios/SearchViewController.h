@@ -27,7 +27,7 @@
 
 
 -(IBAction) tapPicker:(UIButton*)button;
-
+-(IBAction) tapSearchButton:(UIButton*)button;
 
 
 @end

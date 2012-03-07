@@ -172,6 +172,7 @@ UIPickerView<ConditionPicker> *pickerV;
 
 #pragma mark - searchBarDelegate
 
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     searchText = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
@@ -188,6 +189,10 @@ UIPickerView<ConditionPicker> *pickerV;
     
     [self performSegueWithIdentifier:@"Results" sender:self];
     
+}
+
+-(IBAction) tapSearchButton:(UIButton*)button; {
+    [self searchBarSearchButtonClicked:_searchBar];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
