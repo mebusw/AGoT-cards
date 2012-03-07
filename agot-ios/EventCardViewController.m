@@ -30,6 +30,12 @@
 
 #pragma mark - View lifecycle
 
+
+-(void) drawHouseIcons {
+    /** override method of base class to not display house icon for event card */
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
