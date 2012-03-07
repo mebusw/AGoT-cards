@@ -131,7 +131,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     int pageId = ((CardViewController*)viewController).pageId;
     NSLog(@"%d", pageId);
-    if (pageId >= [cards count]) {
+    if (pageId >= [cards count] - 1) {
         return nil;
     } else {
         pageId++;
