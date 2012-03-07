@@ -65,7 +65,7 @@
 
 -(void) drawHouseIcons {
     NSArray *houseImages = [NSArray arrayWithObjects:ICON_STARK, ICON_BARATHEON, ICON_TARGRARYEN, ICON_LANNISTER, ICON_MARTELL, ICON_GREYJOY, ICON_NEUTRAL, ICON_UNIQUE, nil];
-    NSArray *housesNumStrings = [card.house componentsSeparatedByString:@","];
+    NSArray *housesNumStrings = [card.house componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",，"]];
     
     int y = 8;
     for (NSString *h in housesNumStrings) {
@@ -126,14 +126,30 @@
     }
     
 }
+
+-(void) drawTitle {
+    NSArray *strings = [card.uniques componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",，"]];
+    NSMutableString *formatedTitle = [NSMutableString stringWithString:@""];
+    NSLog(@"%@--%@", card.uniques, strings);
+
+    for (NSString *s in strings) {
+        if ([s isEqualToString:STR_UNIQUE]) {
+            [formatedTitle appendFormat:@"⚑"];
+        } else if ([s isEqualToString:STR_INFINITE]) {
+            [formatedTitle appendFormat:@"∞"];
+        }
+    }
+    [formatedTitle appendFormat:card.title];
+    lblTitle.text = formatedTitle;
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSLog(@"%@", self.card.title);
-    lblTitle.text = card.title;
     lblTraits.text = card.traits;
-    
+    [self drawTitle];
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
     [self drawHouseIcons];
     [self drawCostIcon];

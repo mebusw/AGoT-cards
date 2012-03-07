@@ -54,4 +54,7 @@
 #define STR_BW_SHADOWS @"暗影"
 #define STR_BW_NOBLE @"高贵"
 
+#define STR_UNIQUE @"独有"
+#define STR_INFINITE @"无穷"
+
 #endif

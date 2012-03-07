@@ -35,10 +35,9 @@
     imgInt.hidden = YES;
     imgMil.hidden = YES;
     imgPow.hidden = YES;
-    NSLog(@"%@", self.card.challenge);
+
     NSArray *challengesStrings = [self.card.challenge componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",，"]];
     for (NSString *c in challengesStrings) {
-        NSLog(@"%@", c);
         if ([c isEqualToString:MILITARY]) {
             imgMil.hidden = NO;
         } else if ([c isEqualToString:INTELIGENCE]) {
