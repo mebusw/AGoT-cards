@@ -111,7 +111,7 @@ UIPickerView<ConditionPicker> *pickerV;
     challengeSelected = [[NSMutableSet alloc] init];
     multiHouseFlag = NO;
     
-    _searchBar.text= @" ";
+    _searchBar.text= @"";
     
     types = [[[TypeDao alloc] init] select];
     AGoTType *anyType = [[AGoTType alloc] init];
@@ -174,10 +174,7 @@ UIPickerView<ConditionPicker> *pickerV;
 
 #pragma mark - searchBarDelegate
 
--(IBAction) tapMask:(UIButton*)button {
-    [_searchBar resignFirstResponder];
-    
-}
+
 
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -348,15 +345,21 @@ UIPickerView<ConditionPicker> *pickerV;
     NSArray *items = [NSArray arrayWithObject:item];
     toolbar.items = items;
     [self.view addSubview:toolbar];
+    btnMask.hidden = NO;
 }
 
 -(void) dismissPicker:(id)obj {
     pickerV.button.titleLabel.text = [pickerV titleForIndex:[self getSelectedRowForPicker:pickerV.conditionKey]];
     [pickerV removeFromSuperview];
     [toolbar removeFromSuperview];
+    btnMask.hidden = YES;
     
 }
 
+-(IBAction) tapMask:(UIButton*)button {
+    [_searchBar resignFirstResponder];
+    [self dismissPicker:nil];
+}
 
 #pragma mark - Picker delegate
 
