@@ -54,7 +54,6 @@
 
 -(NSString*) buildCrestWhereClause {
     AGotCrest *crest = [_conditions objectForKey:CREST_SELECTED];
-    NSLog(@"%d %@", crest._id, crest.name);
     if (ANY == crest._id) {
         return @"(1)";
     } else {
@@ -79,7 +78,6 @@
         return @"(1)";
     }
 
-    NSLog(@"%d-%d", set.setsId, set.expId);
     if (set.isBigExpansion) {
         return [NSString stringWithFormat:@"(setsID='%d')", set.setsId];
     } else {

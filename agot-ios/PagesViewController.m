@@ -89,7 +89,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"");
     self.view.backgroundColor = [UIColor yellowColor];
     self.title = @"卡牌";
     self.delegate = (id)self;
@@ -119,7 +118,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     int pageId = ((CardViewController*)viewController).pageId;
-    NSLog(@"%d", pageId);
     if (pageId <= 0) {
         return nil;
     } else {
@@ -130,7 +128,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     int pageId = ((CardViewController*)viewController).pageId;
-    NSLog(@"%d", pageId);
     if (pageId >= [cards count] - 1) {
         return nil;
     } else {

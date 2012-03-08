@@ -378,7 +378,6 @@ UIPickerView<ConditionPicker> *pickerV;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"r=%d", row);
     
     UIPickerView<ConditionPicker> *pv = (UIPickerView<ConditionPicker>*)pickerView;
     [self setSelectedRow:row ForPicker:pv.conditionKey];

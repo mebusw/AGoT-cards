@@ -130,7 +130,6 @@
 -(void) drawTitle {
     NSArray *strings = [card.uniques componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",，"]];
     NSMutableString *formatedTitle = [NSMutableString stringWithString:@""];
-    NSLog(@"%@--%@", card.uniques, strings);
 
     for (NSString *s in strings) {
         if ([s isEqualToString:STR_UNIQUE]) {
@@ -147,7 +146,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", self.card.title);
     lblTraits.text = card.traits;
     [self drawTitle];
     [self.wvRules loadHTMLString:[self formatRules:card.rules] baseURL:nil];
