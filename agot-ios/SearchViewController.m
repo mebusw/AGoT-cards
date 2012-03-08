@@ -111,7 +111,7 @@ UIPickerView<ConditionPicker> *pickerV;
     challengeSelected = [[NSMutableSet alloc] init];
     multiHouseFlag = NO;
     
-    _searchBar.text= @"";
+    _searchBar.text= @" ";
     
     types = [[[TypeDao alloc] init] select];
     AGoTType *anyType = [[AGoTType alloc] init];
