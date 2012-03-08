@@ -54,6 +54,7 @@ UIPickerView<ConditionPicker> *pickerV;
 @synthesize isWithRules, isWithTitle, isWithTraits;
 @synthesize isWithInt, isWithMil, isWithPow;
 @synthesize btnType, btnSet, btnCrest;
+@synthesize btnMask;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,6 +93,7 @@ UIPickerView<ConditionPicker> *pickerV;
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"权力的游戏卡牌搜索";
+    btnMask.hidden = YES;
     
     houses = [[[HouseDao alloc] init] select];
     multiHouseId = [houses count];
@@ -172,6 +174,11 @@ UIPickerView<ConditionPicker> *pickerV;
 
 #pragma mark - searchBarDelegate
 
+-(IBAction) tapMask:(UIButton*)button {
+    [_searchBar resignFirstResponder];
+    
+}
+
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     searchText = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -222,12 +229,12 @@ UIPickerView<ConditionPicker> *pickerV;
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    searchBar.showsCancelButton = YES;
+    btnMask.hidden = NO;
     return YES;
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
-    searchBar.showsCancelButton = NO;
+    btnMask.hidden = YES;
     return YES; 
 }
 

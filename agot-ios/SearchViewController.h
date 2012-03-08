@@ -24,10 +24,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnCrest;
 @property (strong, nonatomic) IBOutlet UIButton *btnType;
 
-
+@property (strong, nonatomic) IBOutlet UIButton *btnMask;
 
 -(IBAction) tapPicker:(UIButton*)button;
 -(IBAction) tapSearchButton:(UIButton*)button;
+-(IBAction) tapMask:(UIButton*)button;
 
 
 @end
