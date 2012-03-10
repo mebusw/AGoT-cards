@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <iAd/iAd.h>
 
 @interface PagesViewController : UIPageViewController
 
 @property (nonatomic, strong) NSArray *cards;
 @property (nonatomic) int startPageId;
+
+
 @end
 

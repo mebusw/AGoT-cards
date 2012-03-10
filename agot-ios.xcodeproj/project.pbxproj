@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F145C6D150B645A00CAC064 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F145C6C150B645A00CAC064 /* iAd.framework */; };
 		8F1B287C14E0080F006C8638 /* AGoTCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287814E0080F006C8638 /* AGoTCard.m */; };
 		8F1B287D14E0080F006C8638 /* CardDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287914E0080F006C8638 /* CardDao.m */; };
 		8F1B287F14E0080F006C8638 /* AGoTSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B287B14E0080F006C8638 /* AGoTSet.m */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F145C6C150B645A00CAC064 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		8F1B287814E0080F006C8638 /* AGoTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTCard.m; sourceTree = "<group>"; };
 		8F1B287914E0080F006C8638 /* CardDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDao.m; sourceTree = "<group>"; };
 		8F1B287B14E0080F006C8638 /* AGoTSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTSet.m; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F145C6D150B645A00CAC064 /* iAd.framework in Frameworks */,
 				8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */,
 				8F257E6514DEBFC6008CF1D5 /* UIKit.framework in Frameworks */,
 				8F257E6714DEBFC6008CF1D5 /* Foundation.framework in Frameworks */,
@@ -300,6 +303,7 @@
 		8F257E5514DEBFC6008CF1D5 = {
 			isa = PBXGroup;
 			children = (
+				8F145C6C150B645A00CAC064 /* iAd.framework */,
 				8F7B062A14FD18780099F351 /* doc */,
 				8F257E6A14DEBFC6008CF1D5 /* agot-ios */,
 				8F257E8E14DEBFC6008CF1D5 /* agot-iosTests */,

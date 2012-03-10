@@ -20,6 +20,8 @@
 @implementation PagesViewController
 @synthesize cards, startPageId;
 
+ADBannerView *adView;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -86,6 +88,14 @@
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(void) addAdView {
+    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    adView.delegate = (id)self;
+    CGSize size = self.view.frame.size;
+    adView.center = CGPointMake(size.width / 2, size.height);
+    [self.view addSubview:adView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -97,7 +107,7 @@
     CardViewController *startCtrl = [self buildACardViewForPageId:startPageId];
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
-
+    [self addAdView];
 }
 
 
@@ -136,6 +146,48 @@
     }
 
 }
-                                                                                                                                                
+                                                                                                                                            
+#pragma mark - AD Delegate Function
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+	NSLog(@"ad: bannerViewActionShouldBegin");
+
+    
+	return YES;
+}
+
+-(void) bannerViewActionDidFinish:(ADBannerView *)banner
+{
+	NSLog(@"ad: bannerViewActionDidFinish");
+
+}
+
+-(void) bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	NSLog(@"ad: bannerViewDidLoadAd");
+	
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    // banner is invisible now and moved out of the screen on 50 px
+    [UIView setAnimationDuration:1.0];
+    CGSize size = self.view.frame.size;
+    adView.center = CGPointMake(size.width / 2, size.height - 25);
+    adView.hidden = NO;
+    [UIView commitAnimations];
+
+	
+}
+
+-(void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	NSLog(@"ad: bannerView error:%@", error);
+	
+    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    // banner is visible and we move it out of the screen, due to connection issue
+    adView.hidden = YES;
+    [UIView commitAnimations];
+    
+}
+
 
 @end
