@@ -42,9 +42,9 @@
 #define ICON_NEUTRAL @"nesm.png"
 #define ICON_UNIQUE @"unique13.png"
 
-#define ICON_INTELIGENCE @"C_I.png"
-#define ICON_MILITARY @"C_M.png"
-#define ICON_POWER @"C_P.png"
+//#define ICON_INTELIGENCE @"C_I.png"
+//#define ICON_MILITARY @"C_M.png"
+//#define ICON_POWER @"C_P.png"
 
 
 #define ICON_BW_WAR @"warbw.png"

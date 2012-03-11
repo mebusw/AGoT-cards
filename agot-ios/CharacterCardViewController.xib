@@ -194,7 +194,7 @@
 					<object class="IBUIImageView" id="989981517">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 106}, {24, 24}}</string>
+						<string key="NSFrame">{{10, 108}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="790475041"/>
@@ -203,13 +203,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">int16.png</string>
+							<string key="NSResourceName">C_I.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="790475041">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 138}, {24, 24}}</string>
+						<string key="NSFrame">{{10, 138}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="631358656"/>
@@ -218,13 +218,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">pow16.png</string>
+							<string key="NSResourceName">C_P.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="1002619182">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 79}, {24, 24}}</string>
+						<string key="NSFrame">{{10, 79}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="989981517"/>
@@ -233,7 +233,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">mil16.png</string>
+							<string key="NSResourceName">C_M.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="81106008">
@@ -809,13 +809,13 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="C_I.png">{40, 40}</string>
+			<string key="C_M.png">{40, 40}</string>
+			<string key="C_P.png">{40, 40}</string>
 			<string key="ginc.png">{18, 18}</string>
 			<string key="gold.png">{20, 20}</string>
 			<string key="inf.png">{20, 20}</string>
 			<string key="ini.png">{20, 20}</string>
-			<string key="int16.png">{16, 16}</string>
-			<string key="mil16.png">{16, 16}</string>
-			<string key="pow16.png">{16, 16}</string>
 			<string key="str12c.png">{12, 18}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1179</string>

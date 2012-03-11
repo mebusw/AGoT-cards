@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -19,6 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
+        <!--Search View Controller-->
         <scene sceneID="iUH-09-cJQ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxF-kP-lMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,15 +161,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mil16.png" id="L39-eY-Sdb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="C_M.png" id="L39-eY-Sdb">
                                 <rect key="frame" x="196" y="322" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pow16.png" id="Qab-sr-CtR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="C_P.png" id="Qab-sr-CtR">
                                 <rect key="frame" x="196" y="382" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="int16.png" id="Piu-Pl-scg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="C_I.png" id="Piu-Pl-scg">
                                 <rect key="frame" x="196" y="352" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -229,6 +232,7 @@
             </objects>
             <point key="canvasLocation" x="581" y="64"/>
         </scene>
+        <!--Result View Controller-->
         <scene sceneID="hoJ-RQ-zs3">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgH-Vw-RwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,9 +280,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="int16.png" width="16" height="16"/>
-        <image name="mil16.png" width="16" height="16"/>
-        <image name="pow16.png" width="16" height="16"/>
+        <image name="C_I.png" width="40" height="40"/>
+        <image name="C_M.png" width="40" height="40"/>
+        <image name="C_P.png" width="40" height="40"/>
     </resources>
     <classes>
         <class className="ResultViewController" superclassName="UITableViewController">
