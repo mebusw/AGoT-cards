@@ -69,7 +69,7 @@
     
     int y = 8;
     for (NSString *h in housesNumStrings) {
-        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(290, y, 24, 24)];
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(290, y, 18, 20)];
         icon.image = [UIImage imageNamed:[houseImages objectAtIndex:[h intValue]]];
         [self.view addSubview:icon];    
         y += 24;
