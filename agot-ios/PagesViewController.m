@@ -15,12 +15,13 @@
 #import "PlotCardViewController.h"
 #import "AGoTCard.h"
 #import "dictKeys.h"
-
+#import "CardImageViewController.h"
 
 @implementation PagesViewController
 @synthesize cards, startPageId;
 
-
+NSArray *cardImages;
+int cursor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -93,8 +94,15 @@
     self.title = @"卡牌";
     self.delegate = (id)self;
     self.dataSource = (id)self;
+    
+    //TODO poc to use images for card details
+    cardImages = [NSArray arrayWithObjects:@"cs/B73.jpg", @"cs/L55.jpg", @"cs/B146.jpg", nil];
 
-    CardViewController *startCtrl = [self buildACardViewForPageId:startPageId];
+    //CardViewController *startCtrl = [self buildACardViewForPageId:startPageId];
+    cursor = 0;
+    CardImageViewController *startCtrl = [[CardImageViewController alloc] init];
+    startCtrl.imageName = [cardImages objectAtIndex:cursor];
+    
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -117,24 +125,20 @@
 #pragma mark -  page view delegate
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    int pageId = ((CardViewController*)viewController).pageId;
-    if (pageId <= 0) {
-        return nil;
-    } else {
-        pageId--;
-        return [self buildACardViewForPageId:pageId];
-    }
+    
+    cursor = (cursor - 1 + [cardImages count]) % [cardImages count];
+    CardImageViewController *vc = [[CardImageViewController alloc] init];
+    vc.imageName = [cardImages objectAtIndex:cursor];
+
+    return vc;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    int pageId = ((CardViewController*)viewController).pageId;
-    if (pageId >= [cards count] - 1) {
-        return nil;
-    } else {
-        pageId++;
-        return [self buildACardViewForPageId:pageId];
-    }
-
+    
+    cursor = (cursor + 1) % [cardImages count];
+    CardImageViewController *vc = [[CardImageViewController alloc] init];
+    vc.imageName = [cardImages objectAtIndex:cursor];
+    return vc;
 }
                                                                                                                                                 
 
