@@ -7,12 +7,6 @@
 //
 
 #import "PagesViewController.h"
-#import "CharacterCardViewController.h"
-#import "EventCardViewController.h"
-#import "AttachmentCardViewController.h"
-#import "AgendaCardViewController.h"
-#import "LocationCardViewController.h"
-#import "PlotCardViewController.h"
 #import "AGoTCard.h"
 #import "dictKeys.h"
 #import "CardImageViewController.h"
@@ -20,8 +14,6 @@
 @implementation PagesViewController
 @synthesize cards, startPageId;
 
-NSArray *cardImages;
-int cursor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,44 +41,17 @@ int cursor;
 }
 */
 
--(CardViewController*) buildACardViewForPageId:(int)pageId  {
-    AGoTCard *card = [cards objectAtIndex:pageId];
-    
-    CardViewController *viewCtrl;
-    
-    if ([card.type_name isEqualToString:EVENT_CARD]) {
-        EventCardViewController *v = [[EventCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    } else if ([card.type_name isEqualToString:CHARACTER_CARD]) {
-        CharacterCardViewController *v = [[CharacterCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    } else if ([card.type_name isEqualToString:ATTACHMENT_CARD]) {
-        AttachmentCardViewController *v = [[AttachmentCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    } else if ([card.type_name isEqualToString:AGENDA_CARD]) {
-        AgendaCardViewController *v = [[AgendaCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    } else if ([card.type_name isEqualToString:LOCATION_CARD]) {
-        LocationCardViewController *v = [[LocationCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    } else if ([card.type_name isEqualToString:PLOT_CARD]) {
-        PlotCardViewController *v = [[PlotCardViewController alloc] init];
-        v.card = card;
-        viewCtrl = v;
-    }
-    
-    viewCtrl.pageId = pageId;
-
-    return viewCtrl;    
-}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+-(NSString*) imageNameForPageId:(int)pageId {
+    AGoTCard *card = (AGoTCard*)[cards objectAtIndex:pageId];
+    NSString *imageName = [NSString stringWithFormat:@"%@/%@.jpg", card.sets_s, card.cardID];
+    NSLog(@"%d | image=%@", pageId, imageName);
+    return imageName;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -95,13 +60,9 @@ int cursor;
     self.delegate = (id)self;
     self.dataSource = (id)self;
     
-    //TODO poc to use images for card details
-    cardImages = [NSArray arrayWithObjects:@"cs/B73.jpg", @"cs/L55.jpg", @"cs/B146.jpg", nil];
-
-    //CardViewController *startCtrl = [self buildACardViewForPageId:startPageId];
-    cursor = 0;
     CardImageViewController *startCtrl = [[CardImageViewController alloc] init];
-    startCtrl.imageName = [cardImages objectAtIndex:cursor];
+    startCtrl.imageName = [self imageNameForPageId:startPageId];
+    startCtrl.pageId = startPageId;
     
     
     [self setViewControllers:[NSArray arrayWithObject:startCtrl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
@@ -125,19 +86,28 @@ int cursor;
 #pragma mark -  page view delegate
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    int pageId = ((CardImageViewController*)viewController).pageId;
+    CardImageViewController *vc = nil;
     
-    cursor = (cursor - 1 + [cardImages count]) % [cardImages count];
-    CardImageViewController *vc = [[CardImageViewController alloc] init];
-    vc.imageName = [cardImages objectAtIndex:cursor];
-
+    if (pageId > 0) {
+        vc = [[CardImageViewController alloc] init];
+        pageId -= 1;
+        vc.imageName = [self imageNameForPageId:pageId];
+        vc.pageId = pageId;
+    }
     return vc;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    int pageId = ((CardImageViewController*)viewController).pageId;
+    CardImageViewController *vc = nil;
     
-    cursor = (cursor + 1) % [cardImages count];
-    CardImageViewController *vc = [[CardImageViewController alloc] init];
-    vc.imageName = [cardImages objectAtIndex:cursor];
+    if (pageId < [cards count] - 1) {
+        vc = [[CardImageViewController alloc] init];
+        pageId += 1;
+        vc.imageName = [self imageNameForPageId:pageId];
+        vc.pageId = pageId;
+    }
     return vc;
 }
                                                                                                                                                 

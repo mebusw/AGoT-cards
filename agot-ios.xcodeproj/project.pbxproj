@@ -52,26 +52,12 @@
 		8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2614E2D2950034F8AE /* SetDao.m */; };
 		8F7A51CA14FBBF8700A2065F /* TimesGoT_1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */; };
 		8F7A51CD14FBD83900A2065F /* AGotFont.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A51CC14FBD83900A2065F /* AGotFont.html */; };
-		8F7B062414FD15EB0099F351 /* CharacterCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7B062214FD15EB0099F351 /* CharacterCardViewController.m */; };
-		8F7B062514FD15EB0099F351 /* CharacterCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062314FD15EB0099F351 /* CharacterCardViewController.xib */; };
 		8F7B062B14FD18780099F351 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062A14FD18780099F351 /* doc */; };
-		8F7B062F14FD2BD20099F351 /* PlotCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7B062D14FD2BD10099F351 /* PlotCardViewController.m */; };
-		8F7B063014FD2BD20099F351 /* PlotCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */; };
 		8F7BB72C150E2FF200939CBE /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB72B150E2FF200939CBE /* ICON@2x.png */; };
 		8F7BB72D150E2FF900939CBE /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC67150CE96C00FD9783 /* ICON.png */; };
 		8F7BB732150E30AD00939CBE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB731150E30AD00939CBE /* Default@2x.png */; };
-		8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DF50C14F21F9E0034018C /* EventCardViewController.m */; };
-		8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */; };
 		8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */; };
-		8F7E8CDA14FE5F050045BB23 /* CardViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD814FE5EA60045BB23 /* CardViewControllerTests.m */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
-		8F81E3D514FA796300C65640 /* AttachmentCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3D314FA796200C65640 /* AttachmentCardViewController.m */; };
-		8F81E3D614FA796300C65640 /* AttachmentCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3D414FA796200C65640 /* AttachmentCardViewController.xib */; };
-		8F81E3DA14FA79CF00C65640 /* AgendaCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3D814FA79CE00C65640 /* AgendaCardViewController.m */; };
-		8F81E3DB14FA79CF00C65640 /* AgendaCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3D914FA79CF00C65640 /* AgendaCardViewController.xib */; };
-		8F81E3DF14FA7A5500C65640 /* LocationCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3DD14FA7A5300C65640 /* LocationCardViewController.m */; };
-		8F81E3E014FA7A5500C65640 /* LocationCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E3DE14FA7A5400C65640 /* LocationCardViewController.xib */; };
-		8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3E214FA7E5800C65640 /* CardViewController.m */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 		8FF3DC54150CE34500FD9783 /* C_I.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC46150CE34500FD9783 /* C_I.png */; };
@@ -170,36 +156,14 @@
 		8F31EC2614E2D2950034F8AE /* SetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDao.m; sourceTree = "<group>"; };
 		8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimesGoT_1.ttf; sourceTree = "<group>"; };
 		8F7A51CC14FBD83900A2065F /* AGotFont.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AGotFont.html; sourceTree = "<group>"; };
-		8F7B062114FD15EB0099F351 /* CharacterCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterCardViewController.h; sourceTree = "<group>"; };
-		8F7B062214FD15EB0099F351 /* CharacterCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterCardViewController.m; sourceTree = "<group>"; };
-		8F7B062314FD15EB0099F351 /* CharacterCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCardViewController.xib; sourceTree = "<group>"; };
 		8F7B062A14FD18780099F351 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
-		8F7B062C14FD2BD10099F351 /* PlotCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotCardViewController.h; sourceTree = "<group>"; };
-		8F7B062D14FD2BD10099F351 /* PlotCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotCardViewController.m; sourceTree = "<group>"; };
-		8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlotCardViewController.xib; sourceTree = "<group>"; };
 		8F7BB72B150E2FF200939CBE /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
 		8F7BB731150E30AD00939CBE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		8F7DF50B14F21F9E0034018C /* EventCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCardViewController.h; sourceTree = "<group>"; };
-		8F7DF50C14F21F9E0034018C /* EventCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCardViewController.m; sourceTree = "<group>"; };
-		8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCardViewController.xib; sourceTree = "<group>"; };
 		8F7E8CD314FE595F0045BB23 /* ConditionPickers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionPickers.h; sourceTree = "<group>"; };
 		8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionPickers.m; sourceTree = "<group>"; };
-		8F7E8CD714FE5EA60045BB23 /* CardViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewControllerTests.h; sourceTree = "<group>"; };
-		8F7E8CD814FE5EA60045BB23 /* CardViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewControllerTests.m; sourceTree = "<group>"; };
 		8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDaoTests.h; sourceTree = "<group>"; };
 		8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDaoTests.m; sourceTree = "<group>"; };
 		8F7FAC0E14E7BB74004737F2 /* dictKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictKeys.h; sourceTree = "<group>"; };
-		8F81E3D214FA796100C65640 /* AttachmentCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentCardViewController.h; sourceTree = "<group>"; };
-		8F81E3D314FA796200C65640 /* AttachmentCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentCardViewController.m; sourceTree = "<group>"; };
-		8F81E3D414FA796200C65640 /* AttachmentCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentCardViewController.xib; sourceTree = "<group>"; };
-		8F81E3D714FA79CE00C65640 /* AgendaCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaCardViewController.h; sourceTree = "<group>"; };
-		8F81E3D814FA79CE00C65640 /* AgendaCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCardViewController.m; sourceTree = "<group>"; };
-		8F81E3D914FA79CF00C65640 /* AgendaCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaCardViewController.xib; sourceTree = "<group>"; };
-		8F81E3DC14FA7A5300C65640 /* LocationCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCardViewController.h; sourceTree = "<group>"; };
-		8F81E3DD14FA7A5300C65640 /* LocationCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCardViewController.m; sourceTree = "<group>"; };
-		8F81E3DE14FA7A5400C65640 /* LocationCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCardViewController.xib; sourceTree = "<group>"; };
-		8F81E3E114FA7E5700C65640 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
-		8F81E3E214FA7E5800C65640 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		8FBBD2FB14E624DA00347C49 /* PagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
 		8FBBD2FC14E624DA00347C49 /* PagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -386,26 +350,6 @@
 				8FBF91E214E157D30058D09C /* ResultViewController.m */,
 				8F257E6B14DEBFC6008CF1D5 /* Supporting Files */,
 				8F7FAC0E14E7BB74004737F2 /* dictKeys.h */,
-				8F81E3E114FA7E5700C65640 /* CardViewController.h */,
-				8F81E3E214FA7E5800C65640 /* CardViewController.m */,
-				8F81E3D714FA79CE00C65640 /* AgendaCardViewController.h */,
-				8F81E3D814FA79CE00C65640 /* AgendaCardViewController.m */,
-				8F81E3D914FA79CF00C65640 /* AgendaCardViewController.xib */,
-				8F81E3D214FA796100C65640 /* AttachmentCardViewController.h */,
-				8F81E3D314FA796200C65640 /* AttachmentCardViewController.m */,
-				8F81E3D414FA796200C65640 /* AttachmentCardViewController.xib */,
-				8F7B062114FD15EB0099F351 /* CharacterCardViewController.h */,
-				8F7B062214FD15EB0099F351 /* CharacterCardViewController.m */,
-				8F7B062314FD15EB0099F351 /* CharacterCardViewController.xib */,
-				8F7DF50B14F21F9E0034018C /* EventCardViewController.h */,
-				8F7DF50C14F21F9E0034018C /* EventCardViewController.m */,
-				8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */,
-				8F81E3DC14FA7A5300C65640 /* LocationCardViewController.h */,
-				8F81E3DD14FA7A5300C65640 /* LocationCardViewController.m */,
-				8F81E3DE14FA7A5400C65640 /* LocationCardViewController.xib */,
-				8F7B062C14FD2BD10099F351 /* PlotCardViewController.h */,
-				8F7B062D14FD2BD10099F351 /* PlotCardViewController.m */,
-				8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */,
 			);
 			path = "agot-ios";
 			sourceTree = "<group>";
@@ -430,8 +374,6 @@
 				8F257E8F14DEBFC6008CF1D5 /* Supporting Files */,
 				8F7FAC0914E7B8AD004737F2 /* CardDaoTests.h */,
 				8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */,
-				8F7E8CD714FE5EA60045BB23 /* CardViewControllerTests.h */,
-				8F7E8CD814FE5EA60045BB23 /* CardViewControllerTests.m */,
 			);
 			path = "agot-iosTests";
 			sourceTree = "<group>";
@@ -549,15 +491,9 @@
 				8F1B28C614E027C7006C8638 /* unique13.png in Resources */,
 				8FF6D9FB14E6434300AD1E2D /* AGoTLCGCards.db in Resources */,
 				8FF6DA0E14E6ACE700AD1E2D /* names.plist in Resources */,
-				8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */,
-				8F81E3D614FA796300C65640 /* AttachmentCardViewController.xib in Resources */,
-				8F81E3DB14FA79CF00C65640 /* AgendaCardViewController.xib in Resources */,
-				8F81E3E014FA7A5500C65640 /* LocationCardViewController.xib in Resources */,
 				8F7A51CA14FBBF8700A2065F /* TimesGoT_1.ttf in Resources */,
 				8F7A51CD14FBD83900A2065F /* AGotFont.html in Resources */,
-				8F7B062514FD15EB0099F351 /* CharacterCardViewController.xib in Resources */,
 				8F7B062B14FD18780099F351 /* doc in Resources */,
-				8F7B063014FD2BD20099F351 /* PlotCardViewController.xib in Resources */,
 				8FF3DC54150CE34500FD9783 /* C_I.png in Resources */,
 				8FF3DC55150CE34500FD9783 /* C_M.png in Resources */,
 				8FF3DC56150CE34500FD9783 /* C_P.png in Resources */,
@@ -628,13 +564,6 @@
 				8F31EC2414E2D23A0034F8AE /* CrestDao.m in Sources */,
 				8F31EC2714E2D2950034F8AE /* SetDao.m in Sources */,
 				8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */,
-				8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */,
-				8F81E3D514FA796300C65640 /* AttachmentCardViewController.m in Sources */,
-				8F81E3DA14FA79CF00C65640 /* AgendaCardViewController.m in Sources */,
-				8F81E3DF14FA7A5500C65640 /* LocationCardViewController.m in Sources */,
-				8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */,
-				8F7B062414FD15EB0099F351 /* CharacterCardViewController.m in Sources */,
-				8F7B062F14FD2BD20099F351 /* PlotCardViewController.m in Sources */,
 				8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */,
 				8FF3DC71150CF26100FD9783 /* CardImageViewController.m in Sources */,
 			);
@@ -646,7 +575,6 @@
 			files = (
 				8F257E9614DEBFC6008CF1D5 /* agot_iosTests.m in Sources */,
 				8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */,
-				8F7E8CDA14FE5F050045BB23 /* CardViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

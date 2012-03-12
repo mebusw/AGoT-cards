@@ -10,12 +10,12 @@
 
 @interface CardImageViewController ()
 
-
 @end
 
 @implementation CardImageViewController
 
-@synthesize image, imageName;
+@synthesize imageView, imageName;
+@synthesize pageId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.image.image = [UIImage imageNamed:imageName];
+    self.imageView.image = [UIImage imageNamed:imageName];
 }
 
 - (void)viewDidUnload

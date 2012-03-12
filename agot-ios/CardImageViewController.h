@@ -10,7 +10,8 @@
 
 @interface CardImageViewController : UIViewController
 
-@property (nonatomic) IBOutlet UIImageView *image;
+@property (nonatomic, assign) int pageId;
+@property (nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, weak) NSString *imageName;
 
 @end

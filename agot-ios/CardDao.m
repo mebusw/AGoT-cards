@@ -129,6 +129,11 @@
 - (AGoTCard*) parseCards: (FMResultSet*)rs {
     AGoTCard *card = [[AGoTCard alloc] init];
     card._id = [rs stringForColumnIndex:0];
+    card.sortID = [rs stringForColumnIndex:1];
+    card.sets_s = [rs stringForColumnIndex:2];
+    card.setsID = [rs stringForColumnIndex:3];
+    card.expID = [rs stringForColumnIndex:4];
+    card.cardID = [rs stringForColumnIndex:5];
     card.title = [rs stringForColumnIndex:6];
     card.uniques = [rs stringForColumnIndex:7];
     card.house = [rs stringForColumnIndex:8];
@@ -147,6 +152,8 @@
     card.golds = [rs stringForColumnIndex:21];    
     card.prior = [rs stringForColumnIndex:22];
     card.efficacy = [rs stringForColumnIndex:23];
+    card.pub = [rs stringForColumnIndex:24];
+    card.old_title = [rs stringForColumnIndex:25];
     card.type_name = [rs stringForColumnIndex:26];
     card.set_name = [rs stringForColumnIndex:27];    
     
