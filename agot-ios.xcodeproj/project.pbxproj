@@ -57,6 +57,9 @@
 		8F7B062B14FD18780099F351 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062A14FD18780099F351 /* doc */; };
 		8F7B062F14FD2BD20099F351 /* PlotCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7B062D14FD2BD10099F351 /* PlotCardViewController.m */; };
 		8F7B063014FD2BD20099F351 /* PlotCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */; };
+		8F7BB72C150E2FF200939CBE /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB72B150E2FF200939CBE /* ICON@2x.png */; };
+		8F7BB72D150E2FF900939CBE /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC67150CE96C00FD9783 /* ICON.png */; };
+		8F7BB732150E30AD00939CBE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB731150E30AD00939CBE /* Default@2x.png */; };
 		8F7DF50E14F21F9E0034018C /* EventCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DF50C14F21F9E0034018C /* EventCardViewController.m */; };
 		8F7DF50F14F21F9E0034018C /* EventCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */; };
 		8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */; };
@@ -83,8 +86,6 @@
 		8FF3DC5E150CE34500FD9783 /* H_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC50150CE34500FD9783 /* H_T.png */; };
 		8FF3DC60150CE34500FD9783 /* inf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC52150CE34500FD9783 /* inf.png */; };
 		8FF3DC61150CE34500FD9783 /* ini.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC53150CE34500FD9783 /* ini.png */; };
-		8FF3DC68150CE96C00FD9783 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC67150CE96C00FD9783 /* ICON.png */; };
-		8FF3DC6A150CE97800FD9783 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC69150CE97800FD9783 /* Default@2x.png */; };
 		8FF3DC6D150CEC9A00FD9783 /* cs in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC6C150CEC9A00FD9783 /* cs */; };
 		8FF3DC71150CF26100FD9783 /* CardImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3DC6F150CF26100FD9783 /* CardImageViewController.m */; };
 		8FF3DC72150CF26100FD9783 /* CardImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC70150CF26100FD9783 /* CardImageViewController.xib */; };
@@ -176,6 +177,8 @@
 		8F7B062C14FD2BD10099F351 /* PlotCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotCardViewController.h; sourceTree = "<group>"; };
 		8F7B062D14FD2BD10099F351 /* PlotCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotCardViewController.m; sourceTree = "<group>"; };
 		8F7B062E14FD2BD20099F351 /* PlotCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlotCardViewController.xib; sourceTree = "<group>"; };
+		8F7BB72B150E2FF200939CBE /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
+		8F7BB731150E30AD00939CBE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8F7DF50B14F21F9E0034018C /* EventCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCardViewController.h; sourceTree = "<group>"; };
 		8F7DF50C14F21F9E0034018C /* EventCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCardViewController.m; sourceTree = "<group>"; };
 		8F7DF50D14F21F9E0034018C /* EventCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCardViewController.xib; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 		8F257E5514DEBFC6008CF1D5 = {
 			isa = PBXGroup;
 			children = (
+				8F7BB731150E30AD00939CBE /* Default@2x.png */,
+				8F7BB72B150E2FF200939CBE /* ICON@2x.png */,
 				8FF3DC69150CE97800FD9783 /* Default@2x.png */,
 				8FF3DC67150CE96C00FD9783 /* ICON.png */,
 				8F7B062A14FD18780099F351 /* doc */,
@@ -565,10 +570,11 @@
 				8FF3DC5E150CE34500FD9783 /* H_T.png in Resources */,
 				8FF3DC60150CE34500FD9783 /* inf.png in Resources */,
 				8FF3DC61150CE34500FD9783 /* ini.png in Resources */,
-				8FF3DC68150CE96C00FD9783 /* ICON.png in Resources */,
-				8FF3DC6A150CE97800FD9783 /* Default@2x.png in Resources */,
 				8FF3DC6D150CEC9A00FD9783 /* cs in Resources */,
 				8FF3DC72150CF26100FD9783 /* CardImageViewController.xib in Resources */,
+				8F7BB72C150E2FF200939CBE /* ICON@2x.png in Resources */,
+				8F7BB72D150E2FF900939CBE /* ICON.png in Resources */,
+				8F7BB732150E30AD00939CBE /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
