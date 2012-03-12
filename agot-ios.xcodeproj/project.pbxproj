@@ -181,7 +181,6 @@
 		8FF3DC52150CE34500FD9783 /* inf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inf.png; sourceTree = "<group>"; };
 		8FF3DC53150CE34500FD9783 /* ini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ini.png; sourceTree = "<group>"; };
 		8FF3DC67150CE96C00FD9783 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
-		8FF3DC69150CE97800FD9783 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8FF3DC6C150CEC9A00FD9783 /* cs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cs; sourceTree = "<group>"; };
 		8FF3DC6E150CF26100FD9783 /* CardImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardImageViewController.h; sourceTree = "<group>"; };
 		8FF3DC6F150CF26100FD9783 /* CardImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardImageViewController.m; sourceTree = "<group>"; };
@@ -296,7 +295,6 @@
 			children = (
 				8F7BB731150E30AD00939CBE /* Default@2x.png */,
 				8F7BB72B150E2FF200939CBE /* ICON@2x.png */,
-				8FF3DC69150CE97800FD9783 /* Default@2x.png */,
 				8FF3DC67150CE96C00FD9783 /* ICON.png */,
 				8F7B062A14FD18780099F351 /* doc */,
 				8F257E6A14DEBFC6008CF1D5 /* agot-ios */,
