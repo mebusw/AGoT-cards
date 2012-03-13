@@ -47,7 +47,7 @@
 
 -(NSString*) imageNameForPageId:(int)pageId {
     AGoTCard *card = (AGoTCard*)[cards objectAtIndex:pageId];
-    NSString *imageName = [NSString stringWithFormat:@"%@/%@.jpg", card.sets_s, card.cardID];
+    NSString *imageName = [NSString stringWithFormat:@"images/%@/%@.jpg", card.sets_s, card.cardID];
     NSLog(@"%d | image=%@", pageId, imageName);
     return imageName;
 }
