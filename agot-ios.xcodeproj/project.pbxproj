@@ -303,7 +303,6 @@
 		8F257E5514DEBFC6008CF1D5 = {
 			isa = PBXGroup;
 			children = (
-				8F145C6C150B645A00CAC064 /* iAd.framework */,
 				8F7B062A14FD18780099F351 /* doc */,
 				8F257E6A14DEBFC6008CF1D5 /* agot-ios */,
 				8F257E8E14DEBFC6008CF1D5 /* agot-iosTests */,
@@ -324,6 +323,7 @@
 		8F257E6314DEBFC6008CF1D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F145C6C150B645A00CAC064 /* iAd.framework */,
 				8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */,
 				8F257E6414DEBFC6008CF1D5 /* UIKit.framework */,
 				8F257E6614DEBFC6008CF1D5 /* Foundation.framework */,
@@ -702,10 +702,14 @@
 		8F257E9A14DEBFC6008CF1D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "agot-ios/agot-ios-Prefix.pch";
 				INFOPLIST_FILE = "agot-ios/agot-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
