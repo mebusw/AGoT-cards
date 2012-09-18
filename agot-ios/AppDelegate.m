@@ -15,7 +15,7 @@
 
 @synthesize window = _window;
 @synthesize db;
-
+@synthesize userNav;
 
 - (BOOL)initDatabase{
     BOOL success;
@@ -53,13 +53,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
+
+   self.window.rootViewController = userNav;
     
+    NSLog(@"root=%@", self.window.rootViewController);
+    
+    self.window.rootViewController = [[SearchViewController alloc] init];
     NSLog(@"initDatabase=%d", [self initDatabase]);
     
     return YES;

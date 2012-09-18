@@ -11,7 +11,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) FMDatabase *db;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) FMDatabase *db;
+@property (nonatomic, retain) IBOutlet UINavigationController *userNav;
 
 @end

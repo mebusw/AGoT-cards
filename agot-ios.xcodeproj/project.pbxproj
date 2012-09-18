@@ -71,6 +71,9 @@
 		8F81E3E314FA7E5900C65640 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81E3E214FA7E5800C65640 /* CardViewController.m */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
+		8FD1EAD31608A526005B7F92 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD1EAD21608A526005B7F92 /* SearchViewController.xib */; };
+		8FD1EAD51608A5E4005B7F92 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD1EAD41608A5E4005B7F92 /* ResultViewController.xib */; };
+		8FD1EADD1608A7CE005B7F92 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD1EADC1608A7CE005B7F92 /* MainWindow.xib */; };
 		8FF3DC54150CE34500FD9783 /* C_I.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC46150CE34500FD9783 /* C_I.png */; };
 		8FF3DC55150CE34500FD9783 /* C_M.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC47150CE34500FD9783 /* C_M.png */; };
 		8FF3DC56150CE34500FD9783 /* C_P.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC48150CE34500FD9783 /* C_P.png */; };
@@ -198,6 +201,9 @@
 		8FBBD2FC14E624DA00347C49 /* PagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		8FBF91E114E157D30058D09C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		8FBF91E214E157D30058D09C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		8FD1EAD21608A526005B7F92 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		8FD1EAD41608A5E4005B7F92 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		8FD1EADC1608A7CE005B7F92 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		8FF3DC46150CE34500FD9783 /* C_I.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C_I.png; sourceTree = "<group>"; };
 		8FF3DC47150CE34500FD9783 /* C_M.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C_M.png; sourceTree = "<group>"; };
 		8FF3DC48150CE34500FD9783 /* C_P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C_P.png; sourceTree = "<group>"; };
@@ -353,6 +359,7 @@
 		8F257E6A14DEBFC6008CF1D5 /* agot-ios */ = {
 			isa = PBXGroup;
 			children = (
+				8FD1EAD11608A4E6005B7F92 /* Views */,
 				8F1B289814E027A4006C8638 /* Resources */,
 				8F1B288414E0084D006C8638 /* Bean */,
 				8F1B288114E00817006C8638 /* DAO */,
@@ -442,6 +449,16 @@
 			name = FMDB;
 			sourceTree = "<group>";
 		};
+		8FD1EAD11608A4E6005B7F92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FD1EAD21608A526005B7F92 /* SearchViewController.xib */,
+				8FD1EAD41608A5E4005B7F92 /* ResultViewController.xib */,
+				8FD1EADC1608A7CE005B7F92 /* MainWindow.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,7 +504,7 @@
 		8F257E5714DEBFC6008CF1D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 8F257E5A14DEBFC6008CF1D5 /* Build configuration list for PBXProject "agot-ios" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -556,6 +573,9 @@
 				8F7BB721150E2A5C00939CBE /* ginc.png in Resources */,
 				8F7BB723150E2A6D00939CBE /* claim.png in Resources */,
 				8F7BB725150E2A8300939CBE /* str12c.png in Resources */,
+				8FD1EAD31608A526005B7F92 /* SearchViewController.xib in Resources */,
+				8FD1EAD51608A5E4005B7F92 /* ResultViewController.xib in Resources */,
+				8FD1EADD1608A7CE005B7F92 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +716,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -715,7 +735,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

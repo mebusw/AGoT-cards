@@ -14,9 +14,9 @@
 -(NSString*) titleForIndex:(int)index;
 -(int) count;
 
-@property (nonatomic, strong) NSArray *elements;
-@property (nonatomic, strong) UIButton *button;
-@property (nonatomic, weak) NSString *conditionKey;
+@property (nonatomic, retain) NSArray *elements;
+@property (nonatomic, retain) UIButton *button;
+@property (nonatomic, retain) NSString *conditionKey;
 
 @end
 
