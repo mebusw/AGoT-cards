@@ -54,11 +54,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-   self.window.rootViewController = userNav;
+    self.window.rootViewController = userNav;
     
     NSLog(@"root=%@", self.window.rootViewController);
     
-    self.window.rootViewController = [[SearchViewController alloc] init];
     NSLog(@"initDatabase=%d", [self initDatabase]);
     
     return YES;

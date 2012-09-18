@@ -250,6 +250,7 @@ UIPickerView<ConditionPicker> *pickerV;
     return [houses count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
