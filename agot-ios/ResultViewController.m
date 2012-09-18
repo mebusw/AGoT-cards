@@ -95,7 +95,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     AGoTCard *card = (AGoTCard*)[allItems objectAtIndex:indexPath.row];
@@ -148,7 +148,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+    NSLog(@"v= %@ ",  systemVersion);
+    
+    //5.1 4.3.2
+    
+    if (NSOrderedAscending == [systemVersion compare:@"5.0"]) {
+        NSLog(@"not support ");
+        return;
+    }
+    
     PagesViewController *pages = [[PagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    NSLog(@"%@", pages);
     pages.cards = allItems;
     pages.startPageId = indexPath.row;
     [self.navigationController pushViewController:pages animated:YES];

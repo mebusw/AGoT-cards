@@ -191,16 +191,7 @@ UIPickerView<ConditionPicker> *pickerV;
         [challengeSelected addObject:POWER];
     }
     
-    [self performSegueWithIdentifier:@"Results" sender:self];
-    
-}
-
--(IBAction) tapSearchButton:(UIButton*)button; {
-    [self searchBarSearchButtonClicked:_searchBar];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ResultViewController *dest = [segue destinationViewController];
+    ResultViewController *dest = [[ResultViewController alloc] init];
     
     [conditions setObject:[NSNumber numberWithBool:multiHouseFlag] forKey:MULTI_HOUSE_FLAG];
     [conditions setObject:housesSelected forKey:HOUSE_SELECTED];
@@ -217,6 +208,8 @@ UIPickerView<ConditionPicker> *pickerV;
     [conditions setObject:[types objectAtIndex:[self getSelectedRowForPicker:TYPE_SELECTED]] forKey:TYPE_SELECTED];
       
     dest.allItems = [[[CardDao alloc] init] selectCards:conditions];
+    
+    [self.navigationController pushViewController:dest animated:YES];
 }
 
 
@@ -227,12 +220,14 @@ UIPickerView<ConditionPicker> *pickerV;
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     btnMask.hidden = NO;
+    _searchBar.showsCancelButton = YES;
     return YES;
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
     btnMask.hidden = YES;
-    return YES; 
+    _searchBar.showsCancelButton = NO;
+    return YES;
 }
 
 
