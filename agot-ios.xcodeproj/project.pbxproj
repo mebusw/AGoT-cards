@@ -46,6 +46,9 @@
 		8F257EB014DECFD0008CF1D5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAA14DECFD0008CF1D5 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB114DECFD0008CF1D5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F257EAB14DECFD0008CF1D5 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */; };
+		8F2C3938161C80720021A1C4 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C3937161C80720021A1C4 /* ICON@2x.png */; };
+		8F2C3939161C81110021A1C4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB731150E30AD00939CBE /* Default@2x.png */; };
+		8F2C393D161C8CA30021A1C4 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C393C161C8CA30021A1C4 /* ICON.png */; };
 		8F31EC1A14E2D0F20034F8AE /* AGoTHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */; };
 		8F31EC1E14E2D1540034F8AE /* AGotCrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1D14E2D1540034F8AE /* AGotCrest.m */; };
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
@@ -54,9 +57,6 @@
 		8F7A51CA14FBBF8700A2065F /* TimesGoT_1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */; };
 		8F7A51CD14FBD83900A2065F /* AGotFont.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F7A51CC14FBD83900A2065F /* AGotFont.html */; };
 		8F7B062B14FD18780099F351 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062A14FD18780099F351 /* doc */; };
-		8F7BB72C150E2FF200939CBE /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB72B150E2FF200939CBE /* ICON@2x.png */; };
-		8F7BB72D150E2FF900939CBE /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC67150CE96C00FD9783 /* ICON.png */; };
-		8F7BB732150E30AD00939CBE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB731150E30AD00939CBE /* Default@2x.png */; };
 		8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
@@ -145,6 +145,8 @@
 		8F257EAD14DECFD0008CF1D5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		8F257EAE14DECFD0008CF1D5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		8F2C3937161C80720021A1C4 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
+		8F2C393C161C8CA30021A1C4 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		8F31EC1814E2D0F20034F8AE /* AGoTHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGoTHouse.h; sourceTree = "<group>"; };
 		8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGoTHouse.m; sourceTree = "<group>"; };
 		8F31EC1C14E2D1540034F8AE /* AGotCrest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGotCrest.h; sourceTree = "<group>"; };
@@ -158,7 +160,6 @@
 		8F7A51C914FBBF8700A2065F /* TimesGoT_1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimesGoT_1.ttf; sourceTree = "<group>"; };
 		8F7A51CC14FBD83900A2065F /* AGotFont.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AGotFont.html; sourceTree = "<group>"; };
 		8F7B062A14FD18780099F351 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
-		8F7BB72B150E2FF200939CBE /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
 		8F7BB731150E30AD00939CBE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8F7E8CD314FE595F0045BB23 /* ConditionPickers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionPickers.h; sourceTree = "<group>"; };
 		8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionPickers.m; sourceTree = "<group>"; };
@@ -181,7 +182,6 @@
 		8FF3DC50150CE34500FD9783 /* H_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = H_T.png; sourceTree = "<group>"; };
 		8FF3DC52150CE34500FD9783 /* inf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inf.png; sourceTree = "<group>"; };
 		8FF3DC53150CE34500FD9783 /* ini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ini.png; sourceTree = "<group>"; };
-		8FF3DC67150CE96C00FD9783 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		8FF3DC6E150CF26100FD9783 /* CardImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardImageViewController.h; sourceTree = "<group>"; };
 		8FF3DC6F150CF26100FD9783 /* CardImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardImageViewController.m; sourceTree = "<group>"; };
 		8FF3DC70150CF26100FD9783 /* CardImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardImageViewController.xib; sourceTree = "<group>"; };
@@ -293,9 +293,9 @@
 		8F257E5514DEBFC6008CF1D5 = {
 			isa = PBXGroup;
 			children = (
+				8F2C393C161C8CA30021A1C4 /* ICON.png */,
+				8F2C3937161C80720021A1C4 /* ICON@2x.png */,
 				8F7BB731150E30AD00939CBE /* Default@2x.png */,
-				8F7BB72B150E2FF200939CBE /* ICON@2x.png */,
-				8FF3DC67150CE96C00FD9783 /* ICON.png */,
 				8F7B062A14FD18780099F351 /* doc */,
 				8F257E6A14DEBFC6008CF1D5 /* agot-ios */,
 				8F257E8E14DEBFC6008CF1D5 /* agot-iosTests */,
@@ -505,10 +505,10 @@
 				8FF3DC60150CE34500FD9783 /* inf.png in Resources */,
 				8FF3DC61150CE34500FD9783 /* ini.png in Resources */,
 				8FF3DC72150CF26100FD9783 /* CardImageViewController.xib in Resources */,
-				8F7BB72C150E2FF200939CBE /* ICON@2x.png in Resources */,
-				8F7BB72D150E2FF900939CBE /* ICON.png in Resources */,
-				8F7BB732150E30AD00939CBE /* Default@2x.png in Resources */,
 				8F194A10150F98D800141F95 /* images in Resources */,
+				8F2C3938161C80720021A1C4 /* ICON@2x.png in Resources */,
+				8F2C3939161C81110021A1C4 /* Default@2x.png in Resources */,
+				8F2C393D161C8CA30021A1C4 /* ICON.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,10 +672,13 @@
 		8F257E9A14DEBFC6008CF1D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "agot-ios/agot-ios-Prefix.pch";
 				INFOPLIST_FILE = "agot-ios/agot-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -683,10 +686,13 @@
 		8F257E9B14DEBFC6008CF1D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "agot-ios/agot-ios-Prefix.pch";
 				INFOPLIST_FILE = "agot-ios/agot-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

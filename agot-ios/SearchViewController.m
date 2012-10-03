@@ -92,7 +92,7 @@ UIPickerView<ConditionPicker> *pickerV;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"权力的游戏卡牌搜索";
+    self.title = @"权力的游戏卡牌查询";
     btnMask.hidden = YES;
     
     houses = [[[HouseDao alloc] init] select];

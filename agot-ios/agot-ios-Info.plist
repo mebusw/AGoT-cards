@@ -11,13 +11,14 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Default@2x.png</string>
+		<string>114.png</string>
 		<string>ICON@2x.png</string>
 		<string>ICON.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>org.mebusw.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.mebusw.agot-cards</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
