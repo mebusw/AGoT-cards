@@ -64,7 +64,7 @@
     startCtrl.imageName = [self imageNameForPageId:startPageId];
     startCtrl.pageId = startPageId;
     
-    UIBarButtonItem *copyrightBtn = [[UIBarButtonItem alloc] initWithTitle:@"版权信息" style:UIBarButtonItemStyleBordered target:self action:@selector(showCopyright)];
+    UIBarButtonItem *copyrightBtn = [[UIBarButtonItem alloc] initWithTitle:@"关于我" style:UIBarButtonItemStyleBordered target:self action:@selector(showCopyright)];
     self.navigationItem.rightBarButtonItem = copyrightBtn;
     
 
@@ -91,7 +91,7 @@
 
 #pragma mark - button delegate
 - (void) showCopyright {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"版权信息" message:@"本软件仅供爱好者研究使用。所有卡牌内容版权属于游人码头®和Fantasy Flight Publishing®。" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于我" message:@"本软件系爱好者个人开发，如有反馈或意见请发邮件至unplugged_game@163.com\n\n所有卡牌内容版权属于游人码头®和Fantasy Flight Publishing®" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
     [alert show];
 }
 

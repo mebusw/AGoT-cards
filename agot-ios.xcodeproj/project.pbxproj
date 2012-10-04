@@ -58,6 +58,7 @@
 		8F7B062B14FD18780099F351 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 8F7B062A14FD18780099F351 /* doc */; };
 		8F7E8CD514FE595F0045BB23 /* ConditionPickers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8CD414FE595F0045BB23 /* ConditionPickers.m */; };
 		8F7FAC0D14E7B8D3004737F2 /* CardDaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7FAC0A14E7B8AD004737F2 /* CardDaoTests.m */; };
+		8F86B023161DB9A100FD09F0 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C393C161C8CA30021A1C4 /* ICON.png */; };
 		8FBBD2FD14E624DA00347C49 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBD2FC14E624DA00347C49 /* PagesViewController.m */; };
 		8FBF91E314E157D30058D09C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF91E214E157D30058D09C /* ResultViewController.m */; };
 		8FF3DC54150CE34500FD9783 /* C_I.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF3DC46150CE34500FD9783 /* C_I.png */; };
@@ -507,6 +508,7 @@
 				8F194A10150F98D800141F95 /* images in Resources */,
 				8F2C3938161C80720021A1C4 /* ICON@2x.png in Resources */,
 				8F2C3939161C81110021A1C4 /* Default@2x.png in Resources */,
+				8F86B023161DB9A100FD09F0 /* ICON.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +628,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -641,6 +644,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,7 +657,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -661,6 +667,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
