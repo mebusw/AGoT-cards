@@ -48,7 +48,6 @@
 		8F257EB314DED0D1008CF1D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F257EB214DED0D1008CF1D5 /* libsqlite3.dylib */; };
 		8F2C3938161C80720021A1C4 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C3937161C80720021A1C4 /* ICON@2x.png */; };
 		8F2C3939161C81110021A1C4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BB731150E30AD00939CBE /* Default@2x.png */; };
-		8F2C393D161C8CA30021A1C4 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C393C161C8CA30021A1C4 /* ICON.png */; };
 		8F31EC1A14E2D0F20034F8AE /* AGoTHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1914E2D0F20034F8AE /* AGoTHouse.m */; };
 		8F31EC1E14E2D1540034F8AE /* AGotCrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC1D14E2D1540034F8AE /* AGotCrest.m */; };
 		8F31EC2114E2D1CC0034F8AE /* HouseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F31EC2014E2D1CC0034F8AE /* HouseDao.m */; };
@@ -508,7 +507,6 @@
 				8F194A10150F98D800141F95 /* images in Resources */,
 				8F2C3938161C80720021A1C4 /* ICON@2x.png in Resources */,
 				8F2C3939161C81110021A1C4 /* Default@2x.png in Resources */,
-				8F2C393D161C8CA30021A1C4 /* ICON.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
