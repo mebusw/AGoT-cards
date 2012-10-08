@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <navigationController id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,13 +16,13 @@
                         <segue destination="hQj-xQ-laR" kind="relationship" relationship="rootViewController" id="A82-Ot-l8y"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="iUH-09-cJQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cxF-kP-lMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hQj-xQ-laR" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l6K-gA-TUF">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -173,22 +171,6 @@
                                 <rect key="frame" x="196" y="352" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Guj-ew-yzd">
-                                <rect key="frame" x="0.0" y="42" width="320" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapMask:" destination="cxF-kP-lMP" eventType="touchDown" id="BDe-F2-aW2"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ryT-KU-0ob">
                                 <rect key="frame" x="0.0" y="-2" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -209,6 +191,22 @@
                                     <outlet property="delegate" destination="hQj-xQ-laR" id="hLc-u4-eC0"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ngl-8C-DyM" userLabel="Button - Mask">
+                                <rect key="frame" x="0.0" y="42" width="320" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapMask:" destination="hQj-xQ-laR" eventType="touchDown" id="Q8W-K4-vYT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -216,7 +214,7 @@
                     <connections>
                         <outlet property="_searchBar" destination="uqZ-JC-sGY" id="HEk-SM-B24"/>
                         <outlet property="btnCrest" destination="X6K-SV-ESG" id="d58-e4-Cpk"/>
-                        <outlet property="btnMask" destination="Guj-ew-yzd" id="LxD-6J-AYQ"/>
+                        <outlet property="btnMask" destination="Ngl-8C-DyM" id="hvO-rd-XNe"/>
                         <outlet property="btnSet" destination="K1e-4R-7CZ" id="gKk-YC-tCa"/>
                         <outlet property="btnType" destination="kiR-QY-Bz6" id="mHj-k0-lMB"/>
                         <outlet property="checkList" destination="Ipw-8d-XBN" id="t7g-JN-5Ls"/>
@@ -229,13 +227,13 @@
                         <segue destination="LZy-xn-x2R" kind="push" identifier="Results" id="v3d-dI-KaG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxF-kP-lMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581" y="64"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="hoJ-RQ-zs3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgH-Vw-RwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="LZy-xn-x2R" customClass="ResultViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xv7-3Q-Ucf">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -275,6 +273,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2nC-9I-ou5"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgH-Vw-RwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105" y="64"/>
         </scene>
