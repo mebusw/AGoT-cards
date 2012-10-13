@@ -17,7 +17,7 @@
 @synthesize db;
 
 
-- (BOOL)initDatabase{
+- (NSString*)prepareDatabase{
     BOOL success;
     NSError *error;
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -31,7 +31,7 @@
         NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DB_NAME];
         success = [fm copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
         if(!success){
-            NSLog(@"%@", [error localizedDescription]);
+            NSLog(@"fail to copy db file. %@", [error localizedDescription]);
             success = NO;
         }
     }
@@ -44,7 +44,7 @@
             success = NO;
         }
     }
-    return success;
+    return [error localizedDescription];
 }
 
 - (void) closeDatabase{
@@ -60,7 +60,9 @@
         splitViewController.delegate = (id)navigationController.topViewController;
     }
     
-    NSLog(@"initDatabase=%d", [self initDatabase]);
+    NSLog(@"initDatabase err=%@", [self prepareDatabase]);
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"db err" message:[self prepareDatabase] delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    [av show];
     
     return YES;
 }
