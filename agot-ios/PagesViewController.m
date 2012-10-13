@@ -91,7 +91,7 @@
 
 #pragma mark - button delegate
 - (void) showCopyright {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于我" message:@"本软件系爱好者个人开发，如有反馈或意见请发邮件至unplugged_game@163.com\n\n所有卡牌内容版权属于游人码头®和Fantasy Flight Publishing®" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于我" message:@"本软件系爱好者个人开发，如有反馈或意见请发邮件至unplugged_game@163.com\n\n所有卡牌内容版权属于游人码头®和Fantasy Flight Publishing®。\n更多相关游戏信息，请访问游人官方网站www.gameharbor.com.cn，以获得详实信息。" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
     [alert show];
 }
 
