@@ -44,7 +44,7 @@
             success = NO;
         }
     }
-    return [error localizedDescription];
+    return [NSString stringWithFormat:@"%@ | %@", writableDBPath, [error localizedDescription]];
 }
 
 - (void) closeDatabase{
@@ -60,8 +60,8 @@
         splitViewController.delegate = (id)navigationController.topViewController;
     }
     
-    NSLog(@"initDatabase err=%@", [self prepareDatabase]);
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"db err" message:[self prepareDatabase] delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    NSLog(@"initDatabase info=%@", [self prepareDatabase]);
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"adhoc 1.5" message:[self prepareDatabase] delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [av show];
     
     return YES;
