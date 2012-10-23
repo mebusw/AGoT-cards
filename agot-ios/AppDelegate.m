@@ -61,8 +61,8 @@
     }
     
     NSLog(@"initDatabase info=%@", [self prepareDatabase]);
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"adhoc 1.5" message:[self prepareDatabase] delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-    [av show];
+//    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"adhoc 1.5" message:[self prepareDatabase] delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//    [av show];
     
     return YES;
 }
